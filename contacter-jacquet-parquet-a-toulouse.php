@@ -9,12 +9,12 @@
 		<!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-		
+
 		<!-- Design -->
 		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
 	</head>
-	
+
 	<body>
 		<header class="contact">
 			<nav>
@@ -54,7 +54,7 @@
 						<h1 class="center">Une question ? Un devis ?<br/><span></span></h1>
 						<p class="center references">
 							Nous nous déplaçons chez vous, sur toute la région Toulousaine, afin d’établir une estimation précise de votre projet et vous conseiller dans les différents choix et
-							solutions envisageables. Pour toute demande de renseignements supplémentaires ou de devis, vous pouvez contacter notre société Baptiste Jacquet à Toulouse, par téléphone, 
+							solutions envisageables. Pour toute demande de renseignements supplémentaires ou de devis, vous pouvez contacter notre société Baptiste Jacquet à Toulouse, par téléphone,
 							mail ou en remplissant le formulaire de contact ci-contre, nous nous efforcerons de vous répondre dans les plus brefs délais.
 							<br/><br/><br/>
 							<b class="font24">
@@ -90,7 +90,12 @@
 								<input type="text" name="host" id="host" value="OK" style="display:none;" tabindex="55"/>
 								<input type="hidden" name="page" value="contacter-jacquet-parquet-a-toulouse.php" tabindex="56"/>
 								<textarea name="Message" id="Message" tabindex="60" onfocus="inputFocus(this);" onblur="inputBlur(this);">Message :</textarea><br/>
-								<input type="submit" value="ENVOYER" class="bouton"/>
+								<button
+								class="g-recaptcha bouton"
+								data-sitekey="6LfTYHcUAAAAAMKnErcexIT2taocOmOwC4vVfaYP"
+								data-callback="onSubmit">
+								Envoyer
+								</button>
 							<?php
 								}
 							?>
@@ -133,28 +138,39 @@
 				</p>
 			</div>
 		</footer>
-		
+
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="js/prefixfree.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 		<script src="js/smoothscroll.js"></script>
-		
+
 		<!-- FORMULAIRE -->
 		<script type="text/javascript">
 			function valider()
-			{   
+			{
 				if (formcontact.Nom.value == "" || formcontact.Nom.value == "Nom * :")
-				{   
-					alert ( "Vous devez renseigner votre Nom !" );      
-					return false;   
-				}  
+				{
+					alert ( "Vous devez renseigner votre Nom !" );
+					return false;
+				}
 				if (formcontact.Email.value == "" || formcontact.Email.value == "Email * :")
-				{   
-					alert ( "Vous devez renseigner votre adresse email pour être recontacté !" );      
-					return false;   
-				} 
-				return true; 
-			}	 
+				{
+					alert ( "Vous devez renseigner votre adresse email pour être recontacté !" );
+					return false;
+				}
+				return true;
+			}
+		</script>
+
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+		<script>
+
+				function onSubmit(token) {
+
+						document.getElementById("formcontact").submit();
+
+				}
+
 		</script>
 
 		<script type="text/javascript">
@@ -169,6 +185,6 @@
 			  }
 			}
 		</script>
-		
+
 	</body>
 </html>
