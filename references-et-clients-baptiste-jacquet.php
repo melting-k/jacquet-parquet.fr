@@ -1,6 +1,10 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
 		<title>Les références et clients de Jacquet Parquet à Toulouse, Haute-Garonne</title>
 		<meta name='description' content="Découvrez les références de Baptiste Jacquet, les clients qui nous ont fait confiance à Toulouse et en Haute-Garonne pour la pose de leur parquet ou la conception de leur terrasse"/>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -9,12 +13,13 @@
 		<!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-		
+
 		<!-- Design -->
 		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="design-mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
 	</head>
-	
+
 	<body>
 		<header class="references">
 			<nav>
@@ -108,11 +113,11 @@
 				</p>
 			</div>
 		</footer>
-		
+
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="js/prefixfree.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 		<script src="js/smoothscroll.js"></script>
-		
+
 	</body>
 </html>

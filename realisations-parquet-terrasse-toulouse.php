@@ -1,6 +1,10 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
 		<title>Nos réalisations de parquets et de terrasses à Merville & Toulouse</title>
 		<meta name='description' content="Découvrez au travers de notre galerie de photos nos diverses réalisations de parquets et de terrasses en bois sur la région de Toulouse et de Merville, en Haute-Garonne (31)"/>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -9,12 +13,13 @@
 		<!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-		
+
 		<!-- Design -->
 		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="design-mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
 	</head>
-	
+
 	<body>
 		<header class="realisations">
 			<nav>
@@ -129,12 +134,12 @@
 				</p>
 			</div>
 		</footer>
-		
+
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="js/prefixfree.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 		<script src="js/smoothscroll.js"></script>
-		
+
 		<!-- GALERIE -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 		<script src="js/galleria-1.2.9.js"></script>
@@ -145,11 +150,11 @@
 			// Initialize Galleria
 			Galleria.run('#galleria', {
 			transition:'fadeslide',
-			transitionSpeed:'1000',  
+			transitionSpeed:'1000',
 			thumbnails:false,
 			lightbox: false
 			});
 		</script>
-		
+
 	</body>
 </html>

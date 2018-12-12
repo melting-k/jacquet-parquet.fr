@@ -1,6 +1,10 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
 		<title>Pose et rénovation de tous types de parquets à Merville et Toulouse</title>
 		<meta name='description' content="Baptiste Jacquet intervient sur les travaux de pose et de rénovation de parquet à Toulouse et Merville, en Haute-Garonne. Une prise en charge totale et globale, jusqu'aux finitions"/>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -9,12 +13,13 @@
 		<!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-		
+
 		<!-- Design -->
 		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="design-mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
 	</head>
-	
+
 	<body>
 		<header class="pose">
 			<nav>
@@ -55,9 +60,9 @@
 					<div class="column-big left">
 						<h1>Spécialiste de la pose de parquet à Toulouse<br/><span></span></h1>
 						<p>
-							Notre expérience et notre savoir-faire nous permettent de répondre favorablement à tous types de demande en matière de pose de parquet massif ou contrecollé. 
-							Nous intervenons chez vous, après étude des lieux et des supports existants (sol, chape, lambourdage...). Notre équipe de techniciens qualifiés et expérimentés peut, 
-							en fonction de votre projet, vous proposer la création du support. Différentes techniques de pose sont envisageables, parquet cloué, collé, ou flottant. 
+							Notre expérience et notre savoir-faire nous permettent de répondre favorablement à tous types de demande en matière de pose de parquet massif ou contrecollé.
+							Nous intervenons chez vous, après étude des lieux et des supports existants (sol, chape, lambourdage...). Notre équipe de techniciens qualifiés et expérimentés peut,
+							en fonction de votre projet, vous proposer la création du support. Différentes techniques de pose sont envisageables, parquet cloué, collé, ou flottant.
 							Pour toute demande de renseignements complémentaires ou de devis, <a href="contacter-jacquet-parquet-a-toulouse.php" title="Contacter un parqueteur à Toulouse">nous contacter</a>.
 							<br/><br/><br/>
 						</p>
@@ -77,8 +82,8 @@
 				---><div class="column-big right">
 						<h2>Prise en charge globale de la pose à la finition<br/><span></span></h2>
 						<p>
-							Jacquet Parquet vous propose la gestion globale de votre projet : de la fourniture des matériaux à la pose sur-mesure de votre parquet, 
-							jusqu’à la finition. Une fois la pose efféctuée, nous passons à l’étape du ponçage, pour pouvoir ensuite vitrifier le bois. Différentes 
+							Jacquet Parquet vous propose la gestion globale de votre projet : de la fourniture des matériaux à la pose sur-mesure de votre parquet,
+							jusqu’à la finition. Une fois la pose efféctuée, nous passons à l’étape du ponçage, pour pouvoir ensuite vitrifier le bois. Différentes
 							finitions sont possibles : vitrification, mise en teinte, application d’une peinture, vous laissant un large choix de coloris et de rendus.
 							N’hésitez pas à nous contacter pour toute demande de projets sur-mesure ou d’estimation.
 							<br/><br/><br/><br/>
@@ -90,8 +95,8 @@
 						<h2>Découvrez aussi nos solutions de rénovation<br/><span></span></h2>
 						<p>
 							Vous possédez un parquet existant et voulez le rénover ou le personnaliser ?<br/>
-							Jacquet Parquet vous propose la rénovation intégrale de votre sol existant. Nous effectuons tout d’abord un ponçage, afin de retrouver 
-							l’aspect initial du bois et de retirer tout vernis ou teintes appliquées d’origine, puis nous effectuons une nouvelle mise en teinte, 
+							Jacquet Parquet vous propose la rénovation intégrale de votre sol existant. Nous effectuons tout d’abord un ponçage, afin de retrouver
+							l’aspect initial du bois et de retirer tout vernis ou teintes appliquées d’origine, puis nous effectuons une nouvelle mise en teinte,
 							correspondant à votre nouveau projet ou tout simplement afin de retrouver l’état du neuf. Pour plus d’informations concernant la rénovation
 							de parquet à Toulouse, nous contacter.
 							<br/><br/>
@@ -141,12 +146,12 @@
 				</p>
 			</div>
 		</footer>
-		
+
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="js/prefixfree.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 		<script src="js/smoothscroll.js"></script>
-		
+
 		<!-- CARROUSEL -->
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -162,7 +167,7 @@
 				  draggable:false
 				});
 			});
-		</script> 
-		
+		</script>
+
 	</body>
 </html>

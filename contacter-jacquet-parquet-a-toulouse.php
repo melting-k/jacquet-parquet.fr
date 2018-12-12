@@ -1,6 +1,10 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
 		<title>Contactez nous à Toulouse pour vos questions ou demandes de devis</title>
 		<meta name='description' content="Retrouvez les coordonnées de l'entreprise Jacquet Parquet à Toulouse, afin de nous soumettre vos interrogations ou vos demandes de devis, ou pour plus de détail sur nos prestations"/>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -12,6 +16,7 @@
 
 		<!-- Design -->
 		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="design-mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
 	</head>
 

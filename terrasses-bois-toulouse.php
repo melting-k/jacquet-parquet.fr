@@ -1,6 +1,10 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
 		<title>Création de terrasses en bois à Toulouse, aménagement piscine en bois</title>
 		<meta name='description' content="Notre société propose la création de terrasses en bois ainsi que l'aménagement de votre piscine. Nous prenons en charge l'intégralité de votre projet, du terrassement aux finitions"/>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -9,12 +13,13 @@
 		<!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-		
+
 		<!-- Design -->
 		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="design-mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
 	</head>
-	
+
 	<body>
 		<header class="terrasses">
 			<nav>
@@ -55,9 +60,9 @@
 					<div class="column-big left">
 						<h1>Création de terrasses en bois à Toulouse<br/><span></span></h1>
 						<p>
-							Jacquet Parquet vous propose la création intégrale de votre terrasse bois. Nous intervenons pour les particuliers comme pour les professionnels sur la 
-							région toulousaine, en fonction de vos besoins et de votre budget. Notre savoir-faire nous permet d’intervenir sur support existant ou de vous proposer 
-							la création de celui-ci, directement sur votre terrain (terrassement, chappe, lambourdage...). Nous disposons de différentes esssences de bois exotiques 
+							Jacquet Parquet vous propose la création intégrale de votre terrasse bois. Nous intervenons pour les particuliers comme pour les professionnels sur la
+							région toulousaine, en fonction de vos besoins et de votre budget. Notre savoir-faire nous permet d’intervenir sur support existant ou de vous proposer
+							la création de celui-ci, directement sur votre terrain (terrassement, chappe, lambourdage...). Nous disposons de différentes esssences de bois exotiques
 							ou composites de manière à répondre favorablement à tous type de demande. Différentes finitions des lames de bois sont envisageables en fonction de votre
 							projet de terrasse et de vos envies : lames vissées (vis inox visibles), lames clipsées (fixations invisibles)...
 							<br/><br/><br/>
@@ -123,12 +128,12 @@
 				</p>
 			</div>
 		</footer>
-		
+
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="js/prefixfree.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 		<script src="js/smoothscroll.js"></script>
-		
+
 		<!-- CARROUSEL -->
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -144,7 +149,7 @@
 				  draggable:false
 				});
 			});
-		</script> 
-		
+		</script>
+
 	</body>
 </html>

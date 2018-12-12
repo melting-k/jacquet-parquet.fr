@@ -1,0 +1,126 @@
+@media screen and (min-width:992px) {
+  #bt-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  html {
+    font-size: 6.1px;
+  }
+
+  .font46 {
+    font-size: 4.6rem;
+  }
+
+  body {
+    min-width: auto;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  body > header > nav > div{
+    width: 100%;
+  }
+
+  #bt-menu {
+    display: block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+  }
+
+  #bt-menu .barre-menu {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    height: 2px;
+    background: #f39200;
+    position: relative;
+    transition: all 0.5s ease 0s;
+  }
+
+  #bt-menu .barre-menu:after, #bt-menu .barre-menu:before {
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background: #f39200;
+    content: '';
+    position: absolute;
+    top: -6px;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    z-index: 1;
+    transition: top 0.5s ease 0.5s, transform 0.5s ease;
+  }
+
+  #bt-menu .barre-menu:after {
+    top: 6px;
+  }
+
+  #logo {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #logo>img {
+    vertical-align: middle;
+  }
+
+  #menu{
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: url("http://localhost/jacquet-parquet.fr/images/bg-marron.png");
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  #menu > li{
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    height: auto;
+  }
+  #menu > li #s-menu > li > a{
+    color: #fff;
+  }
+  #s-menu{
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  /* menu ouvert sur mobile  */
+  .navbar-main.ouvert #menu {
+    left: 0;
+    transition: all 1s ease;
+  }
+
+  .navbar-main.ouvert #bt-menu .barre-menu {
+    transform: rotate(45deg);
+    transition: top 0.5s ease 0s, transform 0.5s ease 0.5s;
+  }
+
+  .navbar-main.ouvert #bt-menu .barre-menu:after, .navbar-main.ouvert #bt-menu .barre-menu:before {
+    top: 0;
+    transform: rotate(-90deg);
+    transition: top 0.5s ease 0s, transform 0.5s ease 0.5s;
+  }
+
+  #titre-page {
+    width: 100%;
+  }
+}

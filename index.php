@@ -1,6 +1,10 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
 		<title>Baptiste Jacquet, parquet à Toulouse, pose & rénovation Haute-Garonne</title>
 		<meta name='description' content="Baptise Jacquet, parquet à Toulouse, Haute-Garonne. Nous intervenons pour tous les besoins : parquet massif, parquets flottants, et également pour la création de terrasses bois"/>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -9,12 +13,13 @@
 		<!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-		
+
 		<!-- Design -->
 		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="design-mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
 	</head>
-	
+
 	<body>
 		<header>
 			<div class="carousel">
@@ -27,6 +32,7 @@
 				<div class="slide-7"></div>
 			</div>
 			<nav>
+				<button id="bt-menu"> <span class="barre-menu"></span> </button>
 				<div>
 					<p id="logo">
 						<a href="http://www.jacquet-parquet.fr" title="Baptise Jacquet, parquet à Toulouse, Merville"><img src="images/logo-jaquet-parquet-toulouse.png" alt="Logo Jacquet Parquet Toulouse" class="middle"/></a>
@@ -63,9 +69,9 @@
 				<h1 class="accueil">Les parquets Jacquet, modernité & tradition à Toulouse</h1>
 				<p class="center blanc">
 					<img src="images/picto-losange.png" alt="Losange"/>
-					L’entreprise Baptiste Jacquet, spécialiste du parquet massif et de la pose de parquet à Toulouse est née en 2006. Baptiste Jacquet relève d’un savoir-faire unique lui permettant de répondre 
-					à tous types de demandes, de la pose de parquet traditionnelle, collé, cloué ou flottant, à la création d’un sol sur mesure à base d’essences de bois nobles ou exotiques. Nous vous proposons 
-					une large gamme de choix en fourniture de parquet pour répondre au mieux à vos attentes et à votre projet. Nous intervenons également pour la création de terrasses et de plages de piscines sur mesure, ou tout 
+					L’entreprise Baptiste Jacquet, spécialiste du parquet massif et de la pose de parquet à Toulouse est née en 2006. Baptiste Jacquet relève d’un savoir-faire unique lui permettant de répondre
+					à tous types de demandes, de la pose de parquet traditionnelle, collé, cloué ou flottant, à la création d’un sol sur mesure à base d’essences de bois nobles ou exotiques. Nous vous proposons
+					une large gamme de choix en fourniture de parquet pour répondre au mieux à vos attentes et à votre projet. Nous intervenons également pour la création de terrasses et de plages de piscines sur mesure, ou tout
 					espace extérieur en bois pour les particuliers comme les professionnels. N’hésitez pas à nous contacter au 05 61 99 84 79 ou via la page contact, pour toute demande de renseignements supplémentaires ou de devis, bonne visite !
 				</p>
 				<nav id="accelerateurs">
@@ -111,7 +117,7 @@
 						$contenu_du_fichier = fgets ($fp, 50000);
 						fclose ($fp);
 						echo $contenu_du_fichier;
-					?> 
+					?>
 				</div>
 			</div>
 		</aside>
@@ -149,12 +155,12 @@
 				</p>
 			</div>
 		</footer>
-		
+
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="js/prefixfree.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 		<script src="js/smoothscroll.js"></script>
-		
+
 		<!-- CARROUSEL -->
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -170,7 +176,7 @@
 				  draggable:false
 				});
 			});
-		</script> 
-		
+		</script>
+
 	</body>
 </html>

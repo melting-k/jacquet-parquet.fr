@@ -1,6 +1,10 @@
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
 		<title>Nos modèles de parquet et nos essences de bois à Merville, Toulouse</title>
 		<meta name='description' content="Nos différents modèles de parquets : nous pouvons vous proposer une gamme de parquets très variée : massifs, contrecollés ou stratifiés. Découvrez également nos essences de bois"/>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -9,12 +13,13 @@
 		<!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-		
+
 		<!-- Design -->
 		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="design-mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
 	</head>
-	
+
 	<body>
 		<header class="fourniture">
 			<nav>
@@ -55,9 +60,9 @@
 					<div class="column-big left">
 						<h1>Nos différents modèles de parquet à Toulouse<br/><span></span></h1>
 						<p>
-							Les parquets Baptiste Jacquet vous proposent la fourniture de tous types de parquets, massifs, contrecollés, stratifiés. Notre expérience et 
+							Les parquets Baptiste Jacquet vous proposent la fourniture de tous types de parquets, massifs, contrecollés, stratifiés. Notre expérience et
 							notre réseau de fournisseurs nous permettent de  vous faire bénéficier d’un grand panel de références et des meilleures essences de bois pour
-							votre projet, dans la région Toulousaine. Nous mettons à votre disposition un éventail des différentes familles d’essences, afin d’imaginer les nombreuses solutions 
+							votre projet, dans la région Toulousaine. Nous mettons à votre disposition un éventail des différentes familles d’essences, afin d’imaginer les nombreuses solutions
 							envisageables pour votre parquet. Nous vous proposons également la pose, le ponçage, la vitrification mais aussi la rénovation de votre parquet existant à Toulouse.
 						</p>
 					</div><!--
@@ -145,12 +150,12 @@
 				</p>
 			</div>
 		</footer>
-		
+
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="js/prefixfree.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
 		<script src="js/smoothscroll.js"></script>
-		
+
 		<!-- CARROUSEL -->
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -166,7 +171,7 @@
 				  draggable:false
 				});
 			});
-		</script> 
-		
+		</script>
+
 	</body>
 </html>
