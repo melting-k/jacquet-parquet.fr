@@ -880,13 +880,27 @@ body>header.realisations {
   background-image: url(images/slider/slider-realisations.jpg)
 }
 
-#galleria {
-  width: 940px;
-  height: 600px;
-  background: #23150c;
+#galerie-image {
+  width: 930px;
+  height: 590px;
+  border: 5px solid #23150c;
   margin: 40px auto 50px
 }
-
+.slick-list{
+  width: 100%;
+  height: 100%;
+}
+.slick-prev{
+  left: -50px !important;
+}
+.slick-next{
+  right: -50px !important;
+  transform: rotate(180deg);
+}
+.slick-prev, .slick-next{
+  background: url('images/prev-nex.png') !important;
+    background-position: 0 0;
+}
 body>header.references {
   background-image: url(images/slider/slider-realisations.jpg)
 }
@@ -946,4 +960,171 @@ section.contact div.column-small {
 #formcontact>.bouton:hover {
   background: #fff;
   border-color: transparent
+}
+#field-consentement .form-radio {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+#field-consentement .form-radio input[type=checkbox], #field-consentement .form-radio input[type=file], #field-consentement .form-radio input[type=radio] {
+  appearance: none;
+  opacity: 0;
+  width: 0;
+  height: 0
+}
+
+#field-consentement .form-radio label {
+  font-size: 12px;
+  line-height: 17px;
+  color: #fff;
+  cursor: pointer;
+  margin: 0:auto;
+  margin-left: 30px;
+  padding-right: 15px;
+  text-align: left;
+}
+
+#field-consentement .form-radio label:after, #field-consentement .form-radio label:before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: auto;
+  margin: auto;
+  transition: all .2s ease
+}
+
+#field-consentement .form-radio label:after {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #fff;
+  left: 0;
+  bottom: 25px;
+  z-index: 1
+}
+
+#field-consentement .form-radio label:before {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  left: 5px;
+  bottom: 30px;
+  z-index: 2;
+  opacity: 0
+}
+
+#field-consentement .form-radio input[type=checkbox]:checked+label:before, #field-consentement .form-radio input[type=file]:checked+label:before, #field-consentement .form-radio input[type=radio]:checked+label:before {
+  opacity: 1
+}
+
+.u-banner-cookies {
+  background: rgba(0, 0, 0, .85);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  padding: 25px 0 10px;
+  z-index: 100000;
+  opacity: 0;
+  transition: all .5s ease .25s
+}
+.u-banner-cookies_texte a{
+  color: #fff;
+}
+@media (min-width:760px) {
+  .u-banner-cookies {
+    padding: 40px 0
+  }
+}
+
+.u-banner-cookies .row {
+  display: flex;
+  align-items: center
+}
+
+.u-banner-cookies_texte {
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  width: 75%;
+  padding-left: 15%;
+  }
+@media screen and (max-width:992px) {
+  .u-banner-cookies_texte {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (min-width:992px) {
+  .u-banner-cookies_texte {
+    font-size: 16px;
+    line-height: 18px
+  }
+
+  .u-banner-cookies_close {
+    max-width: 150px;
+    width: 100%;
+    height: 50px
+  }
+}
+
+@media (max-width:767px) {
+  .u-banner-cookies .row {
+    display: block
+  }
+
+  .u-banner-cookies_texte {
+    text-align: center
+  }
+
+  .u-banner-cookies_button {
+    margin-top: 25px;
+    margin-bottom: 15px
+  }
+}
+
+.u-banner-cookies_button{
+  display: inline-block;
+  vertical-align: middle;
+  width: 24%;
+}
+.u-banner-cookies_close {
+  display: block;
+  cursor: pointer;
+  z-index: 10;
+  margin: auto;
+  background-color: #fff;
+  color: #000;
+  font-size: 15px;
+  padding: 0 15px;
+  line-height: 48px;
+  border-radius: 3px;
+  transition: all .5s ease;
+  text-align: center;
+}
+@media screen and (max-width:992px) {
+  .u-banner-cookies_button{
+    width: 100%;
+  }
+  .u-banner-cookies_close{
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+.u-banner-cookies_close:hover {
+  background-color: #337ab7;
+  color: #fff;
+  transition: all .5s ease
+}
+
+.u-banner-cookies.active {
+  transform: translateY(0);
+  opacity: 1
 }

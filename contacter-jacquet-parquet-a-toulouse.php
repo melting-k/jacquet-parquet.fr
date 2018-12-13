@@ -15,14 +15,16 @@
         <![endif]-->
 
 		<!-- Design -->
-		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="design.css?v=1" type="text/css" media="screen" />
 		<link rel="stylesheet" href="design-mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93006386-2"></script>
 	</head>
 
 	<body>
 		<header class="contact">
 			<nav>
+				<button id="bt-menu"> <span class="barre-menu"></span> </button>
 				<div>
 					<p id="logo">
 						<a href="http://www.jacquet-parquet.fr" title="Baptise Jacquet, parquet à Toulouse, Merville"><img src="images/logo-jaquet-parquet-toulouse.png" alt="Logo Jacquet Parquet Toulouse" class="middle"/></a>
@@ -95,6 +97,11 @@
 								<input type="text" name="host" id="host" value="OK" style="display:none;" tabindex="55"/>
 								<input type="hidden" name="page" value="contacter-jacquet-parquet-a-toulouse.php" tabindex="56"/>
 								<textarea name="Message" id="Message" tabindex="60" onfocus="inputFocus(this);" onblur="inputBlur(this);">Message :</textarea><br/>
+								<div id="field-consentement" class="input-field">
+                            <div class="form-radio">
+                                <input id="consentement" name="consentement" type="checkbox" value="Oui"><label for="consentement">En soumettant ce formulaire, j'accepte que les données transmises soient exploitées par Ballon Bleu Horizon dans le cadre de ma prise de contact.*</label>
+                            </div>
+                        </div>
 								<button
 								class="g-recaptcha bouton"
 								data-sitekey="6LfTYHcUAAAAAMKnErcexIT2taocOmOwC4vVfaYP"
@@ -134,8 +141,8 @@
 					<a href="fourniture-vente-parquet-toulouse.php" title="Fourniture et vente de parquet à Toulouse">Parquet - Parquet massif - Parquet contrecollé</a><br/>
 					<a href="terrasses-bois-toulouse.php" title="Création de terrasses en bois">Terrasse bois exotique</a> - Composite - Pose collée - Clouée - Flottant<br/>
 					<a href="pose-renovation-parquet-toulouse.php" title="Pose et rénovation de parquet">Fourniture & Pose à Toulouse</a> - Haute Garonne (31)
-					<br/><br/><br/>
-
+					<br/><br/>
+					<a href="mentions-legales.php" title="mentions légales droneperspectives.fr" class="js-closeCookies">Mentions Légales</a><br>
 					Une <a href="http://www.melting-k.fr" title="Création de sites internet à Toulouse" target="_blank">création web Melting K</a>
 				</p><!--
 			---><p class="right">
@@ -143,36 +150,49 @@
 				</p>
 			</div>
 		</footer>
-
+		<div class="u-banner-cookies">
+		<div class="width940">
+						<p class="u-banner-cookies_texte">
+								En poursuivant votre navigation sur ce site, vous acceptez que nous utilisions des cookies pour mesurer l'audience de notre site. Pour en savoir plus et paramétrer vos cookies, <a href="mentions-legales.php" title="mentions légales droneperspectives.fr" class="js-closeCookies">cliquez ici</a>.
+						</p>
+						<div class="u-banner-cookies_button">
+							<a class="u-banner-cookies_close js-closeCookies">J'accepte</a>
+						</div>
+		</div>
+	</div>
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="js/prefixfree.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="js/js.js"></script>
+		<script type="text/javascript" src="js/analyticstracking.js"></script>
 		<script src="js/smoothscroll.js"></script>
 
 		<!-- FORMULAIRE -->
-		<script type="text/javascript">
-			function valider()
-			{
-				if (formcontact.Nom.value == "" || formcontact.Nom.value == "Nom * :")
-				{
-					alert ( "Vous devez renseigner votre Nom !" );
-					return false;
-				}
-				if (formcontact.Email.value == "" || formcontact.Email.value == "Email * :")
-				{
-					alert ( "Vous devez renseigner votre adresse email pour être recontacté !" );
-					return false;
-				}
-				return true;
-			}
-		</script>
-
 		<script src='https://www.google.com/recaptcha/api.js'></script>
-		<script>
+		<script type="text/javascript">
 
 				function onSubmit(token) {
 
+					var checkBox = document.getElementById("consentement");
+					if (formcontact.Nom.value == "" || formcontact.Nom.value == "Nom * :")
+					{
+						alert ( "Vous devez renseigner votre Nom !" );
+						grecaptcha.reset();
+						return false;
+					} else if (checkBox.checked == false)
+					{
+						alert ( "Vous devez cocher la case consentement !" );
+						grecaptcha.reset();
+						return false;
+					} else if (formcontact.Email.value == "" || formcontact.Email.value == "Email * :")
+					{
+						alert ( "Vous devez renseigner votre adresse email pour être recontacté !" );
+						grecaptcha.reset();
+						return false;
+					} else {
 						document.getElementById("formcontact").submit();
+					}
 
 				}
 
@@ -190,6 +210,5 @@
 			  }
 			}
 		</script>
-
 	</body>
 </html>

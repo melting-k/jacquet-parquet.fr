@@ -18,11 +18,13 @@
 		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="design-mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93006386-2"></script>
 	</head>
 
 	<body>
 		<header class="realisations">
 			<nav>
+				<button id="bt-menu"> <span class="barre-menu"></span> </button>
 				<div>
 					<p id="logo">
 						<a href="http://www.jacquet-parquet.fr" title="Baptise Jacquet, parquet à Toulouse, Merville"><img src="images/logo-jaquet-parquet-toulouse.png" alt="Logo Jacquet Parquet Toulouse" class="middle"/></a>
@@ -62,40 +64,11 @@
 							Découvrez ci-dessous quelques unes de nos réalisations dans la région Toulousaine, à travers notre galerie photo.<br/>
 	 						Pour toute demande de renseignements supplémentaires ou de devis n’hésitez pas à nous contacter.
 						</p>
-						<div id="galleria">
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(22).jpg" data-title=""/>
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(23).jpg" data-title=""/>
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(24).jpg" data-title=""/>
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(25).jpg" data-title=""/>
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(26).jpg" data-title=""/>
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(27).jpg" data-title=""/>
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(28).jpg" data-title=""/>
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(29).jpg" data-title=""/>
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(30).jpg" data-title=""/>
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(31).jpg" data-title=""/>
-						    <img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(32).jpg" data-title=""/>
-						    <!-- FIN MAJ 06 / 2017 -->
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(18).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(19).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(20).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(21).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(1).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(2).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(3).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(4).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(5).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(6).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(7).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(8).jpg" data-title=""/>
-							<!--<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(9).jpg" data-title=""/>-->
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(10).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(11).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(12).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(13).jpg" data-title=""/>
-							<!--<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(14).jpg" data-title=""/>-->
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(15).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(16).jpg" data-title=""/>
-							<img src="images/realisations/realisation-parquet-terrasse-bois-toulouse(17).jpg" data-title=""/>
+						<div id="galerie-image">
+							<?php
+							include 'class.moulinette-image.php';
+							$galerie_renovation = new MoulinetteImage("images/realisations");
+							 ?>
 						</div>
 				</section>
 			</div>
@@ -125,8 +98,8 @@
 					<a href="fourniture-vente-parquet-toulouse.php" title="Fourniture et vente de parquet à Toulouse">Parquet - Parquet massif - Parquet contrecollé</a><br/>
 					<a href="terrasses-bois-toulouse.php" title="Création de terrasses en bois">Terrasse bois exotique</a> - Composite - Pose collée - Clouée - Flottant<br/>
 					<a href="pose-renovation-parquet-toulouse.php" title="Pose et rénovation de parquet">Fourniture & Pose à Toulouse</a> - Haute Garonne (31)
-					<br/><br/><br/>
-
+					<br/><br/>
+					<a href="mentions-legales.php" title="mentions légales droneperspectives.fr" class="js-closeCookies">Mentions Légales</a><br>
 					Une <a href="http://www.melting-k.fr" title="Création de sites internet à Toulouse" target="_blank">création web Melting K</a>
 				</p><!--
 			---><p class="right">
@@ -134,27 +107,40 @@
 				</p>
 			</div>
 		</footer>
-
+		<div class="u-banner-cookies">
+		<div class="width940">
+						<p class="u-banner-cookies_texte">
+								En poursuivant votre navigation sur ce site, vous acceptez que nous utilisions des cookies pour mesurer l'audience de notre site. Pour en savoir plus et paramétrer vos cookies, <a href="mentions-legales.php" title="mentions légales droneperspectives.fr" class="js-closeCookies">cliquez ici</a>.
+						</p>
+						<div class="u-banner-cookies_button">
+							<a class="u-banner-cookies_close js-closeCookies">J'accepte</a>
+						</div>
+		</div>
+	</div>
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="js/prefixfree.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/slick/slick.min.js"></script>
 		<script src="js/smoothscroll.js"></script>
 
 		<!-- GALERIE -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-		<script src="js/galleria-1.2.9.js"></script>
 		<script>
-			// Load the classic theme
-			Galleria.loadTheme('js/themes/classic/galleria.classic.min.js');
-
-			// Initialize Galleria
-			Galleria.run('#galleria', {
-			transition:'fadeslide',
-			transitionSpeed:'1000',
-			thumbnails:false,
-			lightbox: false
-			});
+			function sliders() {
+				var galerie = $('#galerie-image'),
+				settingGalerie = {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						autoplay: false,
+						arrows: true,
+						dots: false,
+						draggable: false,
+						infinite: true,
+					};
+				$(galerie).slick(settingGalerie);
+			};
+			sliders();
 		</script>
-
+		<script type="text/javascript" src="js/js.js"></script>
+		<script type="text/javascript" src="js/analyticstracking.js"></script>
 	</body>
 </html>

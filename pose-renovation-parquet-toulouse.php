@@ -18,11 +18,13 @@
 		<link rel="stylesheet" href="design.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="design-mobile.css" type="text/css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93006386-2"></script>
 	</head>
 
 	<body>
 		<header class="pose">
 			<nav>
+				<button id="bt-menu"> <span class="barre-menu"></span> </button>
 				<div>
 					<p id="logo">
 						<a href="http://www.jacquet-parquet.fr" title="Baptise Jacquet, parquet à Toulouse, Merville"><img src="images/logo-jaquet-parquet-toulouse.png" alt="Logo Jacquet Parquet Toulouse" class="middle"/></a>
@@ -79,7 +81,7 @@
 							<img src="images/pose-renovation/pose-globale-finitions.jpg" alt="Prise en charge globale, jusqu'aux finitions"/>
 						</p>
 					</div><!--
-				---><div class="column-big right">
+				---><div class="column-big right left-mobile">
 						<h2>Prise en charge globale de la pose à la finition<br/><span></span></h2>
 						<p>
 							Jacquet Parquet vous propose la gestion globale de votre projet : de la fourniture des matériaux à la pose sur-mesure de votre parquet,
@@ -137,8 +139,8 @@
 					<a href="fourniture-vente-parquet-toulouse.php" title="Fourniture et vente de parquet à Toulouse">Parquet - Parquet massif - Parquet contrecollé</a><br/>
 					<a href="terrasses-bois-toulouse.php" title="Création de terrasses en bois">Terrasse bois exotique</a> - Composite - Pose collée - Clouée - Flottant<br/>
 					<a href="pose-renovation-parquet-toulouse.php" title="Pose et rénovation de parquet">Fourniture & Pose à Toulouse</a> - Haute Garonne (31)
-					<br/><br/><br/>
-
+					<br/><br/>
+					<a href="mentions-legales.php" title="mentions légales droneperspectives.fr" class="js-closeCookies">Mentions Légales</a><br>
 					Une <a href="http://www.melting-k.fr" title="Création de sites internet à Toulouse" target="_blank">création web Melting K</a>
 				</p><!--
 			---><p class="right">
@@ -146,7 +148,16 @@
 				</p>
 			</div>
 		</footer>
-
+		<div class="u-banner-cookies">
+		<div class="width940">
+						<p class="u-banner-cookies_texte">
+								En poursuivant votre navigation sur ce site, vous acceptez que nous utilisions des cookies pour mesurer l'audience de notre site. Pour en savoir plus et paramétrer vos cookies, <a href="mentions-legales.php" title="mentions légales droneperspectives.fr" class="js-closeCookies">cliquez ici</a>.
+						</p>
+						<div class="u-banner-cookies_button">
+							<a class="u-banner-cookies_close js-closeCookies">J'accepte</a>
+						</div>
+		</div>
+	</div>
 		<!-- SCRIPTS -->
 		<script type="text/javascript" src="js/prefixfree.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
@@ -155,6 +166,8 @@
 		<!-- CARROUSEL -->
 		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="js/js.js"></script>
+		<script type="text/javascript" src="js/analyticstracking.js"></script>
 		<script type="text/javascript" src="js/slick/slick.min.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
