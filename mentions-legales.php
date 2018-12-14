@@ -10,7 +10,7 @@
   $LEGALS_client_rcs = "RCS de Toulouse";
   $LEGALS_client_siren = "519 491 138";
   $LEGALS_client_siegesocial = "474 chemin des Téoulets 31330 Merville";
-  $LEGALS_client_mail  = "contact@droneperspectives.fr";
+  $LEGALS_client_mail  = "contact@jacquet-parquet.fr";
   $LEGALS_client_tel  = "05.61.99.84.79";
   $LEGALS_client_url  = "www.jacquet-parquet.fr";
 ?>

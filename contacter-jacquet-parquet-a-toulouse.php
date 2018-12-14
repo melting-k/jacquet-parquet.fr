@@ -58,11 +58,12 @@
 			<div>
 				<section class="contact">
 					<div class="column-big left">
-						<h1 class="center">Une question ? Un devis ?<br/><span></span></h1>
+						<h1 class="center">Un projet ? Une question ?<br/><span></span></h1>
 						<p class="center references">
-							Nous nous déplaçons chez vous, sur toute la région Toulousaine, afin d’établir une estimation précise de votre projet et vous conseiller dans les différents choix et
-							solutions envisageables. Pour toute demande de renseignements supplémentaires ou de devis, vous pouvez contacter notre société Baptiste Jacquet à Toulouse, par téléphone,
-							mail ou en remplissant le formulaire de contact ci-contre, nous nous efforcerons de vous répondre dans les plus brefs délais.
+							Jacquet Parquet assure la gestion globale de vos projets de parquet et terrasse bois à Toulouse et alentours (Blagnac, Colomiers, Tournefeuille, Muret, Saint-Orens, Quint-Fonsegrives, Balma, L’Union, Saint-Jean…).<br/>
+								Pour toute demande de renseignements, n’hésitez pas à nous contacter. <br/>
+								Nous nous déplaçons chez vous pour établir une estimation de votre projet, puis un devis détaillé et personnalisé.. <br/>
+								A très vite !
 							<br/><br/><br/>
 							<b class="font24">
 								Tél. : 05 61 99 84 79<br/>

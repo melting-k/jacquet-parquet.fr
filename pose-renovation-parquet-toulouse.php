@@ -60,11 +60,10 @@
 			<div>
 				<section>
 					<div class="column-big left">
-						<h1>Spécialiste de la pose de parquet à Toulouse<br/><span></span></h1>
+						<h1>Pose traditionnelle, parquet collé, cloué ou flottant.<br/><span></span></h1>
 						<p>
-							Notre expérience et notre savoir-faire nous permettent de répondre favorablement à tous types de demande en matière de pose de parquet massif ou contrecollé.
-							Nous intervenons chez vous, après étude des lieux et des supports existants (sol, chape, lambourdage...). Notre équipe de techniciens qualifiés et expérimentés peut,
-							en fonction de votre projet, vous proposer la création du support. Différentes techniques de pose sont envisageables, parquet cloué, collé, ou flottant.
+							Nous aimons faire les choses bien, jusqu’au bout. Après que vous ayez choisi le parquet qui vous plaît, nous en assurons la pose. Nous étudions les lieux existants (sol, chape, lambourdage…) et nous vous conseillons sur la meilleure solution par rapport aux contraintes de votre projet : pose traditionnelle, parquet collé, cloué ou flottant.
+Parce que l’on veut être sûr que le parquet sélectionné vous correspond, vous avez le choix entre de nombreuses finitions : vitrification, mise en teinte, application d’une peinture. Nous vous proposons un large choix de coloris et de rendus.<br/>
 							Pour toute demande de renseignements complémentaires ou de devis, <a href="contacter-jacquet-parquet-a-toulouse.php" title="Contacter un parqueteur à Toulouse">nous contacter</a>.
 							<br/><br/><br/>
 						</p>
@@ -94,13 +93,9 @@
 				</section>
 				<section>
 					<div class="column-big left">
-						<h2>Découvrez aussi nos solutions de rénovation<br/><span></span></h2>
+						<h2>Le charme de l’ancien, l’odeur du bois et le parquet qui grince…<br/><span></span></h2>
 						<p>
-							Vous possédez un parquet existant et voulez le rénover ou le personnaliser ?<br/>
-							Jacquet Parquet vous propose la rénovation intégrale de votre sol existant. Nous effectuons tout d’abord un ponçage, afin de retrouver
-							l’aspect initial du bois et de retirer tout vernis ou teintes appliquées d’origine, puis nous effectuons une nouvelle mise en teinte,
-							correspondant à votre nouveau projet ou tout simplement afin de retrouver l’état du neuf. Pour plus d’informations concernant la rénovation
-							de parquet à Toulouse, nous contacter.
+							Vous avez fait le choix de rénover une vieille bâtisse, à Toulouse ? Nous vous soutenons dans cette idée et réalisons pour vous le ponçage, la vitrification ou le huilage de vos anciens parquets. Seule votre entière satisfaction pourra marquer la fin de notre intervention.
 							<br/><br/>
 							<a href="contacter-jacquet-parquet-a-toulouse.php" title="Contacter un parqueteur à Toulouse" class="bouton noir">NOUS CONTACTER</a>
 							<br/><br/>

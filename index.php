@@ -67,13 +67,12 @@
 		</header>
 		<section id="main-content" class="accueil">
 			<div>
-				<h1 class="accueil">Les parquets Jacquet, modernité & tradition à Toulouse</h1>
+				<h1 class="accueil">Baptiste Jacquet, écoute et savoir-faire.</h1>
 				<p class="center blanc">
 					<img src="images/picto-losange.png" alt="Losange"/>
-					L’entreprise Baptiste Jacquet, spécialiste du parquet massif et de la pose de parquet à Toulouse est née en 2006. Baptiste Jacquet relève d’un savoir-faire unique lui permettant de répondre
-					à tous types de demandes, de la pose de parquet traditionnelle, collé, cloué ou flottant, à la création d’un sol sur mesure à base d’essences de bois nobles ou exotiques. Nous vous proposons
-					une large gamme de choix en fourniture de parquet pour répondre au mieux à vos attentes et à votre projet. Nous intervenons également pour la création de terrasses et de plages de piscines sur mesure, ou tout
-					espace extérieur en bois pour les particuliers comme les professionnels. N’hésitez pas à nous contacter au 05 61 99 84 79 ou via la page contact, pour toute demande de renseignements supplémentaires ou de devis, bonne visite !
+					Vous faites construire ou rénover votre maison et ne savez plus où donner de la tête ? Baptiste et son équipe posent pour vous parquets et terrasses depuis plus de 12 ans à Toulouse et sa région. Nous savons combien votre projet vous demande de l'énergie. Vous pouvez respirer, le bois c’est notre métier et nous sommes là pour vous décharger de cette partie des travaux de votre maison. Pour vos parquets et vos terrasses, vous n’aurez plus à vous occuper de rien, notre parqueteur saura mettre en forme votre projet de parquet.<br><br>
+					Une équipe, que pour vous.<br><br>
+					Votre confiance est notre priorité. Pour vous garantir des travaux sans stress, c’est Baptiste qui se rendra sur votre chantier avec ses ouvriers pour mettre à votre service les compétences et le savoir-faire de notre entreprise. Amoureux des belles choses et passionné par le bois depuis son plus jeune âge ainsi que sa formation chez Les Compagnons du Devoir, Baptiste est un véritable conseiller en parquet, minutieux et appliqué jusqu’au dernier détail. Pour les formalités, Baptiste et son équipe s’occupent de tout. Vous serez accompagné par Christelle qui saura vous conseiller et gérer votre projet tout au long de sa mise en place.
 				</p>
 				<nav id="accelerateurs">
 					<div class="parquets">

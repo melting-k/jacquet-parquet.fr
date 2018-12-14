@@ -62,11 +62,10 @@
 					<div class="column-big left">
 						<h1>Nos différents modèles de parquet à Toulouse<br/><span></span></h1>
 						<p>
-							Les parquets Baptiste Jacquet vous proposent la fourniture de tous types de parquets, massifs, contrecollés, stratifiés. Notre expérience et
-							notre réseau de fournisseurs nous permettent de  vous faire bénéficier d’un grand panel de références et des meilleures essences de bois pour
-							votre projet, dans la région Toulousaine. Nous mettons à votre disposition un éventail des différentes familles d’essences, afin d’imaginer les nombreuses solutions
-							envisageables pour votre parquet. Nous vous proposons également la pose, le ponçage, la vitrification mais aussi la rénovation de votre parquet existant à Toulouse.
-						</p>
+							Parce qu’il n’y a pas de petit projet, l’équipe de Baptiste Jacquet vous propose un large choix de parquets massifs, contrecollés ou encore stratifiés. Depuis 12 ans nous sélectionnons pour vous les meilleurs parquets. Notre expérience et notre réseau de fournisseurs nous permettent aujourd’hui de vous offrir un très bon rapport qualité / prix avec des produits parfaitement adaptés à vos attentes.	<br/><br/>
+							Un parquet pour chaque projet.
+							<br/><br/>
+				L’entreprise Baptiste Jacquet vous permet de bénéficier des meilleures essences de bois pour votre projet de construction ou de rénovation de parquet. Nous mettons à votre disposition un éventail de familles d’essences, afin d’imaginer ensemble le parquet qui vous ressemble et correspondant à votre projet. Venez découvrir notre panel de références et laissez-vous guider par vos envies.
 					</div><!--
 				---><div class="column-small right">
 						<p>

@@ -60,13 +60,14 @@
 			<div>
 				<section>
 					<div class="column-big left">
-						<h1>Création de terrasses en bois à Toulouse<br/><span></span></h1>
+						<h1>Votre extérieur aussi mérite toute notre attention.<br/><span></span></h1>
 						<p>
-							Jacquet Parquet vous propose la création intégrale de votre terrasse bois. Nous intervenons pour les particuliers comme pour les professionnels sur la
-							région toulousaine, en fonction de vos besoins et de votre budget. Notre savoir-faire nous permet d’intervenir sur support existant ou de vous proposer
-							la création de celui-ci, directement sur votre terrain (terrassement, chappe, lambourdage...). Nous disposons de différentes esssences de bois exotiques
-							ou composites de manière à répondre favorablement à tous type de demande. Différentes finitions des lames de bois sont envisageables en fonction de votre
-							projet de terrasse et de vos envies : lames vissées (vis inox visibles), lames clipsées (fixations invisibles)...
+							Nous créons pour vous terrasses et plages de piscines sur-mesure, et ce n’est pas pour nous déplaire. Nos équipes passionnées s’épanouissent pleinement à vous proposer un aménagement de votre extérieur pour l’embellir et ainsi améliorer votre cadre de vie.
+						Il n’y a pas de condition pour être fier de son jardin ! Nous intervenons pour les particuliers comme pour les professionnels sur la région toulousaine, et nous trouvons toujours la meilleure solution pour allier vos besoins à votre budget.
+						<br/><br/>
+						Laissez libre-court à vos envies.
+						<br/><br/>
+						Nous vous invitons à la découverte de nos essences de bois exotiques ou composites. Voyagez à travers nos divers coloris et choisissez votre finition : lames de bois vissées (vis inox visibles) ou lames clipsées (fixations invisibles). Créons ensemble l’extérieur qui vous ressemble.
 							<br/><br/><br/>
 						</p>
 					</div><!--
