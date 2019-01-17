@@ -74,6 +74,7 @@
 							<img src="images/references/marina-rinaldi.jpg" alt="Marina Rinaldi" class="middle"/>
 							<img src="images/references/le-telegramme.jpg" alt="Le télégramme" class="middle"/>
 							<img src="images/references/airbus.jpg" alt="Airbus" class="middle"/>
+							<a href="http://www.olivia-dubus.fr/" title="Olivia Dubus Architecte"><img width="89px" height="auto" src="images/references/olivia-dubus.png" alt="olivia-dubus" title="Olivia Dubus Architecte" class="middle"/></a>
 							<br/><br/><br/>
 							<span class="font16">Ainsi que les particuliers...</span>
 							<br/><br/>
