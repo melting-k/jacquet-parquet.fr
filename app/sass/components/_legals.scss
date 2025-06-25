@@ -1,0 +1,52 @@
+@use 'utilities' as *;
+
+.c-legals {
+    
+    // ***** Layout 
+    
+    grid-column: 1 / span 12;
+    padding:15rem 0;
+
+    @media (min-width:$screen-lg) {
+        grid-column: 2 / span 10;
+    }
+
+    @media (min-width:$screen-xl) {
+        grid-column: 3 / span 8;
+    }
+
+    &_wrapper {
+        background:$light;
+        position:relative;
+        z-index:10;
+    }
+    
+    // Title 
+    
+    &_title {
+        @extend %font-bold;
+        font-size:4.2rem;
+        margin:8rem 0 4rem;
+        line-height: 1.1;
+        color:$dark;
+        text-transform: uppercase;
+        
+        &_small {
+            font-size:3rem;
+        }
+    }
+    
+    &_text {
+        margin-bottom:3rem;
+        color:$dark;
+        a {
+            text-decoration:underline 1px;
+            text-underline-offset: 20%;
+            
+            &:hover {
+                opacity:.5;
+            }
+        }
+    }
+    
+}

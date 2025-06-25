@@ -1,0 +1,225 @@
+@use 'utilities' as *;
+
+.c-card {
+    width:calc(100% + 20px);
+    border:solid 1px;
+    margin:0 -10px;
+    padding:20px;
+    border-radius:10px;
+    overflow:hidden;
+    transition:all .2s linear, opacity .4s ease-out .1s, transform .4s ease-out .1s;
+
+    @media (min-width:$screen-sm) {
+        width:calc(50% - 5px);
+        margin:0;
+    }
+
+    @media (min-width:$screen-md) {
+        padding:5rem;
+    }
+
+    &_head {
+        @include flex(flex,flex-start,space-between);
+    }
+
+    &_date,
+    &_category {
+        @extend %u-title--small;
+    }
+
+    &_title {
+        @extend %u-title--medium;
+        color:$dark;
+        margin-top:30px;
+
+        @media (min-width:$screen-md) {
+            padding-right:15%;
+        }
+    }
+
+    &_button {
+        margin-top:30px;
+    }
+
+    // ***** Wrapper & Container
+
+    &_wrapper {
+        @include position(relative,5);
+        background:$light;
+        padding:60px 0;
+
+        &_title {
+            grid-column: span 12;
+            @extend %u-title--small;
+            @include flex(flex,center,flex-start);
+            gap:30px;
+
+            &:after {
+                content:'';
+                display:block;
+                border-top:solid 2px $white;
+                flex:1;
+            }
+        }
+
+        &+& {
+            margin-top:-60px;
+        }
+
+        // ***** Colors modifiers 
+
+        &--primary {
+            @extend .c-card_wrapper;
+
+            .c-card {
+                color:$primary;
+
+                .u-button {
+                    background:$primary;
+
+                    &:hover {
+                        background:$secondary;
+                    }
+                }
+            }
+            
+            .c-card_loadbutton {
+                [class^=u-button] {
+                    color:$primary;
+
+                    &:hover {
+                        color:$white;
+                        background:$primary;
+                        border-color:$primary;
+                    }
+                }
+            }
+        }
+
+        &--secondary {
+            @extend .c-card_wrapper;
+
+            .c-card {
+                color:$secondary;
+
+                .u-button {
+                    background:$secondary;
+
+                    &:hover {
+                        background:$primary;
+                    }
+                }
+            }
+            
+            .c-card_loadbutton {
+                [class^=u-button] {
+                    color:$secondary;
+
+                    &:hover {
+                        color:$white;
+                        background:$secondary;
+                        border-color:$secondary;
+                    }
+                }
+            }
+        }
+    }
+
+    &_container {
+        grid-column: span 12;
+        @include flex(flex,flex-start,flex-start);
+        gap:10px;
+        margin-top:60px;
+
+        @media (min-width:$screen-sm) {
+            align-items:stretch;
+        }
+    }
+
+    &_loadbutton {
+        grid-column: span 12;
+        text-align:center;
+
+        [class^=u-button] {
+            margin-top:60px;
+        }
+    }
+
+    &_empty {
+        width:100%;
+        text-align:center;
+        font-weight:bold;
+        font-size:20px;
+    }
+
+    &.past {
+        opacity:.35;
+    }
+
+    // ***** Appearance Effect (Ajax loading)
+    
+    &.unvisible {
+        opacity:0;
+        
+        transition:all .2s ease-out .4s, opacity .4s ease-out 0s, transform .4s ease-out 0s;
+        transform: translateY(20%);
+    }
+
+    // ***** Cards Events
+
+    &--event {
+        @extend .c-card;
+        
+        .c-card {
+            &_image {
+                margin:-20px -20px 30px;
+                position:relative;
+
+                @media (min-width:$screen-md) {
+                    margin:-5rem -5rem 30px;
+                }
+
+                @media (min-width:$screen-lg) {
+                    position:relative;
+                    height:0;
+                    padding-bottom:35%;
+                }
+
+                img {
+                    width:100%;
+                    height:auto;
+
+                    @media (min-width:$screen-lg) {
+                        position:absolute;
+                        height:100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            &_circle {
+                @extend .u-button--round;
+                transform:rotate(-45deg);
+                @include transi();
+                @include position(absolute,1,20px,20px);
+            }
+
+            &_desc {
+                margin-top:30px;
+            }
+        }
+
+        &.past {
+            opacity:.35;
+        }
+
+        &:hover {
+            transform: scale(.97);
+            opacity:1;
+
+            .c-card_circle {
+                transform:none;
+            }
+        }
+    }
+}

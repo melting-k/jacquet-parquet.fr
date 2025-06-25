@@ -1,0 +1,40 @@
+@use 'utilities' as *;
+
+.c-text {
+    @include position(relative,5);
+    background:$light;
+    padding:10rem 0;
+
+    &_title {
+        grid-column: span 12;
+        @extend %u-title--big;
+        color:$dark;
+
+        @media (min-width:$screen-sm) {
+            grid-column: 2 / span 10;
+        }
+
+        @media (min-width:$screen-lg) {
+            grid-column: 1 / span 4;
+        }
+    }
+
+    &_content {
+        grid-column: span 12;
+        color:$dark;
+        margin-top:40px;
+
+        @media (min-width:$screen-sm) {
+            grid-column: 2 / span 10;
+        }
+
+        @media (min-width:$screen-lg) {
+            grid-column: 6 / span 7;
+            margin-top: 0;
+        }
+
+        @media (min-width:$screen-lg) {
+            padding-right:8rem;
+        }
+    }
+}

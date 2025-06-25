@@ -1,0 +1,107 @@
+@use 'core' as *;
+
+// ***** Animations
+
+@keyframes bounce {
+    from {transform:scale(1)}
+    25% {transform: scale(.8)}
+    50% {transform: scale(1.2)}
+    75% {transform: scale(0.9)}
+    to {transform: scale(1)}
+}
+
+@keyframes rotation {
+    from {transform:rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes balance {
+    from {transform:rotate(-15deg);}
+    50% {transform: rotate(15deg);}
+    to {transform: rotate(-15deg);}
+}
+
+@keyframes slider {
+    from {transform:translateX(0%);}
+    to {transform:translateX(-50%);}
+}
+
+// ***** Premier chargement du site + animations entre les pages
+
+.u-transition {
+    
+    @include position(fixed,1000,0,0,0,0);
+    @include transi(.35s, ease-out);
+    @include flex(flex,center,center);
+    background:$dark;
+    width:100%;
+    height:100%;
+    opacity:1;
+    
+    &.under {
+        opacity:0;
+        z-index:-10;
+    }
+    
+    // ***** Animations chargement du site
+    
+    &.first {
+        
+        opacity:1;
+        
+        svg {
+            opacity:1;
+            transform: scale(1);
+        }
+        
+        
+        &.remove {
+            transition-delay:0s;
+            opacity:0;
+            
+            svg {
+                opacity:0;
+                transform: scale(3);
+            }
+        }
+    }
+    
+    // ***** Animations entre les pages 
+    
+    &.out {
+        
+        opacity:1;
+        
+    }
+    
+    &.active {
+        
+        opacity:1;
+        
+        
+
+        &.remove {
+            transition-delay:.4s;
+            opacity:0;
+            
+            
+        }
+    }
+}
+
+// ***** Ajout d'une transition sur les éléments apparaissant via la parallax
+
+.parallax {
+    @include transi(1s, cubic-bezier(0,0,0,1));
+
+    &.no-delay {
+        transition:none;
+    }
+}
+
+[data-parallax] {
+    @include transi(.7s, cubic-bezier(0,0,0,1));
+}
+
+
+

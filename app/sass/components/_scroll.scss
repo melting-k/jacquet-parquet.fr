@@ -1,0 +1,348 @@
+@use 'utilities' as *;
+
+.c-scroll {
+    @include position(relative,10);
+    background: $light;
+    overflow:clip;
+
+    &_wrapper {
+        grid-column: span 12;
+
+        @media (min-width:$screen-sm) {
+            grid-column: 2 / span 10;
+        }
+
+        @media (min-width:$screen-md) {
+            grid-column: span 12;
+            height:100vh;
+            padding:7rem 0;
+            position:sticky;
+            top:0;
+        }
+    }
+
+    &_view {
+        @media (min-width:$screen-md) {
+            @include flex(inline-flex,stretch,flex-start,row,nowrap);
+            white-space: nowrap;
+            gap:10px;
+            @include transi(.5s, cubic-bezier(0,0,0,1));
+            transform:translateX(var(--transformation));
+            height:100%;
+            overflow:clip;
+        }
+    }
+
+    &_intro {
+        padding:40px 0;
+
+        @media (min-width:$screen-md) {
+            padding:0;
+            width:70vw;
+            min-width:70vw;
+            padding-right:9rem;
+            white-space:wrap;
+        }
+        
+        @media (min-width:$screen-lg) {
+            width:65vw;
+            min-width:65vw;
+        }
+        
+        @media (min-width:$screen-xl) {
+            width:45vw;
+            min-width:45vw;
+        }
+    }
+
+    &_title {
+        @extend %u-title--big;
+        color:$dark;
+        margin-bottom:40px;
+
+        @media (min-width:$screen-lg) {
+            margin-bottom: 9rem;
+        }
+    }
+
+    &_text {
+        @media (min-width:$screen-md) {
+            @include flex(flex,flex-start,flex-start);
+            gap:30px;
+        }
+        &_item {
+            @media (min-width:$screen-md) {
+                width:calc(50% - 15px);
+            }
+
+            &+& {
+                margin-top:30px;
+                
+                @media (min-width:$screen-md) {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &_app {
+            @include flex(flex,center,flex-start);
+            gap:20px;
+            font-size:18px;
+            color:$secondary;
+            margin-top:40px;
+            border:solid 1px;
+            padding:20px;
+            border-radius:10px;
+            width:fit-content;
+
+            svg {
+                @include svg($secondary,$white);
+                width:30px;
+            }
+
+            @media (min-width:$screen-md) {
+                margin-top: 0;
+            }
+
+            @media (min-width:$screen-lg) {
+                margin-top: 20px;
+            }
+
+            @media (min-width:$screen-xl) {
+                margin-top: 60px;
+            }
+        }
+    }
+
+    &_cta {
+        display:block;
+        @include position(relative,1);
+        margin:0 -10px;
+
+        @media (min-width:$screen-md) {
+            height:100%;
+            width:40vw;
+            min-width:40vw;
+            margin:0;
+            white-space:wrap;
+        }
+
+        @media (min-width:$screen-lg) {
+            width:35vw;
+            min-width:35vw;
+        }
+
+        @media (min-width:$screen-xl) {
+            width:auto;
+            min-width:0;
+        }
+
+        img {
+            width:100%;
+            height:auto;
+            border-radius: 10px;
+
+            @media (min-width:$screen-md) {
+                height:100%;
+                width:100%;
+                object-fit: cover;
+            }
+
+            @media (min-width:$screen-xl) {
+                height:100%;
+                width:auto;
+            }
+        }
+
+        &_title {
+            @include position(absolute,2,25px,auto,auto,25px);
+            @extend %u-title--medium;
+            color:$white;
+        }
+
+        &_button {
+            @include position(absolute,3,25px,25px);
+            @extend .u-button--round;
+            transform: rotate(-45deg);
+            @include transi();
+        }
+
+        // Image Seule (infos)
+
+        &_image {
+            border-radius:10px;
+            width:100%;
+            height:auto;
+
+            @media (min-width:$screen-md) {
+                height:100%;
+                width:auto;
+            }
+        }
+
+        &:hover {
+            img {
+                transform: scale(.97);
+            }
+            .c-scroll_cta_button {
+                transform: none;
+
+                &:before {
+                    transform: scale(.9);
+                }
+            }
+        }
+    }
+
+    &_catch {
+
+        @media (min-width:$screen-md) {
+            height:100%;
+            width:50vw;
+            min-width:50vw;
+            @include flex(flex,flex-start,flex-start,column,nowrap);
+            white-space:wrap;
+        }
+        
+        @media (min-width:$screen-lg) {
+            width:42vw;
+            min-width:42vw;
+        }
+        
+        @media (min-width:$screen-lg) {
+            width:36vw;
+            min-width:36vw;
+        }
+
+        &_title {
+            @extend %u-title--medium;
+            color:$white;
+            background:$primary;
+            margin:10px -10px;
+            padding:20px;
+            border-radius: 10px;
+
+            span {
+                color:$dark;
+            }
+
+            @media (min-width:$screen-sm) {
+                padding:5rem 10rem;
+            }
+
+            @media (min-width:$screen-md) {
+                margin:0;
+                width:100%;
+                padding:30px 60px;
+            }
+
+            @media (min-width:$screen-xl) {
+                padding:5rem 10rem;
+            }
+        }
+
+        img {
+            flex:1;
+            width:100%;
+            object-fit: cover;
+            height:100%;
+            margin-top:10px;
+            border-radius:10px;
+
+            @media (max-width:$screen-md) {
+                display:none;
+            }
+        }
+
+        &--alt {
+            @extend .c-scroll_catch;
+
+            .c-scroll_catch_title {
+                @extend %u-title--small;
+                margin:10px -10px;
+
+                @media (min-width:$screen-md) {
+                    margin:0;
+                }
+
+                @media (min-width:$screen-lg) {
+                    padding:5rem 7rem;
+                }
+            }
+        }
+    }
+
+    &_image {
+        border-radius:10px;
+        height:100%;
+        width:auto;
+
+        @media (max-width:$screen-md) {
+            display:none;
+        }
+    }
+
+    &_scrollbar {
+        @include position(absolute,10,auto,auto,14rem,0);
+        width:40vw;
+        height:2px;
+        border-bottom:solid 2px $white;
+
+        &:after {
+            content:'';
+            display:block;
+            height:6px;
+            border-radius: 3px;
+            background:$primary;
+            @include position(absolute,11,auto,auto,-4px,0px);
+            width:var(--scrollbar);
+        }
+
+        @media (max-width:$screen-md) {
+            display:none;
+        }
+    }
+
+    &_scroller {
+        height:200vh;
+        margin:25vh 0;
+        grid-column: span 12;
+
+        @media (min-width:$screen-lg) {
+            height:250vh;
+        }
+
+        @media (max-width:$screen-md) {
+            display:none;
+        }
+    }
+
+    &+.c-testimonials {
+        @media (min-width:$screen-md) {
+            margin-top:-7rem;
+        }
+    }
+
+
+    // ***** Modifiers 
+
+    &--secondary {
+        @extend .c-scroll;
+        background:$dark;
+
+        .c-scroll_wrapper {
+            padding-bottom:60px;
+
+            @media (min-width:$screen-md) {
+                padding:7rem 0
+            }
+        }
+
+        .c-scroll_title {
+            color:$secondary;
+        }
+        .c-scroll_text_item {
+            color:$secondary;
+        }
+    }
+}

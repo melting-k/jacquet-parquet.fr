@@ -1,0 +1,15 @@
+# SetEnv PHP_VER 5_4
+RewriteEngine on
+
+Options +FollowSymlinks -MultiViews
+
+# ----- PAGE EVENEMENT
+
+RewriteRule ^evenement\/([a-zA-Z0-9|\-]+)\/?$ evenement.php?slug=$1 [QSA,L]
+
+
+# REDIRECTION AUTRES PAGES (URL SIMPLIFIEE)
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([a-zA-Z0-9|\-]+)\/?$ $1.php [QSA,L]

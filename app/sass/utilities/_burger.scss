@@ -1,0 +1,53 @@
+@use 'core' as *;
+@use 'utilities/buttons' as *;
+
+// ***** Burger Button (main nav)
+
+.u-burger {
+
+    @extend .u-button--round;
+    flex-direction: column;
+    @include position(relative,105);
+    
+    &_bar {
+        display:block;
+        @include position(relative);
+        width:22px;
+        height:2px;
+        background:$white;
+        transition:all .25s ease-out .35s, transform .25s ease-out 0s;
+        
+        &+& {
+            margin-top:5px;
+        }
+    }
+}
+
+.active {
+    
+    .u-burger {
+
+        &:before {
+            transform: scale(.9);
+        }
+    
+        .u-burger_bar {
+            transform:rotate(45deg);
+            
+            &:nth-child(3) {
+                transform:rotate(-45deg);
+            }
+
+            &:nth-child(2) {
+                opacity:0;
+            }
+            
+            transition:all .25s ease-out, transform .25s ease-out .35s;
+
+            &+.u-burger_bar {
+                margin-top:-2px;
+            }
+        }
+        
+    }
+}

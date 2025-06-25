@@ -1,0 +1,89 @@
+@use 'core' as *;
+
+// ***** Main Layout Config
+
+.container {
+    @include position(relative,5);
+    padding:0 30px;
+    width:100%;
+    
+    @media (min-width:$screen-sm) {
+        padding:0 6.5rem;
+    }
+}
+
+.grid {
+    display:grid;
+    column-gap: 10px;
+    grid-template-columns: repeat(12, minmax(0,1fr));
+    position:relative;
+    
+    @media (min-width:$screen-sm) {
+        column-gap: 30px;
+        grid-area: content;
+    }
+}
+
+.hidden {
+    display:none!important;
+}
+
+.hidden-xs {
+    @media (max-width:$screen-sm) {
+        display:none!important;
+    }
+}
+
+.hidden-sm {
+    @media (min-width:$screen-sm) and (max-width:$screen-md) {
+        display:none!important;
+    }
+    &--min {
+        @media (min-width:$screen-sm) {
+            display:none!important;
+        }
+    }
+    &--max {
+        @media (max-width:$screen-sm) {
+            display:none!important;
+        }
+    }
+}
+
+.hidden-md {
+    @media (min-width:$screen-md) and (max-width:$screen-lg) {
+        display:none!important;
+    }
+    &--min {
+        @media (min-width:$screen-md) {
+            display:none!important;
+        }
+    }
+    &--max {
+        @media (max-width:$screen-md) {
+            display:none!important;
+        }
+    }
+}
+
+.hidden-lg {
+    @media (min-width:$screen-lg) and (max-width:$screen-xl) {
+        display:none!important;
+    }
+    &--min {
+        @media (min-width:$screen-lg) {
+            display:none!important;
+        }
+    }
+    &--max {
+        @media (max-width:$screen-lg) {
+            display:none!important;
+        }
+    }
+}
+
+.hidden-xl {
+    @media (min-width:$screen-xl) {
+        display:none!important;
+    }
+}

@@ -1,0 +1,19 @@
+@use 'core' as *;
+
+// ***** Social Buttons
+
+.u-social {
+    @include flex(inline-flex,center,center);
+    svg {
+        @include icon(25px);
+        @include svg($primary);
+    }
+
+    &+& {
+        margin-left:30px;
+    }
+
+    &:hover {
+        opacity:.6;
+    }
+}

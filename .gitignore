@@ -1,0 +1,8 @@
+node_modules
+prod
+package-lock.json
+app/css
+app/back-office/css
+app/back-office/fonts
+app/back-office/uploads
+.DS_Store

@@ -1,0 +1,41 @@
+@use 'core' as *;
+
+// ***** Titres
+
+%u-title {
+    
+    margin:0;
+    line-height:1.15;
+    text-align:left;
+    @extend %font;
+    
+    
+    // ***** Modifiers
+    
+    &--big {
+        @extend %u-title;
+        @include fluid-text(30px,58px);
+
+        &--sub {
+            @extend %u-title;
+            display:block;
+            text-transform: uppercase;
+            margin-top: 4.5rem;
+            @include fluid-text(15px,22px);
+        }
+    }
+
+    &--medium {
+        @extend %u-title;
+        line-height:1.3;
+        @include fluid-text(20px,32px);
+    }
+
+    &--small {
+        @extend %u-title;
+        font-weight:bold;
+        line-height:1.2;
+        text-transform: uppercase;
+        @include fluid-text(16px,20px);
+    }
+}

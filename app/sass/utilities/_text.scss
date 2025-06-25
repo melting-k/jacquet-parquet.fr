@@ -1,0 +1,58 @@
+@use 'core' as *;
+
+// ***** Utilitaires Texte 
+
+.u-text {
+    
+    // Alignments
+    
+    &--center {
+        text-align: center;
+    }
+    
+    &--left {
+        text-align: left;
+    }
+    
+    &--right {
+        text-align: right;
+    }
+    
+    &--justify {
+        text-align: justify;
+    }
+    
+    // Decoration
+    
+    &--underline {
+        text-decoration: underline;
+    }
+    
+    // Size 
+    
+    &--big {
+        font-size:18px;
+
+        @media (min-width:$screen-lg) {
+            font-size:20px;
+        }
+    }
+
+    // Orientation 
+    
+    &--vertical {
+        @include flex(inline-flex,center,center,row,nowrap);
+        line-height: 1;
+        position: relative;
+        transform: rotate(-90deg);
+        white-space: nowrap;
+        
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            padding-bottom: 100%;
+        }
+    }
+    
+}
