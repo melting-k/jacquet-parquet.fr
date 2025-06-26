@@ -1,0 +1,40 @@
+@use 'utilities' as *;
+
+.p-nav {
+    
+    &_logo {
+        
+    }
+    
+    // ***** Menu 
+    
+    &_menu {
+
+        &_overlay {
+
+        }
+
+        &_item {
+            
+        }
+    }
+
+    &_contact {
+        &_overlay {
+            
+        }
+    }
+    
+    // ***** Opening effect 
+    
+    &.active {
+
+    }
+    
+    // ***** Sticky
+    
+    &.sticky {
+        
+    }
+        
+}

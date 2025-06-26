@@ -15,31 +15,24 @@ function dropdown() {
             choices = [],
             defaut = '',
             dropdown = document.createElement('div'),
-            list = document.createElement('div');
-        
-        if(wrapper.querySelector('.dropdown'))
-        {
-            return;
-        }
+            list = document.createElement('div'),
+            icon = wrapper.querySelector('.custom-select_cursor').innerHTML;
 
-        dropdown.classList.add('dropdown-toggle');
+        dropdown.classList.add('c-form_dropdown');
 
         if(multiple) {
             dropdown.setAttribute('multiple',true);
-            options.forEach(function(key){
-                if(key.value !== '')
-                {
-                    choices.push('<button data-value="'+key.value+'" type="button"><span class="checkbox"></span>'+key.textContent+'</button>'); 
-                }
-                else
-                {
+            options.forEach(function(key) {
+                if(key.value !== '') {
+                    choices.push('<button data-value="'+key.value+'" type="button"><span class="c-form_dropdown_list_checkbox"></span>'+key.textContent+'</button>'); 
+                } else {
                     defaut = key.textContent;
                 }
             });
         }
         else
         {
-            options.forEach(function(key){
+            options.forEach(function(key) {
                 if(key.value !== '')
                 {
                     choices.push('<button data-value="'+key.value+'" type="button">'+key.textContent+'</button>');
@@ -51,14 +44,15 @@ function dropdown() {
             });
         }
 
-        list.classList.add('dropdown');
+        list.classList.add('c-form_dropdown_list');
         
         for(const choice of choices){
             list.innerHTML += choice;
         }
 
         wrapper.appendChild(dropdown);
-        dropdown.innerHTML += '<button class="dropdown-toggle-btn" type="button"><span class="txt">'+defaut+'</span> <span class="icon-cursor"></span></button>';
+        dropdown.innerHTML += '<button class="c-form_dropdown_button" type="button"><span class="c-form_dropdown_button_text">'+defaut+'</span> <span class="c-form_dropdown_button_cursor">'+icon+'</span></button>';
+
         dropdown.appendChild(list);
         
         // *** Evenement "Reset" provoque la réinitialisation à la valeur par défaut 
@@ -67,7 +61,7 @@ function dropdown() {
             
             index.selectedIndex = 0;
             
-            dropdown.querySelector('.dropdown-toggle-btn .txt').textContent = defaut;
+            dropdown.querySelector('.c-form_dropdown_button_text').textContent = defaut;
             
             for (option of options) {
                 option.removeAttribute('selected');
@@ -76,12 +70,12 @@ function dropdown() {
             index.selectedIndex = -1;
         });
         
-        const dropdown_button = wrapper.querySelector('.dropdown-toggle-btn');
+        const dropdown_button = wrapper.querySelector('.c-form_dropdown_button');
     
         dropdown_button.addEventListener('click', function(event) {
             event.preventDefault();
             if(!event.target.closest('[data-value]')) {
-                document.querySelectorAll('.dropdown-toggle').forEach(function(index){
+                document.querySelectorAll('.c-form_dropdown').forEach(function(index){
                     index.classList.remove('open');
                 });
                 dropdown.classList.toggle('open');
@@ -89,7 +83,7 @@ function dropdown() {
         });   
 
         document.addEventListener('click', function(event){
-            if(!event.target.closest('.dropdown-toggle') && !event.target.closest('[data-value]')) {
+            if(!event.target.closest('.c-form_dropdown') && !event.target.closest('[data-value]')) {
                 if(dropdown.classList.contains('open')) {
                     dropdown.classList.remove('open');
                 }
@@ -105,12 +99,12 @@ function dropdown() {
                 event.preventDefault();
                 const element = event.target.hasAttribute('data-value') ? event.target : event.target.closest('[data-value]'),
                     select = element.closest('[form-field]').querySelector('select'),
-                    dropdown = element.closest('.dropdown-toggle'),
-                    list = dropdown.querySelector('.dropdown'),
-                    dropdown_button = dropdown.querySelector('.dropdown-toggle-btn'),
+                    dropdown = element.closest('.c-form_dropdown'),
+                    list = dropdown.querySelector('.c-form_dropdown_list'),
+                    dropdown_button = dropdown.querySelector('.c-form_dropdown_button'),
                     valeur = element.getAttribute('data-value'),
                     texte = element.textContent,
-                    button_txt = dropdown_button.querySelector('.txt');
+                    button_txt = dropdown_button.querySelector('.c-form_dropdown_button_text');
 
                 if(dropdown.hasAttribute('multiple'))
                 {
@@ -124,7 +118,7 @@ function dropdown() {
                     else
                     {
                         select.custom_values.push(valeur);
-                        select.custom_labels.push('<button class="tag" data-value="'+valeur+'">'+texte+'</span>');
+                        select.custom_labels.push('<button class="c-form_dropdown_tag" data-value="'+valeur+'">'+texte+'</span>');
                     }
 
                     list.querySelector('button[data-value="'+valeur+'"]').classList.toggle('selected');
@@ -136,26 +130,26 @@ function dropdown() {
                     {
                         button_txt.innerHTML = select.querySelector('option[disabled]').textContent;
                     }
-                    else if(select.custom_values.length > 2)
+                    else if(select.custom_values.length > 0)
                     {
-                        button_txt.innerHTML = select.custom_values.length+' sélectionnés';
+                        button_txt.innerHTML = select.custom_values.length+' choix sélectionné(s)';
 
                         select.custom_values.forEach(function(index) {
                             select.querySelector('option[value="'+index+'"]').setAttribute('selected', true);
                         });
                     }
-                    else
-                    {   
-                        select.custom_values.forEach(function(index) {
-                            select.querySelector('option[value="'+index+'"]').setAttribute('selected', true);
-                        });
+                    // else
+                    // {   
+                    //     select.custom_values.forEach(function(index) {
+                    //         select.querySelector('option[value="'+index+'"]').setAttribute('selected', true);
+                    //     });
 
-                        button_txt.innerHTML = '';
+                    //     button_txt.innerHTML = '';
 
-                        select.custom_labels.forEach(function(index){
-                            button_txt.innerHTML += index; 
-                        });
-                    }
+                    //     select.custom_labels.forEach(function(index){
+                    //         button_txt.innerHTML += index; 
+                    //     });
+                    // }
 
                 }
                 else
@@ -557,16 +551,16 @@ async function ajax_submit(form) {
             }
         }
         
-        setTimeout(function(){
-            overlay.classList.add('close');
-            wrapper.style.opacity = '1';
-            submit.removeAttribute('disabled');
+        // setTimeout(function(){
+        //     overlay.classList.add('close');
+        //     wrapper.style.opacity = '1';
+        //     submit.removeAttribute('disabled');
             
-            setTimeout(function(){
-                form.removeChild(overlay);
-            },500);
+        //     setTimeout(function(){
+        //         form.removeChild(overlay);
+        //     },500);
             
-        },4500);
+        // },4500);
         
     },250);
 

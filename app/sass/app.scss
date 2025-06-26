@@ -1,20 +1,20 @@
-// ***** Imports Partials
-
-@use 'partials/footer' as *;
-@use 'partials/header' as *;
-@use 'partials/nav' as *;
 
 // ***** Imports Components
 
+@use 'components/architects' as *;
+@use 'components/aside' as *;
 @use 'components/assets' as *;
-@use 'components/card' as *;
+@use 'components/carousel' as *;
 @use 'components/content' as *;
-@use 'components/event' as *;
-@use 'components/icons' as *;
+@use 'components/footer' as *;
+@use 'components/form' as *;
+@use 'components/header' as *;
 @use 'components/image' as *;
-@use 'components/label' as *;
+@use 'components/instagram' as *;
+@use 'components/intro' as *;
 @use 'components/legals' as *;
+@use 'components/nav' as *;
 @use 'components/partners' as *;
+@use 'components/quote' as *;
 @use 'components/scroll' as *;
-@use 'components/text' as *;
 @use 'components/testimonials' as *;

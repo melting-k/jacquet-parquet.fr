@@ -1,6 +1,29 @@
 <?php
 return (object) [
+
+    // *** NEW SECTION
+
     (object) [
-        'type' => "legals",
+        'class'    => "",
+        'components'    => (object) [
+
+            // *** HERO
+
+            (object) [
+                'type'      => "hero",
+            ],
+
+            // *** LEGALS
+
+            (object) [
+                'type'      => "legals",
+            ],
+
+            // *** FOOTER
+            
+            (object) [
+                'type'      => "footer",
+            ]
+        ]
     ]
 ];

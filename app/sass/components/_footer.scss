@@ -1,0 +1,19 @@
+@use 'utilities' as *;
+
+.p-footer {
+
+    @include position(relative,110);
+    
+
+    &_coords {
+
+    }
+
+    &_text {
+
+    }
+
+    &_mentions {
+        
+    }
+}

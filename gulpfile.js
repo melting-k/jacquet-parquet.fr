@@ -20,13 +20,9 @@ const sassCompiler = gulpSass(sass);
 
 // Variables et chemins
 const appPath = './app/';
-const adminPath = './app/back-office/';
 const prodPath = './prod/';
-const adminProdPath = './prod/back-office/';
 const sassPath = appPath + 'sass/';
-const adminSassPath = adminPath + 'sass/';
-const uploadsPath = './uploads/';
-const localhostPath = '/hippodrome-beaumont.fr/app/index.php';
+const localhostPath = '/jacquet-parquet.fr/app/index.php';
 const localhostProxy = 'localhost';
 
 // Options SASS
@@ -46,20 +42,6 @@ const autoprefixerOptions = {
     ]
 };
 
-// Tâches spécifiques pour le répertoire Admin
-gulp.task('sass-admin', function (done) {
-    gulp
-        .src(adminSassPath + 'app.scss')
-        .pipe(plumber())
-        .pipe(sourcemaps.init())
-        .pipe(sassCompiler(sassOptions).on('error', sassCompiler.logError))
-        .pipe(autoprefixer(autoprefixerOptions))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(adminPath + 'css'))
-        .pipe(browserSync.stream());  // Pour injecter les styles sans recharger la page
-    done();  // Signaler que la tâche est terminée
-});
-
 // Tâches spécifiques pour le répertoire App
 gulp.task('sass-app', function (done) {
     gulp
@@ -75,7 +57,7 @@ gulp.task('sass-app', function (done) {
 });
 
 // Serveur et watchers
-gulp.task('serve', gulp.series('sass-app', 'sass-admin', function (done) {
+gulp.task('serve', gulp.series('sass-app', function (done) {
     const bs = browserSync.create();  // Utilisation de browserSync sans create()
         
     // Initialisation de BrowserSync avec proxy
@@ -89,30 +71,16 @@ gulp.task('serve', gulp.series('sass-app', 'sass-admin', function (done) {
     gulp.watch(appPath + 'sass/**/*.scss', gulp.series('sass-app')).on('change', function (event) {
         console.log(`Fichier SCSS modifié: ${event.path}`);
     });  
-    gulp.watch(adminPath + 'sass/**/*.scss', gulp.series('sass-admin')).on('change', function (event) {
-        console.log(`Fichier SCSS modifié: ${event.path}`);
-    }); 
-
-    gulp
-        .src(['./node_modules/font-awesome/fonts/*.*'])
-        .pipe(gulp.dest(adminPath + 'fonts/'));
 
     // Watch pour les fichiers CSS (ceux-ci sont gérés par stream() donc pas de reload nécessaire)
     gulp.watch(appPath + 'css/**/*.css').on('change', bs.reload);  // Rechargement pour les fichiers CSS de l'app
-    gulp.watch(adminPath + 'css/**/*.css').on('change', bs.reload);  // Rechargement pour les fichiers CSS de l'admin
 
     // Watch pour les fichiers JS (rechargement complet)
     gulp.watch(appPath + 'js/**/*.js').on('change', bs.reload);  // Rechargement pour les fichiers JS de l'app
-    gulp.watch(adminPath + 'js/**/*.js').on('change', bs.reload);  // Rechargement pour les fichiers JS de l'admin
 
     gulp.watch(appPath + "**/*.{html,php}").on('change', bs.reload);
-    gulp.watch(adminPath + "**/*.{html,php}").on('change', bs.reload);
-
-    gulp.watch(appPath + "**/*.{html,php}").on('change', bs.reload);
-    gulp.watch(adminPath + "**/*.{html,php}").on('change', bs.reload);
 
     gulp.watch(appPath + "img/**/*").on('change', bs.reload);
-    gulp.watch(adminPath + "img/**/*").on('change', bs.reload);
 
     done();  // Signaler que la tâche est terminée
 }));
@@ -158,49 +126,5 @@ gulp.task('build-app', function (done) {
     });
 });
 
-// Build - Admin
-gulp.task('build-admin', function (done) {
-    del([adminProdPath], function (err) {
-        if (err) throw err;
-
-        gulp
-            .src([
-                adminPath + '**/*.*',
-                adminPath + '.htaccess',
-                '!' + adminPath + '**/*.{html,php}',
-                '!' + adminPath + 'img/**/*',
-                '!' + adminPath + 'css/**/*',
-                '!' + adminPath + 'js/**/*',
-                '!' + adminPath + 'sass/**/*'
-            ])
-            .pipe(gulp.dest(adminProdPath));
-
-        fs.stat(adminPath + 'img/**/*', function (err) {
-            if (err != null) {
-                gulp.src(adminPath + 'img/**/*')
-                    .pipe(gulp.dest(adminProdPath + 'img/'));
-            }
-        });
-
-        gulp
-            .src([adminPath + '**/*.{html,php}'])
-            .pipe(useref({
-                searchPath: [adminPath, 'node_modules']
-            }))
-            .on('error', console.error)
-            .pipe(gulpif('*.js', uglify()))
-            .pipe(gulpif('*.css', cleanCSS()))
-            .pipe(gulp.dest(adminProdPath));
-
-        gulp
-            .src(['./node_modules/tinymce/**/*', '!./node_modules/tinymce/*.*'])
-            .pipe(gulpif('*.js', uglify()))
-            .pipe(gulpif('*.css', cleanCSS()))
-            .pipe(gulp.dest(adminProdPath + 'js/'));
-
-        done();  // Signaler que la tâche est terminée
-    });
-});
-
 // Tâche de build pour les deux répertoires
-gulp.task('build', gulp.series('build-app', 'build-admin'));
+gulp.task('build', gulp.series('build-app'));

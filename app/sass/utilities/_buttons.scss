@@ -11,14 +11,14 @@
     font-size:14px;
     @extend %font;
     position:relative;
-    color:$white;
-    background:$primary;
+    color:$light;
+    background:$dark;
     border-radius: 25px;
     gap:15px;
 
     svg {
         @include icon(18px);
-        @include svg($white);
+        @include svg($light);
     }
 
     &--round {
@@ -37,7 +37,7 @@
             @include position(absolute,0,0,0,0,0);
             @include transi();
             border-radius:50%;
-            background:$primary;
+            background:$dark;
         }
 
         svg {
@@ -68,11 +68,11 @@
         padding:0 30px;
 
         &.race {
-            color:$primary;
+            color:$dark;
         }
 
         &.qualif {
-            color:$secondary;
+            color:$light;
         }
     }
 }
@@ -81,7 +81,7 @@ a.u-button,
 button.u-button {
 
     &:hover {
-        background:$secondary;
+        background:$light;
     }
 
     &--round:hover {
@@ -93,15 +93,15 @@ button.u-button {
 
     &--border:hover {
         &.race {
-            background:$primary;
-            border-color:$primary;
-            color:$white;
+            background:$dark;
+            border-color:$dark;
+            color:$light;
         }
 
         &.qualif {
-            background:$secondary;
-            border-color:$secondary;
-            color:$white;
+            background:$light;
+            border-color:$light;
+            color:$light;
         }
     }
 }

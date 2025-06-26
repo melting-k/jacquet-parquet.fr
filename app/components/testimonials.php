@@ -1,6 +1,3 @@
-<?php
-    $testimonials = include realpath(__DIR__.'/../datastore/testimonials.data.php');
-?>
 <aside class="c-testimonials" js-carousel>
     <div class="container">
         <div class="grid">

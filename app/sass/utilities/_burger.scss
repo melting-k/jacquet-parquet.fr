@@ -14,7 +14,7 @@
         @include position(relative);
         width:22px;
         height:2px;
-        background:$white;
+        background:$light;
         transition:all .25s ease-out .35s, transform .25s ease-out 0s;
         
         &+& {

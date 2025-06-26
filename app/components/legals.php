@@ -3,7 +3,7 @@
         <div class="grid">
             <div class="c-legals">
                 <p class="c-legals_text">
-                    <?=$site_legals->denomination()?>, soucieux des droits des individus, notamment au
+                    La société <?php echo $LEGALS_client_societe; ?>, soucieuse des droits des individus, notamment au
                     regard des traitements automatisés, et dans une volonté de transparence avec ses clients, a mis en
                     place une politique reprenant l’ensemble de ces traitements, des finalités poursuivies par ces
                     derniers ainsi que des moyens d’actions à la disposition des individus afin qu’ils puissent au mieux
@@ -20,22 +20,22 @@
                 
                 <p class="c-legals_text">
                     <em>1.1 Site (ci-après « le site ») :</em><br>
-                    <?=$site_legals->denomination()?> - <?=$site_infos->site_url()?>
+                    <?php echo $LEGALS_client_societe; ?> - <?php echo $LEGALS_client_url; ?>
                     <br /><br />
                     <em>1.2 Éditeur (ci-après « l'éditeur ») : </em>
                     <br /><br />
-                    <?=$site_legals->denomination()?>, <?=$site_legals->company_type()?>, dont le siège social est situé : <?=$site_legals->address().' - '.$site_legals->zipcode().' '.$site_legals->city()?><br>
-                    représentée par <?=$site_legals->ceo()?>, en sa qualité de
-                    <?=$site_legals->ceo_role()?>,<br>
-                    immatriculée au <?=$site_legals->rcs()?>, <?=$site_legals->siret()?>.
+                    <?php echo $LEGALS_client_societe; ?>, <?php echo $LEGALS_client_statut; ?>, dont le siège social est situé :                        <?php echo $LEGALS_client_siegesocial; ?> <br>
+                    représentée par <?php echo $LEGALS_client_nom_dirigeant; ?>, en sa qualité de
+                    <?php echo $LEGALS_client_role; ?>,<br>
+                    immatriculée au <?php echo $LEGALS_client_rcs; ?>, <?php echo $LEGALS_client_siren; ?>.
                     <br /><br />
-                    Responsable de la publication : <?=$site_legals->publication_manager()?>, <br>
-                    Adresse mail : <span data-email><?=$site_legals->email_manager()?></span>, <br>
-                    Téléphone : <?=$site_legals->phone_manager()?>
+                    Responsable de la publication : <?php echo $LEGALS_client_name; ?>, <br>
+                    Adresse mail : <?php echo $LEGALS_client_mail; ?>, <br>
+                    Téléphone : <?php echo $LEGALS_client_tel; ?>
                     <br /><br />
                     <em>1.3 Hébergeur (ci-après « l'hébergeur ») : </em>
                     <br /><br />
-                    <?=$site_legals->denomination()?> (<?=$site_infos->site_url()?>) est hébergé par OVH, dont
+                    <?php echo $LEGALS_client_societe; ?> (<?php echo $LEGALS_client_url; ?>) est hébergé par OVH, dont
                     le siège social est situé 2 rue Kellermann - 59100 Roubaix.
                 </p>
                 
@@ -122,7 +122,7 @@
                 <h2 id="protection-donnees" class="c-legals_title">Article 7 - Collecte et protection des données</h2>
                 
                 <p class="c-legals_text">
-                    Vos données sont collectées par <?=$site_legals->denomination()?>.
+                    Vos données sont collectées par La société <?php echo $LEGALS_client_societe; ?>.
                     <br /><br />
                     Une donnée à caractère personnel désigne toute information concernant une personne physique
                     identifiée ou identifiable (personne concernée); est réputée identifiable une personne qui peut être
@@ -150,11 +150,11 @@
                     <br /><br />
                     Le droit d’accès : ils peuvent exercer leur droit d'accès, pour connaître les données personnelles
                     les concernant, en écrivant à l'adresse électronique suivante. Dans ce cas, avant la mise en œuvre
-                    de ce droit, <?=$site_legals->denomination()?> peut demander une preuve de l'identité de
+                    de ce droit, <?php echo $LEGALS_client_societe; ?> peut demander une preuve de l'identité de
                     l'utilisateur afin d'en vérifier l'exactitude.
                     <br /><br />
                     Le droit de rectification : si les données à caractère personnel détenues par
-                    <?=$site_legals->denomination()?> sont inexactes, ils peuvent demander la mise à jour des
+                    <?php echo $LEGALS_client_societe; ?> sont inexactes, ils peuvent demander la mise à jour des
                     informations.
                     <br /><br />
                     Le droit de suppression des données : les utilisateurs peuvent demander la suppression de leurs
@@ -162,16 +162,16 @@
                     données.
                     <br /><br />
                     Le droit à la limitation du traitement : les utilisateurs peuvent de demander à
-                    <?=$site_legals->denomination()?> de limiter le traitement des données personnelles conformément
+                    <?php echo $LEGALS_client_societe; ?> de limiter le traitement des données personnelles conformément
                     aux hypothèses prévues par le RGPD.
                     <br /><br />
                     Le droit de s’opposer au traitement des données : les utilisateurs peuvent s’opposer à ce que ses
                     données soient traitées conformément aux hypothèses prévues par le RGPD.
                     <br /><br />
-                    Le droit à la portabilité : ils peuvent réclamer que <?=$site_legals->denomination()?> leur
+                    Le droit à la portabilité : ils peuvent réclamer que <?php echo $LEGALS_client_societe; ?> leur
                     remet les données personnelles qui lui ont fourni pour les transmettre à une nouvelle Plateforme.
                     <br /><br />
-                    Vous pouvez exercer ce droit en nous contactant, par email, à l’adresse : <span data-email=""><?=$site_legals->email_manager()?></span>
+                    Vous pouvez exercer ce droit en nous contactant, par email, à l’adresse : <?php echo $LEGALS_client_mail; ?>
                     <br /><br />
                     Toute demande doit être accompagnée de la photocopie d’un titre d’identité en cours de validité
                     signé et faire mention de l’adresse à laquelle l'éditeur pourra contacter le demandeur. La réponse
@@ -187,7 +187,7 @@
                     <a href="https://www.cnil.fr/">https://www.cnil.fr</a>.
                     <br /><br />
                     Nous vous recommandons de contacter dans un premier temps le contact au sein de
-                    <?=$site_legals->denomination()?> avant de déposer une réclamation auprès de la CNIL, car nous
+                    <?php echo $LEGALS_client_societe; ?> avant de déposer une réclamation auprès de la CNIL, car nous
                     sommes à votre entière disposition pour régler votre problème.
                 </p>
                 
@@ -195,14 +195,14 @@
                 
                 <p class="c-legals_text">
                     Les données personnelles collectées auprès des utilisateurs ont pour objectif la mise à disposition
-                    des services de <?=$site_legals->denomination()?>, leur amélioration et le maintien d'un
+                    des services de <?php echo $LEGALS_client_societe; ?>, leur amélioration et le maintien d'un
                     environnement sécurisé. La base légale des traitements est l’exécution du contrat entre
-                    l’utilisateur et <?=$site_legals->denomination()?>. Plus précisément, les utilisations sont les
+                    l’utilisateur et <?php echo $LEGALS_client_societe; ?>. Plus précisément, les utilisations sont les
                     suivantes :
                     <br /><br />
-                    - accès et utilisation de <?=$site_legals->denomination()?> par l'utilisateur ;
+                    - accès et utilisation de <?php echo $LEGALS_client_societe; ?> par l'utilisateur ;
                     <br>
-                    - gestion du fonctionnement et optimisation de <?=$site_legals->denomination()?> ;
+                    - gestion du fonctionnement et optimisation de <?php echo $LEGALS_client_societe; ?> ;
                     <br>
                     - vérification, identification et authentification des données transmises par l'utilisateur ;
                     <br>
@@ -217,7 +217,7 @@
                 <h2 class="c-legals_title">Article 10 - Politique de conservation des données</h2>
                 
                 <p class="c-legals_text">
-                    <?=$site_legals->denomination()?> conserve vos données pour la durée nécessaire pour vous
+                    <?php echo $LEGALS_client_societe; ?> conserve vos données pour la durée nécessaire pour vous
                     fournir ses services ou de vous fournir une assistance.
                     <br /><br />
                     Dans la mesure raisonnablement nécessaire ou requise pour satisfaire aux obligations légales ou
@@ -229,9 +229,9 @@
                 <h2 class="c-legals_title">Article 11- Partage des données personnelles avec des tiers</h2>
                 
                 <p class="c-legals_text">
-                    Les données personnelles transmises par l'utilisateur à <?=$site_legals->denomination()?> ne
+                    Les données personnelles transmises par l'utilisateur à <?php echo $LEGALS_client_societe; ?> ne
                     seront, sous aucune mesure, transmises de manière gratuite ou moyennant rémunération, à des
-                    organismes tiers. <?=$site_legals->denomination()?> s'engage donc à garder ces données
+                    organismes tiers. <?php echo $LEGALS_client_societe; ?> s'engage donc à garder ces données
                     confidentielles, et à ne les transmettres à des tiers qu'après obtention du consentement de
                     l'utilisateur.
                 </p>
@@ -240,10 +240,10 @@
                 
                 <p class="c-legals_text">
                     Vous êtes susceptible de recevoir des offres commerciales de l'éditeur. Si vous ne le souhaitez pas,
-                    veuillez cliquer sur le lien suivant : <span data-email=""><?=$site_legals->email_manager()?></span>
+                    veuillez cliquer sur le lien suivant : <?php echo $LEGALS_client_mail; ?>
                     <br /><br />
                     Vos données sont susceptibles d’être utilisées par les partenaires de l'éditeur à des fins de
-                    prospection commerciale, Si vous ne le souhaitez pas, veuillez cliquer sur le lien suivant : <span data-email=""><?=$site_legals->email_manager()?></span>
+                    prospection commerciale, Si vous ne le souhaitez pas, veuillez cliquer sur le lien suivant : <?php echo $LEGALS_client_mail; ?>
                     <br /><br />
                     Si, lors de la consultation du site, vous accédez à des données à caractère personnel, vous devez
                     vous abstenir de toute collecte, de toute utilisation non autorisée et de tout acte pouvant
@@ -309,7 +309,7 @@
                 
                 <p class="c-legals_text">
                     Pour toute question, information sur les produits présentés sur le site, ou concernant le site
-                    lui-même, vous pouvez laisser un message à l'adresse suivante : <span data-email=""><?=$site_legals->email_manager()?></span>.
+                    lui-même, vous pouvez laisser un message à l'adresse suivante : <?php echo $LEGALS_client_mail; ?>.
                 </p>
             </div>
         </div>

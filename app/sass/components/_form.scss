@@ -1,0 +1,412 @@
+@use 'utilities' as *;
+
+.c-form {
+    
+    // ***** Design
+    
+    position:relative;
+    grid-column: span 12;
+
+    --input-height : 50px;
+
+    @media (min-width:$screen-sm) {
+        --input-height : 55px;
+    }
+
+    @media (min-width:$screen-lg) {
+        --input-height : 60px;
+    }
+
+    @media (min-width:$screen-xl) {
+        --input-height : 65px;
+    }
+    
+    &_wrapper {
+        @include transi();
+    }
+    
+    &_field {
+        position:relative;
+        margin-bottom:15px;
+        grid-column: span 12;
+
+        @media (min-width:$screen-sm) {
+            margin-bottom: 30px;
+        }
+
+        &--consent {
+            @extend .c-form_field;
+
+            @include flex(flex,flex-end,flex-start,column);
+            margin-top:15px;
+
+            [class^=u-button] {
+                margin-top:30px;
+            }
+
+            @media (min-width:$screen-lg) {
+                flex-direction:row;
+                align-items:flex-start;
+                justify-content:flex-start;
+
+                [class^=u-button] {
+                    margin-top:0px;
+                    margin-left:45px;
+                }
+            }
+        }
+
+        &--half {
+            @extend .c-form_field;
+
+            @media (min-width:$screen-sm) {
+                grid-column: span 6;
+            }
+        }
+        
+        input[type=tel], 
+        input[type=password],
+        input[type=email], 
+        input[type=text], 
+        textarea,
+        .c-form_dropdown_button {
+            
+            @extend p;
+            border-radius:10px;
+            width:100%;
+            border:solid 1px;
+            color:$light;
+            background:none;
+            height:var(--input-height);
+            padding:0 3rem;
+            @include transi(.2s);
+
+            &::placeholder {
+                opacity:1;
+                color:$light;
+            }
+
+            &:focus {
+                background:rgba($light,.1);
+            }
+            
+        }
+        
+        textarea {
+            padding-top:12px;
+            height:200px;
+
+            @media (min-width:$screen-lg) {
+                padding-top:15px;
+            }
+        }
+        
+        .custom-select {
+            display:none;
+
+            &_cursor {
+                display:none;
+            }
+        }
+        
+        &:after {
+            @include transi(.25s);
+            margin-top: 0;
+            display: block;
+            content: "";
+            height: 0;
+            opacity: 0;
+            font-size: 10px;
+            line-height: 1.2;
+            text-align: left;
+            color: red;
+            position:absolute;
+            top:100%;
+            left:0;
+        }
+        
+        &.error:after {
+            height:auto;
+            margin-top: 5px;;
+            content: attr(data-message);
+            opacity: 1;
+        }
+        
+        &.error {
+            margin-bottom:30px;
+            
+            input[type=tel], input[type=password], input[type=email], input[type=text], textarea, .c-form_dropdown_button {
+                border-color:red;
+            }
+        }
+    }
+
+    // ***** Form Radio
+    
+    &_radio {
+        width:100%;
+
+        @media (min-width:$screen-lg) {
+            width:auto;
+            flex:1;
+        }
+        
+        input[type=radio], input[type=checkbox] {
+            appearance:none;
+            opacity:0;
+            width:0;
+            height:0;
+            position:absolute;
+        }
+        
+        label {
+            position:relative;
+            @include flex(flex,center,flex-start,row,nowrap);
+            gap:20px;
+            @extend %font;
+            color:$light;
+            cursor:pointer;
+            margin:0;
+            font-size:12px;
+            line-height: 1.2;
+            
+            &:before {
+                display:block;
+                content:'';
+                width:24px;
+                height:24px;
+                border-radius:20px;
+                @include transi(.2s);
+                background:$light;
+            }
+            
+            &:after {
+                display:block;
+                content:'';
+                width:12px;
+                height:12px;
+                border-radius:10px;
+                background:$dark;
+                @include position(absolute,2,6px,auto,auto,6px);
+                margin:auto;
+                @include transi(.2s);
+                opacity:0;
+            }
+        }
+        
+        input[type=radio]:checked+label,input[type=checkbox]:checked+label {
+            &:after {
+                opacity:1;
+            }
+        }
+    }
+
+    // ***** Custom Dropdown
+
+    &_dropdown {
+        position:relative;
+        width:100%;
+        overflow:hidden;
+        @include transi();
+        
+        &_button {
+            @include flex(inline-flex,center,space-between);
+            text-transform: uppercase;
+            min-height:var(--input-height);
+            height:auto!important;
+            padding:10px 3rem!important;
+            
+            &_cursor {
+                @include icon(24px);
+                margin-left:15px;
+
+                svg {
+                    @include svg($light);
+                }
+            }
+
+            &_text {
+                flex:1;
+            }
+
+            &:hover {
+                background:rgba($light,.1);
+            }
+        }
+        
+        &_list {
+            @include position(relative,1);
+            overflow:hidden;
+            max-height:0px;
+            @include transi();
+            background:$light;
+            border-radius: 10px;
+            
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display:none;
+            }
+                
+            button {
+                width:100%;
+                text-align: left;
+                max-height:0px;
+                overflow:hidden;
+                padding:0 3rem;
+                @include transi(.2s);
+                @extend p;
+                color:$dark;
+
+                &:hover {
+                    opacity:.5;
+                }
+            }
+        }
+        
+        &.open {
+
+            .c-form_dropdown_button {
+                background:rgba($light,.1);
+
+                svg {
+                    transform: rotate(90deg);
+                }
+            }
+            
+            .c-form_dropdown_list {
+                overflow:auto;
+                max-height:1000px;
+                margin-top:15px;
+                padding:3rem 0;
+                
+                button {
+                    max-height:150px;
+                }  
+            }
+        }
+        
+        &.is_focus {
+            .c-form_dropdown_button {
+                color:$light;
+            }
+        }
+
+        &[multiple]
+        {
+            .c-form_dropdown_tag {
+                @include flex(inline-flex,center,space-between,row,nowrap);
+                @extend p;
+                line-height:1.2;
+                gap:10px;
+                flex:1;
+                background:$light;
+                color:$dark;
+                font-size:12px;
+                padding:5px 10px;
+                border-radius:5px;
+                
+                &:after {
+                    content:'X';
+                    color:rgba($dark,.6);
+                    @include icon(12px);
+                    margin-left:5px;
+                    flex:0;
+                }
+            }
+            
+            .c-form_dropdown_list {
+                @include flex(flex,flex-start,flex-start,column);
+                gap:1.5rem 3rem;
+
+                @media (min-width:$screen-md) {
+                    flex-direction:row;
+                    align-items:center;
+                }
+                
+                button {
+                    @include flex(inline-flex,center,flex-start,row,nowrap);
+                    gap:15px;
+
+                    @media (min-width:$screen-md) {
+                        width:calc(50% - 30px);
+                    }
+                    
+                    &.selected {
+
+                        .c-form_dropdown_list_checkbox {
+                            &:after {
+                                opacity:1;
+                            }
+                        }
+
+                    }
+                }   
+
+                &_checkbox {
+                    display:inline-block;
+                    position:relative;
+                    width:20px;
+                    height:20px;
+                    border:solid 1px $dark;
+                    border-radius:5px;
+                    flex:0 0 20px;
+
+                    &:after {
+                        content:'';
+                        width:10px;
+                        height:10px;
+                        background:$dark;
+                        @include position(absolute,1,0,0,0,0);
+                        margin:auto;
+                        border-radius:2px;
+                        opacity:0;
+                        transition:all .2s ease;
+                    }
+                }
+            }
+        }
+    }
+
+
+    
+    // ***** Overlay after sending form
+    
+    &_overlay {
+        @include position(absolute, 1000, 50%, 0, auto, 0);
+        transform: translateY(-50%);
+        border-radius:30px;
+        @include transi();
+        background:$light;
+        width:100%;
+        margin:auto;
+
+        @media (min-width:$screen-sm) {
+            width:40vw;
+            min-width:600px;
+        }
+
+        &_text {
+            @extend %font;
+            padding:5rem;
+            text-align:center;
+            font-size:16px;
+            color:$dark;
+            line-height: 1.3;
+            
+            @media (min-width:$screen-md) {
+                font-size:22px;
+            }
+        }
+
+        &.close {
+            top:80px;
+            opacity: 0;
+        }
+
+        &.under {
+            z-index: -1;
+        }
+    }
+}

@@ -1,36 +1,5 @@
 @use 'utilities' as *;
 
 .c-image {
-    @include position(relative,5);
-    background:$light;
-
-    &_wrapper {
-        grid-column: span 12;
-        overflow:hidden;
-        padding-bottom:75%;
-        position:relative;
-        border-radius:10px;
-
-        @media (min-width:$screen-sm) and (max-width:$screen-md) {
-            grid-column: 2 / span 10;
-        }
-
-        @media (min-width:$screen-md) {
-            padding-bottom: 48%;
-        }
-
-        img {
-            @include position(absolute,1,auto,0,0,-30%);
-            width:130%;
-            height:100%;
-            object-fit:cover;
-
-            @media (min-width:$screen-md) {
-                width:100%;
-                height:auto;
-                object-fit: contain;
-                left:0;
-            }
-        }
-    }
+    
 }
