@@ -1,29 +1,121 @@
 @use 'utilities' as *;
 
-.p-architects {
-    &_content {
+.c-architects {
 
+    background:$dark;
+    @include position(relative,5);
+    padding:20rem 0;
+
+    &_content {
+        grid-column: span 12;
+
+        @media (min-width:$screen-sm) {
+            grid-column: 2 / span 10;
+        }
+
+        @media (min-width:$screen-md) {
+            grid-column: 1 / span 6;
+            align-self: center;
+        }
+
+        @media (min-width:$screen-xl) {
+            grid-column: 1 / span 5;
+        }
     }
 
     &_title {
-
+        @extend %u-title--medium;
+        color:$light;
+        margin-bottom: 7rem;
     }
 
     &_text {
+        color:$light;
 
+        &:after {
+            content:'';
+            display:block;
+            width:100%;
+            border-bottom:solid 1px $light;
+            margin-top: 7rem;
+
+            @media (min-width:$screen-md) {
+                width:60%;
+            }
+        }
+    }
+
+    &_right {
+        grid-column: span 12;
+
+        @media (min-width:$screen-sm) {
+            grid-column: 2 / span 10;
+        }
+
+        @media (min-width:$screen-md) {
+            grid-column: 8 / span 5;
+        }
+
+        @media (min-width:$screen-xl) {
+            grid-column: 9 / span 4;
+        }
     }
 
     &_assets {
         &_item {
+            margin-top:60px;
+            padding:0 15%;
 
+            @include flex(flex,center,center,column);
+
+            p {
+                text-align:center;
+                text-transform: uppercase;
+                color:$light;
+            }
+
+            @media (min-width:$screen-md) {
+                &:first-child {
+                    margin-top: 0;
+                }
+                flex-direction:row;
+                gap:3rem;
+
+                p {
+                    flex:1;
+                    text-align: left;
+                }
+            }
+        }
+
+        &_icon {
+            @include icon(80px);
+            border-radius:50%;
+            border:solid 1px $light;
+            margin-bottom: 15px;
+
+            svg {
+                @include icon(42px);
+                @include svg($light);
+            }
+
+            @media (min-width:$screen-md) {
+                margin-bottom: 0;
+            }
         }
     }
 
     &_icon {
+        text-align:center;
+        margin:70px 0;
 
+        svg {
+            @include svg($light);
+            @include icon(55px)
+        }
     }
 
     &_button {
-
+        text-align:center;
     }
 }

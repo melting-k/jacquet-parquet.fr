@@ -40,18 +40,18 @@ return (object) [
     (object) [
         'class'    => "",
         'components'    => (object) [
-            // (object) [
-            //     'type'      => "architects",
-            // ],
-            // (object) [
-            //     'type'      => "partners",
-            // ],
-            // (object) [
-            //     'type'      => "testimonials",
-            // ],
-            // (object) [
-            //     'type'      => "instagram",
-            // ],
+            (object) [
+                'type'      => "architects",
+            ],
+            (object) [
+                'type'      => "partners",
+            ],
+            (object) [
+                'type'      => "testimonials",
+            ],
+            (object) [
+                'type'      => "instagram",
+            ],
             (object) [
                 'type'      => "footer",
             ]

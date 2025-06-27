@@ -29,6 +29,7 @@
 
     &--medium {
         @extend %u-title;
+        text-transform: uppercase;
         @include fluid-text(25px,40px);
     }
 

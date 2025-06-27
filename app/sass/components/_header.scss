@@ -7,7 +7,7 @@
     @include position(relative,1);
     overflow:hidden;
     height:100vh;
-    background: $dark;;
+    background: $dark;
 
     &_background {
         @include position(fixed,1,0,0,0,0);
@@ -18,6 +18,11 @@
             height:100%;
             width:auto;
             position:relative;
+
+            @media (min-width:$screen-md) {
+                width:100%;
+                object-fit: cover;
+            }
         }
 
         &:after {
@@ -36,6 +41,10 @@
 
     &_content {
         grid-column: span 12;
+
+        @media (min-width:$screen-lg) {
+            margin-top:6.5rem;
+        }
     }
 
     &_title {
@@ -54,6 +63,10 @@
         text-align:center;
         position:relative;
         top:20vh;
+
+        @media (min-width:$screen-lg) {
+            top:0;
+        }
 
         svg {
             position:relative; 

@@ -37,10 +37,12 @@ class Gallery {
             // on détermine la balise alt (title)
             $title = str_replace($this->path, "", $value); // on filtre, remplace par des espaces
             $title = str_replace($filter, " ", $title); // on filtre, remplace par des espaces
+            $pattern = '/\((\d+)\)/';
+            $title = preg_replace($pattern, "", $title); // on filtre, remplace par des espaces
             $title = trim($title,'/');
             
             // On injecte les images dans la vue
-            $this->images[] = "<img src='$value' alt='$title'/>";
+            $this->images[] = "<img src='$value' alt='Logo $title'/>";
         }
     } 
 

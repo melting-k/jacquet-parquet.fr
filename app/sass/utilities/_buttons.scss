@@ -5,10 +5,10 @@
 .u-button {
     
     @include flex(inline-flex,center,space-between);
-    padding:0 25px;
+    padding:0 30px;
     min-width:140px;
-    height:45px;
-    font-size:14px;
+    height:50px;
+    font-size:15px;
     @extend %font-bold;
     position:relative;
     color:$dark;
@@ -30,6 +30,11 @@
     @media (min-width:$screen-xl) {
         height:70px;
         font-size:25px;
+    }
+
+    &--light {
+        @extend .u-button;
+        color:$light;
     }
 
     &--small {
@@ -59,24 +64,12 @@ button.u-button {
         }
     }
 
-    &--round:hover {
-        background:none;
-        &:before {
-            transform: scale(.9);
-        }
-    }
+    &--light:hover {
+        background:$light;
+        color:$dark;
 
-    &--border:hover {
-        &.race {
-            background:$dark;
-            border-color:$dark;
-            color:$light;
-        }
-
-        &.qualif {
-            background:$light;
-            border-color:$light;
-            color:$light;
+        svg {
+            @include svg($dark);
         }
     }
 }

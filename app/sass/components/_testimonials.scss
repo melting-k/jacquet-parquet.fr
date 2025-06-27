@@ -1,16 +1,147 @@
 @use 'utilities' as *;
 
-.p-testimonials {
+.c-testimonials {
+
+    @include position(relative,1);
+    background:$light;
+    overflow:hidden;
+    padding:15rem 0;
     
-    &_carousel {
-        &_slideshow {
+    &_slideshow_wrapper {
+        grid-column: span 12;
+        @include position(relative,1);
 
+        @media (min-width:$screen-sm) {
+            grid-column: 4 / span 9;
         }
-        &_nav {
 
+        @media (min-width:$screen-xl) {
+            grid-column: 3 / span 10;
         }
-        &_slide {
-            
+    }
+
+    &_slideshow {
+        @include flex(inline-flex,stretch,flex-start,row,nowrap);
+        white-space: nowrap;
+        @include transi(.35s);
+        transform:translateX(calc(-100% / var(--slidesNumber) * var(--currentSlide)));
+    }
+
+    &_slide {
+        @include flex(flex,center,center);
+        width:calc(100vw - 30px);
+        white-space: normal;
+        background:$dark;
+        margin-right: 20px;
+        padding:45px 30px;
+        position:relative;
+        @include transi(.35s);
+
+        &:before,
+        &:after {
+            content:'"';
+            @include icon(25px);
+            display:block;
+            @include position(absolute,1,10px,auto,auto,15px);
+            @extend %font;
+            font-size:50px;
+            color:$light;
+            line-height: 1;
+
+            @media (min-width:$screen-lg) {
+                top:15px;
+                left:20px;
+            }
+        }
+
+        &:after {
+            bottom:10px;
+            right:15px;
+            top:auto;
+            left:auto;
+
+            @media (min-width:$screen-lg) {
+                bottom:15px;
+                right:20px;
+            }
+        }
+
+        @media (min-width:$screen-sm) {
+            width:320px;
+        }
+
+        @media (min-width:$screen-lg) {
+            width:420px;
+            padding:45px;
+        }
+
+        @media (min-width:$screen-xl) {
+            width:520px;
+            padding:8rem 6rem;
+        }
+
+        &.prev {
+            @media (min-width:$screen-sm) {
+                opacity:0;
+                transform: translateX(-30%);
+            }
+        }
+
+        img {
+            width:100%;
+            height:auto;
+        }
+
+        &_text {
+            text-align:center;
+            color:$light;
+        }
+
+    }
+
+    &_nav {
+        grid-row: 2;
+        grid-column: span 12;
+        text-align:center;
+        margin-top:50px;
+        @include flex(flex,center,center);
+        gap:70px;
+
+        @media (min-width:$screen-sm) {
+            gap:6rem;
+            justify-content: flex-start;
+            grid-row: 1;
+            grid-column: 1 / span 3;
+            margin-top:0;
+            @include position(relative,5);
+        }
+
+        @media (min-width:$screen-xl) {
+            grid-column: 1 / span 2;
+        }
+
+        &_button {
+            @include icon(34px);
+            transform: rotate(180deg);
+
+            @media (min-width:$screen-sm) {
+                @include icon(7rem);
+            }
+
+            svg {
+                @include svg($dark);
+                width:100%;
+                height:100%;
+            }
+
+            &+& {
+                transform: none;
+            }
+
+            &.disabled {
+                opacity:.3;
+                pointer-events: none;
+            }
         }
     }
 }

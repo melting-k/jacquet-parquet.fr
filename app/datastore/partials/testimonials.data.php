@@ -1,27 +1,37 @@
 <?php
 return (object) [
     (object) [
-        'name' => "Serge G.",
-        'text' => "Excellente journée à l'hippodrome de Beaumont. Très bon repas. Ambiance très agréable. Vraiment à recommander&nbsp;!"
+        'text' => "Nous venons de refaire tout le parquet de l'étage de notre maison. Le résultat est magnifique et nous avons beaucoup apprécié la collaboration avec l'entreprise Jacquet, très professionnel et très agréable du début à la fin. L'avant projet a été très bien géré, les travaux sont réalisés avec soin et professionnalisme, la relation est basée sur la confiance. Je recommande +++.
+        <br><br>
+        Nathalie F."
     ],
     (object) [
-        'name' => "Jean-Charles V.",
-        'text' => "C'est un très bel endroit pour passer un après-midi et regarder les courses de chevaux très sympathique le restaurant très accueillant la nourriture est bonne un bon moyen de s'évader de jouer et de profiter de tous ces équipements."
+        'text' => "L'entreprise Jacquet a fait un très bon et beau travail dans l'aménagement intérieur et extérieur de notre maison.<br>
+        C'est une entreprise familiale sérieuse et fort sympathique, les matériaux sont beaux et nobles, le travail est soigné, appliqué et le nettoyage après chantier parfait. J'ai eu de la chance d'être entourée d'une entreprise comme elle pour mes travaux. Je recommande à 100%. Merci encore à vous.
+        <br><br>
+        Pascal Y."
     ],
     (object) [
-        'name' => "Alain G.",
-        'text' => "De passage dans la région, j'ai apprécié d'assister à une réunion hippique. Bel hippodrome avec des structures de qualité&nbsp;!"
+        'text' => "Architecte d'intérieur à Toulouse, nous travaillons avec eux depuis plus de 10 ans. Les devis sont faits rapidement, ils ont une bonne expertise technique et la réalisation sur chaque projet est parfaite.
+        <br><br>
+        Olivia Dubus"
     ],
     (object) [
-        'name' => "Daniel D.",
-        'text' => "J'ai beaucoup aimé l'ambiance le fait de pouvoir aller au plus près dans les écuries. Le top&nbsp;!"
+        'text' => "J'ai contacté cette entreprise que je ne connais pas pour installer un parquet sur un carrelage existant et voici mon expérience : Ce n'est pas une mauvaise ou bonne entreprise mais excellente.<br>
+        Le travail a été d'une qualité irréprochable et un service client parfait avec des délais tenus.<br>
+        Quoi dire de plus si : Vous pouvez aller les yeux fermés
+        <br><br>
+        Eric C."
     ],
     (object) [
-        'name' => "Coco B.",
-        'text' => "Super cadre, bel hippodrome, à découvrir lors des différentes courses organisées. Nous y retournerons avec notre petite fille qui fait de l'équitation, elle a été trop fan."
+        'text' => "L’entreprise Jacquet a refait tout notre parquet, très contents de notre choix, entreprise réactive à l'échelle humaine, artisans très sérieux. <br>
+        Nous recommandons !
+        <br><br>
+        Emilie S."
     ],
     (object) [
-        'name' => "Christelle L.",
-        'text' => "Petit moment convivial entre amis : détente et convivialité, l'hippodrome est sympa, même pour les novices&nbsp;!"
+        'text' => "Travail très bien fait. Ils savent restaurer les parquets et les embellir. Une équipe bien organisée et qui maintient propre le chantier.
+        <br><br>
+        Magali G."
     ]
 ];

@@ -621,10 +621,12 @@ function menu() {
     const navigation = document.querySelector('[data-role=nav]'),
           contact = document.querySelector('[data-role=contact]'),
           nav_button = document.querySelector('[data-action=open_nav]'),
-          contact_button = document.querySelector('[data-action=open_contact]');
+          contact_button = document.querySelectorAll('[data-action=open_contact]');
 
     nav_button.addEventListener('click',handleMenuClick);
-    contact_button.addEventListener('click',handleContactClick);
+    for(const button of contact_button) {
+        button.addEventListener('click',handleContactClick);
+    }
 
     function handleMenuClick(event) {
         event.target.closest('[data-action=open_nav]').classList.toggle('active');
@@ -699,10 +701,6 @@ function setup_carousel(carousel) {
             {
                 breakpoint : 1000,
                 visible : 2
-            },
-            {
-                breakpoint : 1620,
-                visible : 3
             }
         ];
         
@@ -723,10 +721,6 @@ function setup_carousel(carousel) {
             {
                 breakpoint : 1200,
                 visible : 4
-            },
-            {
-                breakpoint : 1620,
-                visible : 5
             }
         ];
     }

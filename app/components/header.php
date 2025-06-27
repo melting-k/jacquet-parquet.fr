@@ -1,6 +1,6 @@
 <header class="c-header" id="head">
-    <div class="c-header_background">
-        <img src="<?=$page_item->image->url?>" alt="<?=$page_item->image->alt?>" class="parallax" data-css="opacity" data-start="1" data-end="0">
+    <div class="c-header_background parallax" data-css="opacity,transform" data-start="1,scale(1)" data-end="0,scale(1.1)" data-anchor="#head">
+        <img src="<?=$page_item->image->url?>" alt="<?=$page_item->image->alt?>">
     </div>
     <div class="container">
         <div class="grid">

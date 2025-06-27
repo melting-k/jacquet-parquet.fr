@@ -54,10 +54,6 @@
             opacity:0;
             transition:all .35s ease-out .2s, opacity .3s ease-out 0s;
 
-            a:hover {
-                opacity:.7;
-            }
-
             &+& {
                 border-top:solid 0px;
             }
@@ -79,10 +75,6 @@
                 &.active {
                     background:$dark;
                     color:$light;   
-                }
-
-                a:hover {
-                    opacity:1;
                 }
             }
 
