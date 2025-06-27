@@ -24,8 +24,8 @@
     // Title 
     
     &_title {
-        @extend %font-bold;
-        font-size:4.2rem;
+        @extend %font-alt-bold;
+        font-size:3rem;
         margin:8rem 0 4rem;
         line-height: 1.1;
         color:$dark;

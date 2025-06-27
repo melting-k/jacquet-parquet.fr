@@ -29,48 +29,30 @@ if(isset($PAGE_name))
             $META_title = "Baptiste Jacquet - Artisan parqueteur à Toulouse";
             $META_description = "Avec plus de 20 ans d'expérience d'artisan parqueteur, Baptiste Jacquet réalise la pose et rénovation de tous types de parquets et terrasses extérieures bois.";
             $META_robots = "index,follow";
-            $HEADER_title = "BAPTISTE JACQUET<br>Artisan - Parqueteur";
-            $HEADER_subtitle = "Pose, rénovation de parquets et terrasses en bois.<br>Un savoir-faire authentique depuis 20 ans.";
-            $HEADER_img = "img/header/baptiste-jacquet-artisan-parqueteur-toulouse.jpg";
             break;
             
         case 'pose':
             $META_title = "Pose de tous types de parquets à Toulouse - Baptiste Jacquet";
             $META_description = "Baptiste Jacquet, c'est avant tout un savoir-faire artisanal pour la pose de parquets massifs, contrecollés ou stratifiés qui subliment votre intérieur.";
             $META_robots = "index,follow";
-            $HEADER_title = "Pose<br>de parquets";
-            $HEADER_subtitle = "Un savoir-faire artisanal pour des parquets massifs, contrecollés ou stratifiés qui subliment votre intérieur";
-            $HEADER_img = "img/header/pose-de-parquets-toulouse.jpg";
-            $HEADER_hero = false;
             break;
         
         case 'renovation':
             $META_title = "Rénovation de parquets anciens à Toulouse - Baptiste Jacquet";
             $META_description = "Rénovez et redonnez vie et caractère à vos parquets anciens en faisant appel à un artisan qualifié, au savoir-faire artisanal reconnu.";
             $META_robots = "index,follow";
-            $HEADER_title = "Rénovation de parquets anciens";
-            $HEADER_subtitle = "Redonnez vie et caractère à vos parquets d’époque avec notre savoir-faire artisanal";
-            $HEADER_img = "img/header/renovation-parquets-anciens-toulouse.jpg";
-            $HEADER_hero = false;
             break;
         
         case 'terrasses':
             $META_title = "Installation terrasses en bois à Toulouse - Baptiste Jacquet";
             $META_description = "Faites appel à Baptiste Jacquet pour l'installation d'une terrasse bois, qui créera un espace extérieur durable et convivial dans votre maison.";
             $META_robots = "index,follow";
-            $HEADER_title = "Terrasses en bois";
-            $HEADER_subtitle = "Créez un espace extérieur convivial et durable qui prolonge votre habitat";
-            $HEADER_img = "img/header/installation-terrasse-bois-toulouse.jpg";
-            $HEADER_hero = false;
             break;
         
         case 'legals':
             $META_title = "Mentions légales et politique de confidentialité | Les Démurailleurs";
             $META_description = "Les mentions légales relatives à l'utilisation du site www.les-demurailleurs.fr, ainsi que notre politique de confidentialité à l'égard de vos données personnelles";
             $META_robots = "noindex,nofollow";
-            $HEADER_title = "Mentions légales";
-            $HEADER_subtitle = "et politique de confidentialité";
-            $HEADER_hero = true;
             break;
             
         default:
@@ -148,9 +130,10 @@ $partners = new Gallery('img/partners');
 $instagram = new InstagramAPI();
 $instagram->save_session(20);
 
-$testimonials = include realpath(__DIR__.'/../datastore/testimonials.data.php');
-$architects = include realpath(__DIR__.'/../datastore/architects.data.php');
-$footer = include realpath(__DIR__.'/../datastore/footer.data.php');
+$testimonials = include realpath(__DIR__.'/../datastore/partials/testimonials.data.php');
+$architects = include realpath(__DIR__.'/../datastore/partials/architects.data.php');
+$header = include realpath(__DIR__.'/../datastore/partials/header.data.php');
+$footer = include realpath(__DIR__.'/../datastore/partials/footer.data.php');
 
 //*******************************
 // SHARING ELEMENTS

@@ -11,7 +11,18 @@ return (object) [
 
             (object) [
                 'type'      => "hero",
+                'title'     => "Mentions légales",
+                'subtitle'  => "et politique de confidentialité",
             ],
+        ]
+    ],
+
+    // *** NEW SECTION
+
+    (object) [
+        'class'    => "--dark",
+        'id'       => "main",
+        'components'    => (object) [
 
             // *** LEGALS
 

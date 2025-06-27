@@ -4,11 +4,26 @@
 
 .container {
     @include position(relative,5);
-    padding:0 30px;
+    padding:0 15px;
     width:100%;
     
     @media (min-width:$screen-sm) {
-        padding:0 6.5rem;
+        padding:0;
+        display:grid;
+        grid-template-columns: auto 720px auto;
+        grid-template-areas: ". content .";
+    }
+    
+    @media (min-width:$screen-md) {
+        grid-template-columns: auto 950px auto;
+    }
+    
+    @media (min-width:$screen-lg) {
+        grid-template-columns: auto 1160px auto;
+    }
+    
+    @media (min-width:$screen-xl) {
+        grid-template-columns: auto 1560px auto;
     }
 }
 

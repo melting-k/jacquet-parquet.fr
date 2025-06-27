@@ -7,18 +7,14 @@
     position:relative;
     grid-column: span 12;
 
-    --input-height : 50px;
+    --input-height : 30px;
 
     @media (min-width:$screen-sm) {
-        --input-height : 55px;
+        --input-height : 35px;
     }
 
     @media (min-width:$screen-lg) {
-        --input-height : 60px;
-    }
-
-    @media (min-width:$screen-xl) {
-        --input-height : 65px;
+        --input-height : 40px;
     }
     
     &_wrapper {
@@ -26,41 +22,24 @@
     }
     
     &_field {
+
+        .is_focus .c-form_dropdown_button {
+            text-transform: none;
+            color:$dark;
+        }
+        
         position:relative;
         margin-bottom:15px;
         grid-column: span 12;
-
-        @media (min-width:$screen-sm) {
-            margin-bottom: 30px;
-        }
 
         &--consent {
             @extend .c-form_field;
 
             @include flex(flex,flex-end,flex-start,column);
-            margin-top:15px;
+            margin-bottom:0;
 
             [class^=u-button] {
-                margin-top:30px;
-            }
-
-            @media (min-width:$screen-lg) {
-                flex-direction:row;
-                align-items:flex-start;
-                justify-content:flex-start;
-
-                [class^=u-button] {
-                    margin-top:0px;
-                    margin-left:45px;
-                }
-            }
-        }
-
-        &--half {
-            @extend .c-form_field;
-
-            @media (min-width:$screen-sm) {
-                grid-column: span 6;
+                margin-top:15px;
             }
         }
         
@@ -71,33 +50,37 @@
         textarea,
         .c-form_dropdown_button {
             
-            @extend p;
-            border-radius:10px;
+            font-size:15px;
+            @extend %font;
             width:100%;
-            border:solid 1px;
-            color:$light;
+            border-bottom:solid 1px;
+            color:rgba($dark,.6);
             background:none;
             height:var(--input-height);
-            padding:0 3rem;
             @include transi(.2s);
 
-            &::placeholder {
-                opacity:1;
-                color:$light;
+            @media (min-width:$screen-xl) {
+                font-size:17px;
             }
 
-            &:focus {
-                background:rgba($light,.1);
+            &::placeholder {
+                opacity:.6;
+                color:$dark;
+                text-transform: uppercase;
             }
-            
+
+            &:focus,
+            &.is_focus {
+                color:$dark;
+            }
         }
         
         textarea {
-            padding-top:12px;
-            height:200px;
+            padding-top:8px;
+            height:120px;
 
-            @media (min-width:$screen-lg) {
-                padding-top:15px;
+            @media (min-width:$screen-xl) {
+                height:140px;
             }
         }
         
@@ -133,7 +116,7 @@
         }
         
         &.error {
-            margin-bottom:30px;
+            margin-bottom:20px;
             
             input[type=tel], input[type=password], input[type=email], input[type=text], textarea, .c-form_dropdown_button {
                 border-color:red;
@@ -164,7 +147,7 @@
             @include flex(flex,center,flex-start,row,nowrap);
             gap:20px;
             @extend %font;
-            color:$light;
+            color:$dark;
             cursor:pointer;
             margin:0;
             font-size:12px;
@@ -174,20 +157,22 @@
                 display:block;
                 content:'';
                 width:24px;
+                min-width:24px;
                 height:24px;
                 border-radius:20px;
                 @include transi(.2s);
                 background:$light;
+                border:solid 1px $dark;
             }
             
             &:after {
                 display:block;
                 content:'';
-                width:12px;
-                height:12px;
+                width:13px;
+                height:13px;
                 border-radius:10px;
                 background:$dark;
-                @include position(absolute,2,6px,auto,auto,6px);
+                @include position(absolute,2,0px,auto,0px,6px);
                 margin:auto;
                 @include transi(.2s);
                 opacity:0;
@@ -214,23 +199,19 @@
             text-transform: uppercase;
             min-height:var(--input-height);
             height:auto!important;
-            padding:10px 3rem!important;
+            text-align:left;
             
             &_cursor {
-                @include icon(24px);
                 margin-left:15px;
 
                 svg {
-                    @include svg($light);
+                    @include icon(18px);
+                    @include svg($dark);
                 }
             }
 
             &_text {
                 flex:1;
-            }
-
-            &:hover {
-                background:rgba($light,.1);
             }
         }
         
@@ -254,10 +235,13 @@
                 text-align: left;
                 max-height:0px;
                 overflow:hidden;
-                padding:0 3rem;
                 @include transi(.2s);
-                @extend p;
+                font-size:15px;
                 color:$dark;
+
+                @media (min-width:$screen-lg) {
+                    font-size:17px;
+                }
 
                 &:hover {
                     opacity:.5;
@@ -268,8 +252,6 @@
         &.open {
 
             .c-form_dropdown_button {
-                background:rgba($light,.1);
-
                 svg {
                     transform: rotate(90deg);
                 }
@@ -278,93 +260,12 @@
             .c-form_dropdown_list {
                 overflow:auto;
                 max-height:1000px;
-                margin-top:15px;
-                padding:3rem 0;
+                padding:1.5rem 0;
                 
                 button {
                     max-height:150px;
+                    padding:5px 0;
                 }  
-            }
-        }
-        
-        &.is_focus {
-            .c-form_dropdown_button {
-                color:$light;
-            }
-        }
-
-        &[multiple]
-        {
-            .c-form_dropdown_tag {
-                @include flex(inline-flex,center,space-between,row,nowrap);
-                @extend p;
-                line-height:1.2;
-                gap:10px;
-                flex:1;
-                background:$light;
-                color:$dark;
-                font-size:12px;
-                padding:5px 10px;
-                border-radius:5px;
-                
-                &:after {
-                    content:'X';
-                    color:rgba($dark,.6);
-                    @include icon(12px);
-                    margin-left:5px;
-                    flex:0;
-                }
-            }
-            
-            .c-form_dropdown_list {
-                @include flex(flex,flex-start,flex-start,column);
-                gap:1.5rem 3rem;
-
-                @media (min-width:$screen-md) {
-                    flex-direction:row;
-                    align-items:center;
-                }
-                
-                button {
-                    @include flex(inline-flex,center,flex-start,row,nowrap);
-                    gap:15px;
-
-                    @media (min-width:$screen-md) {
-                        width:calc(50% - 30px);
-                    }
-                    
-                    &.selected {
-
-                        .c-form_dropdown_list_checkbox {
-                            &:after {
-                                opacity:1;
-                            }
-                        }
-
-                    }
-                }   
-
-                &_checkbox {
-                    display:inline-block;
-                    position:relative;
-                    width:20px;
-                    height:20px;
-                    border:solid 1px $dark;
-                    border-radius:5px;
-                    flex:0 0 20px;
-
-                    &:after {
-                        content:'';
-                        width:10px;
-                        height:10px;
-                        background:$dark;
-                        @include position(absolute,1,0,0,0,0);
-                        margin:auto;
-                        border-radius:2px;
-                        opacity:0;
-                        transition:all .2s ease;
-                    }
-                }
             }
         }
     }
@@ -378,21 +279,16 @@
         transform: translateY(-50%);
         border-radius:30px;
         @include transi();
-        background:$light;
+        background:$dark;
         width:100%;
         margin:auto;
-
-        @media (min-width:$screen-sm) {
-            width:40vw;
-            min-width:600px;
-        }
 
         &_text {
             @extend %font;
             padding:5rem;
             text-align:center;
             font-size:16px;
-            color:$dark;
+            color:$light;
             line-height: 1.3;
             
             @media (min-width:$screen-md) {

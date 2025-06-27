@@ -5,32 +5,52 @@
 
 .u-burger {
 
-    @extend .u-button--round;
-    flex-direction: column;
-    @include position(relative,105);
+    width:60px;
+    height:40px;
+    background:$light;
+    @include flex(flex,center,center,column);
+    @include position(relative,20);
+    margin-left:auto;
+
+    @media (min-width:$screen-lg) {
+        width:75px;
+        height:55px;
+    }
+
+    &:after {
+        content:'';
+        display: block;
+        @include position(absolute,1,3px,3px,3px,3px);
+        background:$dark;
+        @include transi();
+        transform:scale(0);
+    }
     
     &_bar {
         display:block;
-        @include position(relative);
-        width:22px;
-        height:2px;
-        background:$light;
-        transition:all .25s ease-out .35s, transform .25s ease-out 0s;
+        @include position(relative,2);
+        width:25px;
+        height:3px;
+        background:$dark;
+        transition:all .25s ease-out .35s, transform .25s ease-out 0s, background .25s ease-out 0s;
         
         &+& {
-            margin-top:5px;
+            margin-top:3px;
         }
     }
-}
 
-.active {
-    
-    .u-burger {
-
-        &:before {
-            transform: scale(.9);
+    &:hover,
+    &.active {
+        &:after {
+            transform: scale(1);
         }
-    
+
+        .u-burger_bar {
+            background:$light;
+        }
+    }
+
+    &.active {
         .u-burger_bar {
             transform:rotate(45deg);
             
@@ -45,9 +65,8 @@
             transition:all .25s ease-out, transform .25s ease-out .35s;
 
             &+.u-burger_bar {
-                margin-top:-2px;
+                margin-top:-3px;
             }
         }
-        
     }
 }

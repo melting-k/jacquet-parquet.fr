@@ -1,20 +1,23 @@
 @use 'utilities' as *;
 
-.p-header {
+.c-header {
     
     // ***** Design
     
     @include position(relative,1);
     overflow:hidden;
     height:100vh;
+    background: $dark;;
 
     &_background {
-        @include position(fixed,-1,0,0,0,0);
+        @include position(fixed,1,0,0,0,0);
+        @include flex(flex,center,center);
+        overflow:hidden;
 
         img {
-            width:100%;
             height:100%;
-            object-fit: cover;
+            width:auto;
+            position:relative;
         }
 
         &:after {
@@ -26,44 +29,68 @@
         }
     }
 
-    &_title {
-        grid-column: span 12;
-        @extend %u-title--medium;
-        margin-top:20px;
-        @include position(fixed,1);
-        padding-right:30px;
-        line-height:1.15;
-        color:$light;
+    .grid {
+        height:100vh;
+        align-items:center;
+    }
 
-        @media (min-width:$screen-sm) {
-            margin-top:4rem;
-        }
+    &_content {
+        grid-column: span 12;
+    }
+
+    &_title {
+        
+        @extend %u-title--big;
+        color:$light;
+        margin-bottom:6.5rem;
 
         &_sub {
-            color:$dark;
-        }
-
-        &:before {
-            content:'';
-            display:block;
-            width:1.5rem;
-            height:1.5rem;
-            background:$dark;
-            border-radius:50%;
-            @include position(absolute,1,1.6rem,auto,auto,-3.6rem);
-            animation: bounce 2.5s ease-in-out infinite;
-
-            @media (min-width:$screen-md) {
-                top:1.4rem;
-            }
-
-            @media (min-width:$screen-lg) {
-                top:1.2rem;
-            }
+            @extend %u-title--big--sub;
+            padding:0 15%;
         }
     }
 
     &_scroll {
+        text-align:center;
+        position:relative;
+        top:20vh;
 
+        svg {
+            position:relative; 
+            @include svg($light);
+            @include icon(45px);
+            transform: rotate(90deg);
+            animation:bounce 1.5s infinite;
+
+            &:hover {
+                opacity:.5;
+            }
+        }
+    }
+
+    // ***** Modifiers (Hero)
+
+    &--hero {
+        @include position(relative,1);
+        overflow:hidden;
+        height:auto;
+
+        .grid {
+            height:65vh;
+            align-items:center;
+        }
+
+        .c-header_title {
+            margin-bottom:0;
+            margin-top:6rem;
+        }
+    }
+}
+
+.home {
+    .c-header_background img {
+        @media (max-width:$screen-sm) {
+            left:60%;
+        }
     }
 }

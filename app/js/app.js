@@ -4,8 +4,6 @@
         $(window).ready(function () {
             windowWidth = $(window).width();
             windowHeight = $(window).height();
-            Animation();
-            smoothScroll();
         });
         
         $(window).load(function () {
@@ -17,40 +15,6 @@
                 location.reload();
             }
         });
-        
-        ///////////////////////////////////////////////////////
-        /* SMOOTHSCROLL */
-        ///////////////////////////////////////////////////////
-
-        function smoothScroll() {
-            
-            $(document).on('click',".scroll", function (event) {
-                event.preventDefault();
-                var hash = (this.hash) ? this.hash : $(this).attr('target');
-                
-                if($(this).closest('[data-role=nav]').length) {
-                    
-                    $(this).closest('nav').removeClass('active');
-                    $(this).closest('html').removeClass('noscroll');
-                    
-                    setTimeout(function(){
-                        $('html, body').animate({
-                            scrollTop: $(hash).offset().top
-                        }, 700);
-                    }, 600);
-                }
-                else {
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 700);
-                }
-            });
-            
-            $('a.no-anchor').on('click',function(e){
-                e.preventDefault();
-            });
-            
-        };
 
         ///////////////////////////////////////////////////////
         /* FUNCTION PARALLAX */
@@ -560,103 +524,91 @@
     });
 })(jQuery);
 
-// ===========================================
-// ***** Gestionnaire de cards
-// ===========================================
+function animations() {
 
-function load_items() {
-    const load_buttons = document.querySelectorAll('[load_items]');
-    
-    for (button of load_buttons) {
-        const cards_wrapper = button.closest('[cards_wrapper]'),
-              cards_container = cards_wrapper.querySelector('[cards_container]'),
-              cards_total = parseInt(cards_container.getAttribute('total_items')),
-              element = button,
-              article_baseUrl = cards_wrapper.dataset.article_url;
-        
-        display_button(element,cards_container);
-        
-        button.addEventListener('click',function() {handleClick(element)});
-        
-        function handleClick(button) {
-            const items_number = button.dataset.number,
-                  formData = new FormData(),
-                  cards_number = cards_container.querySelectorAll('[card]').length,
-                  filters = cards_wrapper.querySelectorAll('[filter_items]');
-
-            for (const filter of filters) {
-                formData.append(filter.dataset.key,filter.dataset.value);
-            }
-
-            formData.append('current',cards_number);
-            formData.append('number',items_number);
-            formData.append('base_url',article_baseUrl);
-
-            cards_ajax_handler(formData,cards_number);
-        }
-
-        async function cards_ajax_handler(data,number) {
-            
-            const new_cards = await fetch('ajax/load_items.php',{
-                method:'post',
-                body: data 
-            });
-
-            const content = await new_cards.text();
-            cards_container.innerHTML += content;
-            
-            const card_items = cards_container.querySelectorAll('[card]');
-            
-            let i,
-                y=1;
-            
-            const new_cards_num = card_items.length - number,
-                  bouton = cards_wrapper.querySelector('[load_items]');
-            
-            for(i = card_items.length - new_cards_num; i < card_items.length; i++)
-            {
-                const item = card_items[i];
-                
-                item.classList.add('unvisible');
-                
-                setTimeout(function() {
-                    item.classList.remove('unvisible');
-                },y*100);
-                
-                y++;
-            }
-            
-            display_button(element,cards_container);
-        }
+    // Fonction utilitaire pour appliquer des classes avec délai
+    function applyTransitionSequence(selectors, steps) {
+        const elements = document.querySelectorAll(selectors);
+        if (!elements.length) return;
+        steps.forEach(([action, classes, delay]) => {
+            setTimeout(() => {
+                elements.forEach(el => {
+                    if (action === 'add') el.classList.add(...classes);
+                    if (action === 'remove') el.classList.remove(...classes);
+                });
+            }, delay);
+        });
     }
-}
-  
-function display_button(bouton,container) {
 
-    const cards_count = parseInt(container.querySelectorAll('[card]').length),
-          total = parseInt(container.getAttribute('total_items'));
-    
-    if(cards_count >= total)
-    {
-        bouton.classList.add('hidden');
+    // Animation au chargement
+    if (document.querySelector('.u-transition.first')) {
+        fetch('ajax/animation.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: 'animation=none'
+        });
+        applyTransitionSequence('.u-transition', [
+            ['add',    ['remove'],                500],
+            ['add',    ['under'],                 600],
+            ['remove', ['first', 'active', 'remove'], 800]
+        ]);
     }
-    else
-    {
-        bouton.classList.remove('hidden');
+
+    if (document.querySelector('.u-transition.active')) {
+        fetch('ajax/animation.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: 'animation=none'
+        });
+        applyTransitionSequence('.u-transition', [
+            ['add',    ['remove'],                10],
+            ['add',    ['under'],                 400],
+            ['remove', ['active', 'anim', 'remove'], 650]
+        ]);
     }
+
+    // Animation interpages
+    document.addEventListener('click', function(event) {
+        const target = event.target.closest('a:not([target="_blank"]):not([href^="#"])');
+        if (!target) return;
+        event.preventDefault();
+
+        fetch('ajax/animation.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: 'animation=done'
+        });
+
+        const link = target.getAttribute('href');
+        const transitions = document.querySelectorAll('.u-transition');
+        transitions.forEach(el => el.classList.remove('under'));
+
+        setTimeout(() => {
+            transitions.forEach(el => el.classList.add('out'));
+        }, 10);
+
+        setTimeout(() => {
+            window.location.href = link;
+        }, 360);
+    });
 }
 
-///////////////////////////////////////////////////////
-/* Retour Arrière */
-///////////////////////////////////////////////////////
+function smoothscroll() {
+    const smoothscroll_links = document.querySelectorAll('a[href^="#"]');
 
-function history_back() {
-    const back_buttons = document.querySelectorAll('[history-back]');
-    
-    for(back_button of back_buttons) {
-        back_button.addEventListener('click',() => {
-            history.go(-1);
-        })
+    if(!smoothscroll_links) {
+        return;
+    } 
+
+    for(const anchor_link of smoothscroll_links) {
+        anchor_link.addEventListener('click',handleSmoothscroll);
+    }
+
+    function handleSmoothscroll(event) {
+        event.preventDefault();
+        const anchor = event.target.closest('a[href^="#"]').hash,
+              anchor_target = document.querySelector(anchor);
+        anchor_target.scrollIntoView({ behavior: "smooth"});
     }
 }
 
@@ -666,16 +618,22 @@ function history_back() {
 
 function menu() {
 
-    const navigation = document.querySelector('[data-role=nav]');
+    const navigation = document.querySelector('[data-role=nav]'),
+          contact = document.querySelector('[data-role=contact]'),
+          nav_button = document.querySelector('[data-action=open_nav]'),
+          contact_button = document.querySelector('[data-action=open_contact]');
 
-    const nav_buttons = document.querySelectorAll('[data-action="open_nav"]');
+    nav_button.addEventListener('click',handleMenuClick);
+    contact_button.addEventListener('click',handleContactClick);
 
-    for (const button of nav_buttons) {
-        button.addEventListener('click',handleMenuClick);
+    function handleMenuClick(event) {
+        event.target.closest('[data-action=open_nav]').classList.toggle('active');
+        navigation.classList.toggle('active');
     }
 
-    function handleMenuClick() {
-        navigation.classList.toggle('active');
+    function handleContactClick(event) {
+        event.target.closest('[data-action=open_contact]').classList.toggle('active');
+        contact.classList.toggle('active');
     }
 
     let scrollTop = document.documentElement.scrollTop;
@@ -685,8 +643,17 @@ function menu() {
     }
 
     document.addEventListener('click', function(event) {
-        if(!event.target.closest('[data-role=nav]') && navigation.classList.contains('active')) {
+        if(!event.target.closest('[data-role=nav]') 
+            && !event.target.closest('[data-action=open_nav]') 
+            && navigation.classList.contains('active')) {
             navigation.classList.remove('active');
+            nav_button.classList.remove('active');
+        }
+        if(!event.target.closest('[data-role=contact]') 
+            && !event.target.closest('[data-action=open_contact]') 
+            && contact.classList.contains('active')) {
+            contact.classList.remove('active');
+            contact_button.classList.remove('active');
         }
     });
 
@@ -940,98 +907,16 @@ function clickable_phone() {
     }
 }
 
-///////////////////////////////////////////////////////
-/* Horizontal Scroll */
-///////////////////////////////////////////////////////
-
-function horizontal_scroll() {
-
-    const scrollers = document.querySelectorAll('[js-hscroll]'),
-          observer = new IntersectionObserver(start_hscroll);
-
-    // On n'éxecute rien si les conditions de la fonction ne sont pas remplies (pas d'élément / fenêtre trop petite)
-    if(!window.matchMedia('(min-width:1000px)').matches || !scrollers.length) {
-        return;
-    }
-
-    for(const scroller of scrollers) {
-        observer.observe(scroller);
-    }
-}
-
-function start_hscroll(entries, observer) {
-    for (const entry of entries) {
-        const element = entry.target;
-
-        // On stocke la référence du handler pour pouvoir le retirer
-        if (!element._hscrollHandler) {
-            element._hscrollHandler = function () {
-                setup_hscroll(element);
-            };
-        }
-        
-        // Appelle une fois pour l'état initial
-        setup_hscroll(element);
-
-        if (entry.isIntersecting) {
-            // Ajoute le listener seulement si visible
-            window.addEventListener('scroll', element._hscrollHandler);
-            // Appelle une fois pour l'état initial
-            setup_hscroll(element);
-        } else {
-            // Retire le listener si non visible
-            window.removeEventListener('scroll', element._hscrollHandler);
-        }
-    }
-}
-          
-function setup_hscroll(element) {
-    const view = element.querySelector('[js-hscroll_view]'),
-        view_width = view.getBoundingClientRect().width,
-        wrapper = element.querySelector('[js-hscroll_wrapper]'),
-        wrapper_width = wrapper.getBoundingClientRect().width,
-        scrollbar = element.querySelector('[js-hscroll_scrollbar]'),
-        scroller = element.querySelector('[js-hscroll_scroller]'),
-        scroller_coords = scroller.getBoundingClientRect(),
-        start = scroller_coords.height + windowHeight,
-        end = windowHeight,
-        total = start - end;
-    let percent, transform;
-
-    if(scroller_coords.bottom > start) {
-        percent = 0;
-        transform = 0;
-    }
-
-    if(scroller_coords.bottom < end) {
-        percent = 100;
-        transform = ((view_width - wrapper_width) * -1).toFixed();
-    }
-
-    if(end < scroller_coords.bottom && start > scroller_coords.bottom) {
-        percent = ((scroller_coords.bottom - start) / (end - start) * 100).toFixed(2); 
-        percent = Number(percent);
-
-        
-        transform = ((view_width - wrapper_width) * percent / -100).toFixed();
-    }
-    
-    element.style.setProperty('--transformation',transform+'px');
-    element.style.setProperty('--scrollbar',percent+"%");
-
-}
 
 window.addEventListener("load", function() {
-    load_items();
-    history_back();
+    animations();
     carousel();
     menu();
     secure_email();
     clickable_phone();
-    horizontal_scroll();
+    smoothscroll();
 });
 
 window.addEventListener("resize", function() {
     carousel();
-    horizontal_scroll();
 }); 

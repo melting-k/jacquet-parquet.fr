@@ -1,40 +1,198 @@
 @use 'utilities' as *;
 
-.p-nav {
+.c-nav {
+    @include position(fixed,20,0,0,auto,0);
+    height:12rem;
+    min-height:80px;
+    padding:0 5rem;
+    @include flex(flex,center,space-between);
     
     &_logo {
-        
+        svg {
+            @include svg($light);
+            width:19rem;
+            min-width:110px;
+
+            &:hover {
+                opacity:.6;
+            }
+        }
     }
     
     // ***** Menu 
     
     &_menu {
+        @include position(fixed,20,80px,5rem);
+        background:$light;
+        padding:0 30px;
+        width:calc(100% - 10rem);
+        overflow:hidden;
 
-        &_overlay {
+        @media (min-width:$screen-sm) {
+            width:400px;
+        }
 
+        @media (min-width:$screen-lg) {
+            position:relative;
+            top:0;
+            right:0;
+            height:55px;
+            margin-left:auto;
+            padding:0 10px;
+            width:auto;
+            @include flex(flex,center,center);
         }
 
         &_item {
-            
+            padding:0;
+            color:$dark;
+            @extend %font-alt-medium;
+            font-size:18px;
+            text-align:center;
+            max-height:0;
+            overflow:hidden;
+            opacity:0;
+            transition:all .35s ease-out .2s, opacity .3s ease-out 0s;
+
+            a:hover {
+                opacity:.7;
+            }
+
+            &+& {
+                border-top:solid 0px;
+            }
+
+            @media (min-width:$screen-lg) {
+                opacity:1;
+                max-height:100%;
+                height:35px;
+                font-size:14px;
+                @include transi();
+                padding:0 15px;
+                @include flex(inline-flex,center,center);
+
+                &+& {
+                    margin-left:8px;
+                }
+
+                &:hover,
+                &.active {
+                    background:$dark;
+                    color:$light;   
+                }
+
+                a:hover {
+                    opacity:1;
+                }
+            }
+
+            @media (min-width:$screen-xl) {
+                font-size:17px;
+                padding:0 20px;
+            }
+        }
+
+        // ***** Opening effect 
+    
+        &.active {
+            .c-nav_menu_item {
+                max-height:200px;
+                padding:30px 0;
+                opacity:1;
+                transition:all .35s ease-out 0s, opacity .3s ease-out .3s;
+
+                &.active a {
+                    opacity:.4;
+                }
+
+                &+.c-nav_menu_item {
+                    border-top:solid 1px;
+                }
+            }
         }
     }
 
     &_contact {
-        &_overlay {
+        @include position(fixed,20,80px,5rem);
+        @include transi(.35s,ease-out,.3s);
+        background:$light;
+        overflow:hidden;
+        max-height:0;
+        width:calc(100% - 10rem);
+
+        @media (min-width:$screen-sm) {
+            width:400px;
+        }
+
+        @media (min-width:$screen-md) {
+            top:12rem;
+            overflow:auto;
             
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display:none;
+            }
+        }
+
+        &_title {
+            @extend %font-alt-bold;
+            color:$dark;
+            margin-bottom:30px;
+            opacity:0;
+            text-transform: uppercase;
+            @include transi(.35s,ease-out);
+            @include fluid-text(18px,30px);
+        }
+
+        .c-form {
+            @include transi(.35s,ease-out);
+            opacity:0;
+        }
+
+
+        &_button {
+            @extend .u-burger;
+            margin-left:3rem;
+
+            svg {
+                @include position(relative,2);
+                @include svg($dark);
+                @include icon(22px);
+                @include transi();
+
+                @media (min-width:$screen-lg) {
+                    @include icon(30px);
+                }
+            }
+
+            &:hover,
+            &.active {
+                svg {
+                    @include svg($light);
+                }
+            }
+        }
+
+        &.active {
+            max-height:100vh;
+            padding:25px;
+            transition-delay:0s;
+
+            .c-nav_contact_title,
+            .c-form {
+                opacity:1;
+                transition-delay:.3s;
+            }
+
+            @media (min-width:$screen-md) {
+                max-height:calc(100vh - 15rem);
+            }
+
+            @media (min-width:$screen-lg) {
+                padding:30px;
+            }
         }
     }
-    
-    // ***** Opening effect 
-    
-    &.active {
-
-    }
-    
-    // ***** Sticky
-    
-    &.sticky {
-        
-    }
-        
 }

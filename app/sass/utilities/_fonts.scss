@@ -46,8 +46,14 @@ font-display:auto;font-style:normal;font-weight:100 900;font-stretch:normal;
     font-style:normal;
 }
 
+%font-alt-medium {
+    font-family:$font-alt;
+    font-weight:500;
+    font-style:normal;
+}
+
 %font-alt-bold {
-    font-family:$font;
+    font-family:$font-alt;
     font-weight:700;
     font-style:normal;
 }

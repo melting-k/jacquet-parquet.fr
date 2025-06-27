@@ -551,16 +551,16 @@ async function ajax_submit(form) {
             }
         }
         
-        // setTimeout(function(){
-        //     overlay.classList.add('close');
-        //     wrapper.style.opacity = '1';
-        //     submit.removeAttribute('disabled');
+        setTimeout(function(){
+            overlay.classList.add('close');
+            wrapper.style.opacity = '1';
+            submit.removeAttribute('disabled');
             
-        //     setTimeout(function(){
-        //         form.removeChild(overlay);
-        //     },500);
+            setTimeout(function(){
+                form.removeChild(overlay);
+            },500);
             
-        // },4500);
+        },4500);
         
     },250);
 

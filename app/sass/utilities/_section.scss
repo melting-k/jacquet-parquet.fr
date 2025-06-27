@@ -1,5 +1,12 @@
 @use 'core' as *;
 
-%u-section {
-    
+.u-section {
+    &--light {
+        @include position(relative,2);
+        background:$light;
+    }
+    &--dark {
+        @include position(relative,2);
+        background:$dark;
+    }
 }

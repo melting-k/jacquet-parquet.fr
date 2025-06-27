@@ -4,75 +4,44 @@
 
 .u-button {
     
-    @include flex(inline-flex,center,center);
-    padding:0 20px;
-    min-width:130px;
-    height:47px;
+    @include flex(inline-flex,center,space-between);
+    padding:0 25px;
+    min-width:140px;
+    height:45px;
     font-size:14px;
-    @extend %font;
+    @extend %font-bold;
     position:relative;
-    color:$light;
-    background:$dark;
-    border-radius: 25px;
-    gap:15px;
+    color:$dark;
+    border-radius: 30px;
+    text-transform: uppercase;
+    border:solid 1px;
 
     svg {
         @include icon(18px);
-        @include svg($light);
+        @include svg($dark);
+        margin-right:15px;
     }
 
-    &--round {
-        @extend .u-button;
-        width:50px;
-        height:50px;
-        min-width:50px;
-        padding:0;
-        background:none;
-        position:relative;
-        gap:0;
-
-        &:before {
-            content:'';
-            display:block;
-            @include position(absolute,0,0,0,0,0);
-            @include transi();
-            border-radius:50%;
-            background:$dark;
-        }
-
-        svg {
-            @include icon(20px);
-            @include position(relative,10);
-            margin:0;
-        }
-
-        @media (min-width:$screen-sm) {
-            width:60px;
-            min-width:60px;
-            height:60px;
-
-            svg {
-                @include icon(24px);
-            }
-        }
+    @media (min-width:$screen-lg) {
+        height:60px;
+        font-size:22px;
     }
 
-    &--border {
+    @media (min-width:$screen-xl) {
+        height:70px;
+        font-size:25px;
+    }
+
+    &--small {
         @extend .u-button;
-        border-radius:10px;
-        border:solid 1px;
-        background:none;
-        font-size:18px;
-        height:7rem;
-        min-height:45px;
-        padding:0 30px;
 
-        &.race {
-            color:$dark;
-        }
+        height:45px;
+        font-size:15px;
+        justify-content: center;
 
-        &.qualif {
-            color:$light;
+        @media (min-width:$screen-lg) {
+            height:55px;
+            font-size:18px;
         }
     }
 }
@@ -81,7 +50,13 @@ a.u-button,
 button.u-button {
 
     &:hover {
-        background:$light;
+        background:$dark;
+        color:$light;
+
+        svg {
+            @include svg($light);
+            margin-right:0;
+        }
     }
 
     &--round:hover {
