@@ -1,5 +1,96 @@
 @use 'utilities' as *;
 
 .c-quote {
-    
+    @include position(relative,5);
+    background:$dark;
+
+    img {
+        @include position(absolute,1,0,0,0,0);
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
+
+    &:after {
+        content:'';
+        display:block;
+        @include position(absolute,2,0,0,0,0);
+        opacity:.4;
+        background:$dark;
+    }
+
+    .grid {
+        height:100vh;
+        align-items: center;
+    }
+
+    &_content {
+        grid-column: span 12;
+        @include position(relative,5);
+        padding:0 30px;
+        @extend %font-alt;
+        color:$light;
+        text-align:center;
+        @include fluid-text(20px,35px);
+
+        @media (min-width:$screen-sm) {
+            padding:0;
+            grid-column: 3 / span 8;
+        }
+
+        > svg {
+            @include svg($light);
+            @include icon(3.5rem);
+            transform:rotate(-90deg);
+            margin-left:5px;
+
+            &:first-child {
+                transform: rotate(90deg);
+                margin-left:0px;
+                margin-right:5px;
+            }
+
+            @media (min-width:$screen-sm) {
+                @include icon(2.5rem);
+            }
+        }
+
+        p {
+            text-align:center;
+
+            svg {
+                @include icon(36rem);
+                transform: none;
+                @include svg($light);
+            }
+        }
+
+        &--alt {
+            grid-column: span 12;
+            padding:0 30px;
+
+            @media (min-width:$screen-sm) {
+                grid-column: 2 / span 10;
+            }
+
+            @media (min-width:$screen-md) {
+                padding:0;
+                grid-column: 4 / span 6;
+            }
+        }
+    }
+
+    // *** Alternative version : title + text
+
+    &_title {
+        @extend %u-title--medium;
+        color:$light;
+        text-align:center;
+        margin-bottom:10rem;
+    }
+
+    &_text {
+        text-align:center;
+        color:$light;
+    }
 }

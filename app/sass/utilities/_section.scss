@@ -2,7 +2,7 @@
 
 .u-section {
     &--light {
-        @include position(relative,2);
+        @include position(relative,3);
         background:$light;
     }
     &--dark {

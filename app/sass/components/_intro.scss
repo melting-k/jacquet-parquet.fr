@@ -1,5 +1,104 @@
 @use 'utilities' as *;
 
 .c-intro {
-    
+    padding:15rem 0;
+    @include position(relative,5);
+
+    &_content {
+        grid-column: span 12;
+
+        @media (min-width:$screen-sm) {
+            grid-column: 2 / span 10;
+        }
+
+        @media (min-width:$screen-md) {
+            grid-column:1 / span 6;
+            align-self:center;
+        }
+
+        @media (min-width:$screen-xl) {
+            grid-column: 2 / span 5;
+        }
+    }
+
+    &_title {
+        @extend %u-title--medium;
+        margin-bottom:6.5rem;
+    }
+
+    &_text {
+        &:after {
+            content:'';
+            display:block;
+            width:100%;
+            margin-top:6.5rem;
+            border-bottom:solid 1px;
+
+            @media (min-width:$screen-md) {
+                width:60%;
+            }
+        }
+    }
+
+    &_image {
+        grid-column: span 12;
+        text-align:center;
+        margin-top:6.5rem;
+
+        @media (min-width:$screen-sm) {
+            grid-column: 3 / span 8;
+        }
+
+        @media (min-width:$screen-md) {
+            grid-column: 8 / span 5;
+            text-align:left;
+            margin-top: 0;
+        }
+
+        img {
+            width:100%;
+            height:auto;
+        }
+
+        svg {
+            width:22rem;
+            min-width:150px;
+            @include position(relative,1);
+            margin-top:-11rem;
+
+            @media (min-width:$screen-md) {
+                margin-left:-5.5rem;
+            }
+        }
+    }
+}
+
+.u-section--dark {
+    .c-intro {
+        &_title,
+        &_text {
+            color:$light;
+        }
+
+        &_image {
+            svg {
+                @include svg($light);
+            }
+        }
+    }
+}
+
+.u-section--light {
+    .c-intro {
+        &_title,
+        &_text {
+            color:$dark;
+        }
+
+        &_image {
+            svg {
+                @include svg($dark);
+            }
+        }
+    }
 }

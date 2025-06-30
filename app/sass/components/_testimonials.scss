@@ -83,7 +83,7 @@
         &.prev {
             @media (min-width:$screen-sm) {
                 opacity:0;
-                transform: translateX(-30%);
+                transform: translateX(50%);
             }
         }
 

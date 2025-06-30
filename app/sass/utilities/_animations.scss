@@ -99,7 +99,7 @@
 }
 
 [data-parallax] {
-    @include transi(.7s, cubic-bezier(0,0,0,1));
+    @include transi(.85s, cubic-bezier(0,0,0,1));
 }
 
 
