@@ -1,5 +1,182 @@
 @use 'utilities' as *;
 
 .c-scroll {
-    
+    @include position(relative,10);
+
+    @media (min-width:$screen-sm) {
+        margin-bottom:-35vh;
+    }
+
+    &_view {
+        grid-column: span 12;
+        margin:0 -15px;
+        background:$dark;
+        position:sticky;
+        top:0;
+        height:100vh;
+
+        .grid {
+            height:100%;
+            align-content:center;
+        }
+
+        @media (min-width:$screen-sm) {
+            margin:0;
+            grid-column: 2 / span 10;
+            padding:15rem;
+        }
+    }
+
+    &_title {
+        @extend %u-title--medium;
+        color:$light;
+        grid-column: span 12;
+        text-align:center;
+        margin-bottom:11rem;
+        align-self:center;
+    }
+
+    &_content {
+        grid-column: span 12;
+        @include flex(flex,center,center,column);
+
+        @media (min-width:$screen-md) {
+            flex-direction:row;
+            justify-content:space-between;
+        }
+    }
+
+    &_numbers {
+        position:relative;
+        width:100%;
+
+        @media (min-width:$screen-md) {
+            width:25%;
+        }
+    }
+
+    &_number {
+        @include position(absolute,1);
+        color:$light;
+        font-size:17rem;
+        @extend %font-alt-bold;
+        opacity:0;
+        transform:translateY(50%);
+        @include transi();
+        width:100%;
+        text-align:center;
+
+        &.active {
+            opacity:1;
+            transform:none;
+        }
+
+        &.prev {
+            transform: translateY(-50%);
+            opacity:0;
+        }
+    }
+
+    &_right {
+        width:100%;
+        position:relative;
+
+        &:before {
+            content:'';
+            display:block;
+            width:50vw;
+            border-bottom:solid 1px $light;
+            margin:30px auto;
+        }
+
+        @media (min-width:$screen-md) {
+            width:65%;
+
+            &:before {
+                margin:0;
+                @include position(absolute,1,25%,auto,25%,0);
+                border-bottom:none;
+                border-left:solid 1px $light;
+                @include transi();
+            }
+
+            &:hover {
+                &:before {
+                    top:0;
+                    bottom:0;
+                }
+            }
+        }
+
+        @media (min-width:$screen-xl) {
+            width:55%;
+
+            &:before {
+                left:-10%;
+            }
+        }
+    }
+
+    &_texts {
+        position:relative;
+        width:100%;
+        overflow:hidden;
+    }
+
+    &_text {
+        width:100%;
+        text-align:center;
+        color:$light;
+        @include position(absolute,1);
+        padding:0 60px;
+        opacity:0;
+        transform: translateX(25%);
+        @include transi();
+
+        &.active {
+            opacity:1;
+            transform:none;
+        }
+
+        &.prev {
+            opacity:0;
+            transform:translateX(-25%);
+        }
+
+        strong {
+            text-transform: uppercase;
+        }
+    }
+
+    &_dots {
+        width:100%;
+        position:relative;
+        @include flex(flex,center,center);
+        margin-top:30px;
+        gap:10px;
+
+        @media (min-width:$screen-md) {
+            @include position(absolute,1,auto,0,-45px,0);
+        }
+    }
+
+    &_dot {
+        @include icon(16px);
+        border-radius: 50%;
+        border:solid 2px $light;
+        position:relative;
+        @include transi();
+
+        &.active {
+            background:$light;
+        }
+    }
+
+    &_scroller {
+        grid-column: span 12;
+
+        &_item {
+            height:75vh;
+        }
+    }
 }

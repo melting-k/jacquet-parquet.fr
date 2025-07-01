@@ -19,6 +19,12 @@
     svg {
         width:40rem;
         @include svg($light);
-        @include position(absolute,2,auto,auto,-5rem,25rem);
+        @include position(absolute,2,auto,auto,-5rem,50%);
+        transform: translateX(-50%);
+
+        @media (min-width:$screen-md) {
+            left:25rem;
+            transform: none;
+        }
     }
 }

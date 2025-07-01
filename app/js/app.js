@@ -690,7 +690,7 @@ function carousel() {
 
 function setup_carousel(carousel) {
     
-    const carousel_slides = carousel.querySelectorAll('[js-carousel_slide]'),
+    const carousel_tracks = carousel.querySelectorAll('[js-carousel_track]'),
           carousel_prev = carousel.querySelector('[js-carousel_prev]'),
           carousel_next = carousel.querySelector('[js-carousel_next]');
     let responsive_array = [
@@ -723,6 +723,21 @@ function setup_carousel(carousel) {
                 visible : 4
             }
         ];
+    }
+
+    if(carousel.hasAttribute('pose')) {
+        responsive_array = [
+            {
+                breakpoint : 300,
+                visible : 1
+            }
+        ];
+    }
+          
+    let carousel_slides;
+
+    for(const track of carousel_tracks) {
+        carousel_slides = track.querySelectorAll('[js-carousel_slide]');
     }
     
     let current_index = 0,
@@ -823,18 +838,21 @@ function setup_carousel(carousel) {
                 slide.classList.remove('prev');
             }
         }
-        for(let i=0;i<visible_items;i++) {
-            active_index = current_index+i;
-            carousel_slides[active_index].classList.add('active');
+
+        for(const track of carousel_tracks) {
+            const slides = track.querySelectorAll('[js-carousel_slide]');
+
+            for(let i=0;i<visible_items;i++) {
+                active_index = current_index+i;
+                slides[active_index].classList.add('active');
+            }
+            for(let y=0;y<current_index;y++) {
+                slides[y].classList.add('prev');
+            }
         }
-        for(let y=0;y<current_index;y++) {
-            carousel_slides[y].classList.add('prev');
-        }
-        
         
         carousel.style.setProperty('--currentSlide',current_index);
         
-
         carousel_prev.classList.remove('disabled');
         carousel_next.classList.remove('disabled');
 
@@ -901,6 +919,80 @@ function clickable_phone() {
     }
 }
 
+///////////////////////////////////////////////////////
+/* Switch items */
+///////////////////////////////////////////////////////
+
+function switch_content() {
+    const switchers = document.querySelectorAll('[content_switcher]');
+    
+    if(!switchers) {
+        return;
+    }
+
+    for(const switcher of switchers) {
+        const observer = new IntersectionObserver(switch_content_callback,{rootMargin:'-50% 0% 0% 0%'}),
+              items = switcher.querySelectorAll('[sticky_switcher]'),
+              scroller = switcher.querySelector('[sticky_scroller]'),
+              containers = document.querySelectorAll('[items_container]');
+
+        switcher.containers = containers;
+        scroller.parent = switcher;
+
+        containers.forEach((container,index) => {
+            const container_items = container.querySelectorAll('[content_to_switch]');
+            
+            let max_height = 0;
+            
+            container_items.forEach((item,index) =>{
+                const height = Math.round(item.getBoundingClientRect().height);
+                max_height = (height > max_height) ? height : max_height;
+            });
+            
+            container.style.height = max_height + 'px';
+            
+        });
+
+        items.forEach((item,index) => {
+            item.index = index;
+            item.parent = switcher;
+            observer.observe(item);
+        });
+    }
+}
+
+function switch_content_callback(entries,observer) {
+    
+    for (const entry of entries)
+    {
+        const parent = entry.target.parent;
+
+        if(entry.isIntersecting)
+        {
+            const index = entry.target.index;
+            
+            parent.containers.forEach((container,key) => {
+                const items = container.querySelectorAll('[content_to_switch]');
+
+                items.forEach(function(content,num) {
+                    if(num==index) {
+                        content.classList.add("active");
+                        content.classList.remove("prev");
+                    } 
+                    if(num < index) {
+                        content.classList.add("prev");
+                        content.classList.remove("active");
+                    }
+                    if(num > index) {
+                        content.classList.remove("active");
+                    }
+                });
+            })
+            
+        }
+    }
+}
+
 
 window.addEventListener("load", function() {
     animations();
@@ -909,6 +1001,8 @@ window.addEventListener("load", function() {
     secure_email();
     clickable_phone();
     smoothscroll();
+
+    switch_content();
 });
 
 window.addEventListener("resize", function() {

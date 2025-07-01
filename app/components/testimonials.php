@@ -10,7 +10,7 @@
                 </button>
             </p>
             <div class="c-testimonials_slideshow_wrapper" data-parallax="fadeIn">
-                <div class="c-testimonials_slideshow">
+                <div class="c-testimonials_slideshow"  js-carousel_track>
 <?php
     foreach($testimonials as $testimonial) {
 ?>

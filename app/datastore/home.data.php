@@ -61,6 +61,29 @@ return (object) [
 
             (object) [
                 'type'      => "assets",
+                'title'     => "Nos Engagements",
+                'items'     => (object) [
+                    (object) [
+                        'icon'      => $icons->plus,
+                        'title'     => "Expertise",
+                        'text'      => "Formé chez les Compagnons, 20 ans d’expérience dans le bois"
+                    ],
+                    (object) [
+                        'icon'      => $icons->bulle,
+                        'title'     => "Accompagnement",
+                        'text'      => "Des conseils personnalisés et un suivi attentif de A à Z"
+                    ],
+                    (object) [
+                        'icon'      => $icons->check,
+                        'title'     => "Qualité",
+                        'text'      => "Des finitions soignées et matériaux sélectionnés avec soin"
+                    ],
+                    (object) [
+                        'icon'      => $icons->square,
+                        'title'     => "Réactivité",
+                        'text'      => "Des devis rapides et adaptés et un respect des délais annoncés"
+                    ]
+                ]
             ],
         ]
     ],
@@ -70,6 +93,37 @@ return (object) [
     (object) [
         'class'    => "--light",
         'components'    => (object) [
+
+            // *** SCROLL
+
+            (object) [
+                'type'      => "scroll",
+
+                'title'     => "Comment ça marche ?",
+
+                'items'     => (object) [
+                    (object) [
+                        'title'     => "Premier contact",
+                        'text'      => "Partagez vos idées et vos besoins avec notre équipe.<br>C’est le début de l’aventure !"
+                    ],
+                    (object) [
+                        'title'     => "Visite technique",
+                        'text'      => "Baptiste se déplace chez vous pour évaluer précisément le chantier et vous proposer des solutions adaptées."
+                    ],
+                    (object) [
+                        'title'     => "Devis détaillé",
+                        'text'      => "Recevez une proposition claire qui détaille les matériaux, techniques et délais pour vous permettre de décider en toute sérénité."
+                    ],
+                    (object) [
+                        'title'     => "Réalisation",
+                        'text'      => "Notre équipe intervient avec soin et respect de votre intérieur, pour garantir un résultat impeccable."
+                    ],
+                    (object) [
+                        'title'     => "Réception",
+                        'text'      => "Nous réceptionnons le chantier et vous partageons nos conseils d’entretien pour préserver la beauté de votre parquet ou terrasse."
+                    ]
+                ]
+            ],
             
             // *** IMAGE
 

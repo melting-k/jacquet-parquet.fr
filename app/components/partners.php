@@ -5,7 +5,7 @@
                 Ils nous font confiance !
             </h2>
             <div class="c-partners_slideshow_wrapper" data-parallax="fadeIn">
-                <div class="c-partners_slideshow">
+                <div class="c-partners_slideshow" js-carousel_track>
 <?php
     foreach($partners->images as $partner) {
 ?>

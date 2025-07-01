@@ -43,6 +43,14 @@ return (object) [
                     'alt'       => "Pose d'un parquet neuf dans une maison"
                 ]
             ],
+            
+            // *** ASIDE
+
+            (object) [
+                'type'      => "aside",
+                'title'     => "L’élégance intemporelle des Points de Hongrie et Bâtons Rompus",
+                'text'      => "Vous rêvez d’un parquet au caractère unique et raffiné ? Nos poses en Point de Hongrie et Bâtons Rompus sublimeront votre intérieur avec élégance. Ces techniques historiques, signatures des plus beaux parquets, sont notre spécialité. Confiez-nous votre projet pour un résultat d’exception qui valorisera durablement votre habitat.",
+            ],
 
             // *** IMAGE
 
@@ -75,6 +83,74 @@ return (object) [
     (object) [
         'class'    => "--light",
         'components'    => (object) [
+
+            // *** ASIDE
+
+            (object) [
+                'type'      => "aside-alt",
+                'title'     => "Nos méthodes de pose : collée, clouée, flottante",
+                'text'      => "Nous étudions attentivement votre sol existant (chape, ancien parquet, lambourdes…) et vous conseillons sur la méthode de pose la plus adaptée à votre situation. Notre objectif est de vous garantir un résultat esthétique mais aussi technique, pour un parquet qui durera dans le temps.",
+
+                'carousel'  => (object) [
+                    (object) [
+                        'title' => "Pose collée",
+                        'text'  => "Idéale pour parquets massifs et contrecollés. Parfaite sur chape plane et sèche.",
+                        'image' => (object) [
+                            'url'   => "img/aside/pose-de-parquet-collee.jpg",
+                            'alt'   => "Pose de parquet collée"
+                        ]
+                    ],
+                    (object) [
+                        'title' => "Pose clouée",
+                        'text'  => "Méthode traditionnelle, réalisée sur lambourdes ou plancher existant. Offre une sensation unique sous le pied.",
+                        'image' => (object) [
+                            'url'   => "img/aside/pose-de-parquet-clouee.jpg",
+                            'alt'   => "Pose de parquet clouée"
+                        ]
+                        ],
+                    (object) [
+                        'title' => "Pose Flottante",
+                        'text'  => "Idéale pour parquets contrecollés et stratifiés.",
+                        'image' => (object) [
+                            'url'   => "img/aside/pose-de-parquet-flottante.jpg",
+                            'alt'   => "Pose de parquet flottante"
+                        ]
+                    ]
+                ]
+            ],
+
+            // *** ASSETS
+
+            (object) [
+                'type'      => "assets-alt",
+                'title'     => "Des finitions qui révèlent<br class='hidden-sm--max'> la beauté du bois",
+                'items'     => (object) [
+                    (object) [
+                        'image'      => (object) [
+                            'url'       => "img/assets/finition-parquet-vitrification.jpg",
+                            'alt'       => "Vitrification de parquet"
+                        ],
+                        'title'     => "VITRIFICATION",
+                        'text'      => "Protection durable et résistante contre les tâches et l’usure quotidienne. Disponible en différents niveaux de brillance, du mat profond au brillant éclatant."
+                    ],
+                    (object) [
+                        'image'      => (object) [
+                            'url'       => "img/assets/finition-parquet-huilage.jpg",
+                            'alt'       => "Finition de parquet huilage"
+                        ],
+                        'title'     => "HUILAGE",
+                        'text'      => "Pénètre le bois pour le nourrir en profondeur, tout en préservant son aspect naturel et sa respiration. Offre un toucher chaleureux et un entretien facile par zones."
+                    ],
+                    (object) [
+                        'image'      => (object) [
+                            'url'       => "img/assets/finition-parquet-teinte.jpg",
+                            'alt'       => "Parquet finition teintée"
+                        ],
+                        'title'     => "TEINTE",
+                        'text'      => "Personnalisez la couleur de votre parquet pour l’accorder parfaitement à votre décoration, du ton clair et lumineux aux nuances plus profondes et caractérisées."
+                    ]
+                ]
+            ],
                         
             // *** QUOTE
 
@@ -86,6 +162,17 @@ return (object) [
                 ],
                 'title'     => "Fourniture de parquets de qualité",
                 'text'      => "En plus de la pose, nous proposons une sélection rigoureuse de parquets pour votre projet. Grâce à notre réseau de fournisseurs et à notre expérience, nous vous donnons accès à des parquets de qualité supérieure, adaptés à vos besoins et à votre budget. Nous privilégions les parquets français certifiés, garantissant qualité, durabilité et respect de l’environnement. "
+            ],
+                        
+            // *** ASIDE
+
+            (object) [
+                'type'      => "aside-logos",
+                
+                'title'     => "Des parquets certifiés responsables",
+                'text'      => "Notre sélection est rigoureuse : nous vous proposons des parquets répondant aux normes et labels les plus exigeants, gage de qualité et de respect de l’environnement : ",
+                'icon'      => $icons->logo_round,
+                'logos'     => 'img/aside/certifications'
             ],
         ]
     ],

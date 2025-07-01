@@ -1,5 +1,122 @@
 @use 'utilities' as *;
 
 .c-assets {
-    
+    @include position(relative,5);
+    padding:20rem 0;
+
+    &_title {
+        grid-column: span 12;
+        @extend %u-title--medium;
+        color:$light;
+        text-align:center;
+        margin-bottom:12.5rem;
+    }
+
+    &_item {
+        grid-column: span 12;
+        text-align:center;
+        color:$light;
+        @include flex(flex,center,flex-start,column);
+        margin-bottom:50px;
+        gap:3rem;
+        padding:0 15vw;
+
+        &:last-child {
+            margin-bottom:0;
+        }
+
+        @media (min-width:$screen-sm) {
+            grid-column: span 6;
+            padding:0 30px;
+
+            &:nth-last-child(2) {
+                margin-bottom:0;
+            }
+        }
+
+        @media (min-width:$screen-md) {
+            grid-column: span 3;
+            margin-bottom: 0;
+            padding:0 1.5rem;
+        }
+
+        p {
+            text-align:center;
+            color:$light;
+        }
+
+        &_icon {
+            @include icon(8rem);
+            margin-bottom:5rem;
+
+            svg {
+                @include icon(8rem);
+                @include svg($light);
+            }
+        }
+    }
+
+    // *** Alternative version
+
+    &--alt {
+        @extend .c-assets;
+
+        .c-assets {
+            &_title {
+                color:$dark;
+                margin-bottom:15rem;
+            }
+
+            &_items {
+                grid-column: span 12;
+                @include flex(flex,flex-start,center,column);
+
+                @media (min-width:$screen-sm) {
+                    flex-direction:row;
+                }
+
+                @media (min-width:$screen-lg) {
+                    justify-content: space-between;
+                }
+            }
+
+            &_item {
+                width:100%;
+                padding:0 10vw;
+                margin-bottom:90px;
+
+                @media (min-width:$screen-sm) {
+                    width:50%;
+                    padding:0 30px;
+                }
+
+                @media (min-width:$screen-md) {
+                    width:33.333%;
+                    margin-bottom: 0;
+                }
+
+                @media (min-width:$screen-lg) {
+                    width:23.5%;
+                    padding:0;
+                }
+
+                &_image {
+                    @include icon(240px);
+                    border-radius:50%;
+                    overflow:hidden;
+                    margin-bottom:45px;
+
+                    img {
+                        width:100%;
+                        height:100%;
+                    }
+                }
+
+                p {
+                    text-align:center;
+                    color:$dark;
+                }
+            }
+        }
+    }
 }
