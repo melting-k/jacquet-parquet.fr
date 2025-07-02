@@ -2,6 +2,178 @@
 
 .c-content {
     @include position(relative,5);
-    background:$light;
-    padding:60px 0;
+    padding:20rem 0;
+    overflow:hidden;
+
+    &_title {
+        grid-column: span 12;
+        @extend %u-title--medium;
+        margin-bottom:20rem;
+        text-align:center;
+    }
+
+    &_item {
+        margin-bottom:20rem;
+        grid-column: span 12;
+
+        @media (min-width:$screen-sm) and (max-width:$screen-md) {
+            grid-column: 2 / span 10;
+        }
+
+        &:last-child {
+            margin-bottom:0;
+        }
+
+        &_img {
+            grid-column: span 12;
+            position:relative;
+            margin-bottom:45px;
+
+            img {
+                width:100%;
+                height:auto;
+            }
+
+            svg {
+                @include svg($dark);
+                width:60%;
+                @include position(absolute,1,auto,-15%,-15%,auto);
+
+                @media (max-width:$screen-md) {
+                    display:none;
+                }
+            }
+
+            @media (min-width:$screen-md) {
+                grid-column: 8 / span 5;
+                grid-row: 1;
+                margin-bottom: 0;
+                align-self:center;
+            }
+        }
+
+        &_texts {
+            grid-column: span 12;
+            @include flex(flex,flex-start,flex-start,column);
+            gap:30px;
+
+            @media (min-width:$screen-md) {
+                grid-column: 1 / span 5;
+                grid-row: 1;
+                align-self:center;
+            }
+            
+            @media (min-width:$screen-xl) {
+                gap:45px;
+            }
+        }
+
+        &_title {
+            @extend %u-title--medium;
+        }
+
+        &_button {
+            width:100%;
+
+            [class^=u-button] {
+                width:100%;
+            }
+        }
+
+        &_assets,
+        &_essences {
+            margin-top:15px;
+            @include flex(flex,flex-start,flex-start,column);
+            gap:30px;
+
+            &_items {
+                @include flex(flex,flex-start,flex-start,column);
+                gap:15px;
+            }
+        }
+
+        &_essences {
+            &_items {
+                @media (min-width:$screen-md) {
+                    flex-direction:row;
+                }
+
+                @media (min-width:$screen-xl) {
+                    gap:45px;
+                }
+            }
+        }
+
+        &_asset {
+            @include flex(flex,center,flex-start);
+            gap:30px;
+
+            svg {
+                @include icon(30px);
+            }
+        }
+
+        &_essence {
+            @include flex(flex,center,flex-start,row-reverse);
+            gap:15px;
+
+            img {
+                @include icon(8rem);
+            }
+
+            @media (min-width:$screen-md) {
+                flex-direction:column;
+                width:10rem;
+                gap:30px;
+
+                span {
+                    @include flex(inline-flex,center,center);
+                    text-align:center;
+                    height:50px;
+                }
+            }
+        }
+
+        // *** Variants : invert
+
+        @media (min-width:$screen-md) {
+            &:nth-child(2n+2) {
+                .c-content_item_img {
+                    grid-column: 1 / span 5;
+                }
+
+                .c-content_item_texts {
+                    grid-column: 7 / span 5;
+                }
+            }
+        }
+    }
+}
+
+.u-section--dark {
+    .c-content {
+        &_item {
+
+            border-bottom:solid 1px $light;
+            padding-bottom:15rem;
+            margin-bottom:15rem;
+
+            &:last-child {
+                padding-bottom:0;
+                border-bottom:none;
+                margin-bottom:0;
+            }
+
+            &_title,
+            &_text,
+            &_asset,
+            &_essence {
+                color:$light;
+            }
+
+            svg {
+                @include svg($light);
+            }
+        }
+    }
 }

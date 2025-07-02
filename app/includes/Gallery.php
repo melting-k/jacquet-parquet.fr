@@ -42,7 +42,7 @@ class Gallery {
             $title = trim($title,'/');
             
             // On injecte les images dans la vue
-            $this->images[] = "<img src='$value' alt='Logo $title'/>";
+            $this->images[] = "<img src='$value' alt='$title'/>";
         }
     } 
 

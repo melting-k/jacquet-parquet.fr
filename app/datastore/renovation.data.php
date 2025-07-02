@@ -4,7 +4,7 @@ return (object) [
     // *** NEW SECTION
 
     (object) [
-        'class'    => "--light",
+        'class'    => "",
         'components'    => (object) [
 
             // *** HEADER
@@ -42,6 +42,32 @@ return (object) [
                 ]
             ],
 
+            // *** CAROUSEL
+
+            (object) [
+                'type'  => "carousel",
+                'title' => "Notre process<br>de rénovation",
+
+                'items'  => (object) [
+                    (object) [
+                        'title'     => "Diagnostic",
+                        'text'      => "Evaluation de l’état de votre parquet, identification des lames à remplacer et des travaux nécessaires."
+                    ],
+                    (object) [
+                        'title'     => "Réparations",
+                        'text'      => "Remplacement des lames endommagées ou instables et correction des défauts structurels."
+                    ],
+                    (object) [
+                        'title'     => "Ponçage",
+                        'text'      => "Élimination méthodique des anciennes finitions et mise à niveau de l’ensemble de la surface pour homogénéiser."
+                    ],
+                    (object) [
+                        'title'     => "Finitions",
+                        'text'      => "Application de vitrification, huile ou teinte selon vos préférences pour protéger et sublimer votre parquet."
+                    ]
+                ]
+            ],
+
             // *** QUOTE
 
             (object) [
@@ -50,7 +76,16 @@ return (object) [
                     'url'       => "img/quote/interieur-de-maison-avec-parquet-renove.jpg",
                     'alt'       => "Photo d'un intérieur de maison avec un parquet rénové"
                 ],
-                'text'      => "$icons->double_arrow Rénover plutôt que remplacer : une démarche écologique et économique qui préserve l’âme et l’histoire de votre maison. $icons->double_arrow"
+                'text'      => "$icons->double_arrow Rénover plutôt que remplacer, c'est adopter une démarche écologique et économique qui préserve l’âme et l’histoire de votre maison. $icons->double_arrow"
+            ],
+
+            // *** CAROUSEL
+
+            (object) [
+                'type'  => "carousel",
+                'title' => "Quelques exemples...",
+
+                'images'  => new Gallery('img/realisations')
             ],
         ]
     ],

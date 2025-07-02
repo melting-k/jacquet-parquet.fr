@@ -4,7 +4,7 @@ return (object) [
     // *** NEW SECTION
 
     (object) [
-        'class'    => "--light",
+        'class'    => "",
         'components'    => (object) [
 
             // *** HEADER
@@ -71,10 +71,108 @@ return (object) [
 
     (object) [
         'class'    => "--dark",
-        'id'       => "main",
         'components'    => (object) [
     
-            
+            // *** CONTENT
+
+            (object) [
+                'type'      => "content",
+                
+                'items'     => (object) [
+                    (object) [
+                        'image' => (object) [
+                            'url'   => "img/content/pose-parquet-massif-toulouse.jpg",
+                            'alt'   => "Pose de parquet massif à Toulouse"
+                        ],
+                        'title' => "Parquet massif",
+                        'text'  => "Le parquet massif représente l’excellence et l’authenticité. Entièrement constitué de bois noble, il traverse les générations grâce à sa possibilité d’être rénové plusieurs fois.",
+
+                        'assets'    => (object) [
+                            "Noblesse du matériau",
+                            "Robustesse dans le temps ",
+                            "Authentique et élégant",
+                            "Rénovable"
+                        ],
+
+                        'essences' => (object) [
+                            (object) [
+                                'title' => "Chêne français",
+                                'image' => "img/essences/chene.png"
+                            ],
+                            (object) [
+                                'title' => "Pin",
+                                'image' => "img/essences/pin.png"
+                            ],
+                            (object) [
+                                'title' => "Hêtre",
+                                'image' => "img/essences/hetre.png"
+                            ],
+                            (object) [
+                                'title' => "Frêne",
+                                'image' => "img/essences/frene.png"
+                            ]
+                        ]
+                    ],
+
+                    (object) [
+                        'image' => (object) [
+                            'url'   => "img/content/installation-parquet-contrecolle-toulouse.jpg",
+                            'alt'   => "Pose de parquet contrecollé à Toulouse"
+                        ],
+                        'title' => "Parquet Contrecollé",
+                        'text'  => "Le parquet contrecollé combine une couche de bois noble en surface avec des couches techniques qui lui confèrent une bonne stabilité.",
+
+                        'assets'    => (object) [
+                            "Compatible avec le chauffage au sol",
+                            "Des teintes et des aspects pour tous les projets",
+                            "Grande stabilité",
+                            "Excellent rapport qualité-prix"
+                        ],
+
+                        'essences' => (object) [
+                            (object) [
+                                'title' => "Chêne",
+                                'image' => "img/essences/chene.png"
+                            ]
+                        ]
+                    ],
+
+                    (object) [
+                        'image' => (object) [
+                            'url'   => "img/content/parquet-revetement-stratifie-toulouse.jpg",
+                            'alt'   => "Pose de parquet revêtement stratifié à Toulouse"
+                        ],
+                        'title' => "Revêtement stratifié",
+                        'text'  => "Les stratifiés actuels offrent un réalisme étonnant qui reproduit fidèlement l’aspect du bois, tout en proposant une bonne résistance à l’usure quotidienne.",
+
+                        'assets'    => (object) [
+                            "Résistant aux rayures et aux chocs",
+                            "Entretien facile et rapide",
+                            "Solution économique et durable",
+                            "Idéal pour les espaces à fort passage"
+                        ],
+
+                        'essences' => (object) [
+                            (object) [
+                                'title' => "Imitations bois variés",
+                                'image' => "img/essences/imitations-bois.png"
+                            ],
+                            (object) [
+                                'title' => "Finitions mates",
+                                'image' => "img/essences/pin.png"
+                            ],
+                            (object) [
+                                'title' => "Hêtre",
+                                'image' => "img/essences/hetre.png"
+                            ],
+                            (object) [
+                                'title' => "Finitions brillantes",
+                                'image' => "img/essences/frene.png"
+                            ]
+                        ]
+                    ]
+                ]
+            ],
         ]
     ],
     

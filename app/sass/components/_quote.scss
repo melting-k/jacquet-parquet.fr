@@ -93,4 +93,8 @@
         text-align:center;
         color:$light;
     }
+
+    &+.c-carousel {
+        padding-top:15rem;
+    }
 }

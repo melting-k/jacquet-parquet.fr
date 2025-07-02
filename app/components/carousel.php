@@ -1,44 +1,49 @@
-<article class="c-content--alt<?=$page_item->class?>">
+<article class="c-carousel" js-carousel>
     <div class="container">
         <div class="grid">
-            <div class="c-content_text">
-                <h2 class="c-content_title" data-parallax="fadeIn">
-                    <?=$page_item->title?>
-                </h2>
-                <div class="c-content_desc" data-parallax="fadeIn">
+            <h2 class="c-carousel_title" data-parallax="fromB">
+                <?=$page_item->title?>
+            </h2>
+            <p class="c-carousel_nav" data-parallax="fadeIn">
+                <button class="c-carousel_nav_button" js-carousel_prev>
+                    <?=$icons->arrow?>
+                </button>
+                <button class="c-carousel_nav_button" js-carousel_next>
+                    <?=$icons->arrow?>
+                </button>
+            </p>
+            <div class="c-carousel_slideshow_wrapper" data-parallax="fadeIn">
+                <div class="c-carousel_slideshow"  js-carousel_track>
 <?php
-if(is_array($page_item->text)) {
-    foreach($page_item->text as $text) {
+    if(property_exists($page_item,'items')) {
+        $i = 1;
+        foreach($page_item->items as $item) {
 ?>
-                    <p class="c-content_desc_text">
-                        <?=$text?>
-                    </p>
+                    <div class="c-carousel_slide" js-carousel_slide>
+                        <p class="c-carousel_slide_number">
+                            <?=$i?>
+                        </p>
+                        <p class="c-carousel_slide_text">
+                            <strong><?=$item->title?></strong>
+                            <br><br>
+                            <?=$item->text?>
+                        </p>
+                    </div>
 <?php
+        $i++;
+        }
     }
-} else {
+    elseif(property_exists($page_item,'images')) {
+        foreach($page_item->images->images as $image) {
 ?>
-                    <?=$page_item->text?>
+                    <div class="c-carousel_slide--image" js-carousel_slide>
+                        <?=$image?>
+                    </div>
 <?php
-}
-?>
+        }
+    }
+?> 
                 </div>
-<?php
-foreach($page_item->cta as $cta) {
-?>
-                <a href="<?=$cta->link->url?>" title="<?=$cta->link->title?>" class="c-content_button <?=property_exists($cta->link,'class') ? $cta->link->class : ''?>" data-parallax="fadeIn">
-                    <p class="c-content_button_title">
-                        <?=$cta->title?>
-                    </p>
-                    <span class="c-content_button_arrow">
-                        <?=$icons->arrow?>
-                    </span>
-                </a>
-<?php
-}
-?>
-            </div>
-            <div class="c-content_image">
-                <img src="<?=$page_item->image->url?>" alt="<?=$page_item->image->alt?>" data-parallax="fadeIn">
             </div>
         </div>
     </div>

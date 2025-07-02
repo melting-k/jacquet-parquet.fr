@@ -94,6 +94,59 @@ return (object) [
         'class'    => "--light",
         'components'    => (object) [
 
+            // *** CONTENT
+
+            (object) [
+                'type'      => "content",
+                'title'     => "Nos Savoir-faire",
+                
+                'items'     => (object) [
+                    (object) [
+                        'image' => (object) [
+                            'url'   => "img/content/pose-de-parquets-a-toulouse.jpg",
+                            'alt'   => "Pose de parquet neuf à Toulouse",
+                            'icon'  => $icons->parquet
+                        ],
+                        'title' => "Pose de Parquets",
+                        'text'  => "Transformez votre intérieur avec un parquet qui vous ressemble. Nous maîtrisons toutes les techniques de pose pour des parquets massifs, contrecollés ou stratifiés. Notre savoir-faire artisanal garantit un résultat durable et chaleureux qui valorise votre intérieur.",
+                        'button'    => (object) [
+                            'url'   => $NAV->pose->url,
+                            'title' => $NAV->pose->title,
+                            'icon'  => $icons->arrow,
+                            'label' => "Découvrir nos parquets"
+                        ]
+                    ],
+                    (object) [
+                        'image' => (object) [
+                            'url'   => "img/content/renovation-de-parquets-anciens-a-toulouse.jpg",
+                            'alt'   => "Rénovation parquet ancien à Toulouse"
+                        ],
+                        'title' => "Rénovation de parquets anciens",
+                        'text'  => "Redonnez vie à vos parquets anciens. Nous préservons le caractère de votre habitat en restaurant vos sols avec soin : réparation de lames, ponçage soigneux et finitions adaptées pour un résultat qui respecte l'authenticité de votre parquet tout en lui offrant une nouvelle jeunesse.",
+                        'button'    => (object) [
+                            'url'   => $NAV->renovation->url,
+                            'title' => $NAV->renovation->title,
+                            'icon'  => $icons->arrow,
+                            'label' => "Rénover mon parquet"
+                        ]
+                    ],
+                    (object) [
+                        'image' => (object) [
+                            'url'   => "img/content/creation-conception-terrasses-en-bois-toulouse.jpg",
+                            'alt'   => "Création terrasse extérieure en bois à Toulouse"
+                        ],
+                        'title' => "Terrasses en bois",
+                        'text'  => "Prolongez votre espace de vie à l’extérieur. Nos terrasses sur mesure en bois européen, exotique ou composite transforment votre jardin. Nous assurons une conception adaptée à votre extérieur avec des matériaux durables et une  pose experte pour profiter pleinement de votre espace extérieur.",
+                        'button'    => (object) [
+                            'url'   => $NAV->terrasses->url,
+                            'title' => $NAV->terrasses->title,
+                            'icon'  => $icons->arrow,
+                            'label' => "Créer ma terrasse"
+                        ]
+                    ]
+                ]
+            ],
+
             // *** SCROLL
 
             (object) [

@@ -10,20 +10,30 @@
     &_view {
         grid-column: span 12;
         margin:0 -15px;
-        background:$dark;
         position:sticky;
         top:0;
-        height:100vh;
 
         .grid {
-            height:100%;
+            height:100vh;
             align-content:center;
         }
 
         @media (min-width:$screen-sm) {
             margin:0;
             grid-column: 2 / span 10;
-            padding:15rem;
+        }
+
+        &_content {
+            
+            background:$dark;
+            grid-column: span 12;
+            height:100vh;
+            padding:15vh 0;
+
+            @media (min-width:$screen-xs) {
+                height:auto;
+                padding:15rem;
+            }
         }
     }
 

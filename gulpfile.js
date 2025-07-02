@@ -98,8 +98,7 @@ gulp.task('build-app', function (done) {
                 '!' + appPath + 'img/**/*',
                 '!' + appPath + 'css/**/*',
                 '!' + appPath + 'js/**/*',
-                '!' + appPath + 'sass/**/*',
-                '!' + adminPath + '**/*'
+                '!' + appPath + 'sass/**/*'
             ])
             .pipe(gulp.dest(prodPath));
 
@@ -112,8 +111,7 @@ gulp.task('build-app', function (done) {
 
         gulp
             .src([
-                appPath + '**/*.{html,php}',
-                '!' + adminPath + '**/*'
+                appPath + '**/*.{html,php}'
             ])
             .pipe(useref({
                 searchPath: [appPath, 'node_modules']
