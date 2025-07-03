@@ -931,7 +931,7 @@ function switch_content() {
     }
 
     for(const switcher of switchers) {
-        const observer = new IntersectionObserver(switch_content_callback,{rootMargin:'-50% 0% 0% 0%'}),
+        const observer = new IntersectionObserver(switch_content_callback,{rootMargin:'-50% 0% -50% 0%'}),
               items = switcher.querySelectorAll('[sticky_switcher]'),
               scroller = switcher.querySelector('[sticky_scroller]'),
               containers = document.querySelectorAll('[items_container]');
@@ -966,7 +966,8 @@ function switch_content_callback(entries,observer) {
     for (const entry of entries)
     {
         const parent = entry.target.parent;
-
+        
+            console.log(entry);
         if(entry.isIntersecting)
         {
             const index = entry.target.index;

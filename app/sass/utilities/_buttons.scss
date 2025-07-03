@@ -20,6 +20,14 @@
         @include icon(18px);
         @include svg($dark);
         margin-right:15px;
+
+        @media (min-width:$screen-lg) {
+            @include icon(24px);
+        }
+
+        @media (min-width:$screen-xl) {
+            @include icon(28px);
+        }
     }
 
     @media (min-width:$screen-lg) {
@@ -30,6 +38,7 @@
     @media (min-width:$screen-xl) {
         height:70px;
         font-size:24px;
+        padding:0 40px;
     }
 
     &--light {

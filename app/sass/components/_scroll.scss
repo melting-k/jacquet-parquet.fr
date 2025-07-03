@@ -10,7 +10,7 @@
     &_view {
         grid-column: span 12;
         margin:0 -15px;
-        position:sticky;
+        @include position(sticky,5);
         top:0;
 
         .grid {
@@ -187,6 +187,15 @@
 
         &_item {
             height:75vh;
+            position:relative;
+
+            @media (min-width:$screen-md) {
+                height:50vh;
+            }
+
+            &_anchor {
+                @include position(absolute,1,-15vh,0,auto,0);
+            }
         }
     }
 }
