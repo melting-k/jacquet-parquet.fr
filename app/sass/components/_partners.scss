@@ -37,7 +37,7 @@
 
     &_slide {
         @include flex(flex,flex-start,flex-start,column);
-        width:calc(100vw - 30px);
+        width:calc(100vw - 60px);
         white-space: normal;
         background:$white;
         border-radius:10px;
@@ -55,7 +55,7 @@
         }
 
         @media (min-width:$screen-xs) {
-            width:calc(50vw - 2.25rem - 15px);
+            width:calc(50vw - 2.25rem - 30px);
             margin-right: 4.5rem;
         }
 

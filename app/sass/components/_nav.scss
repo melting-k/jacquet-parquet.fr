@@ -8,13 +8,27 @@
     @include flex(flex,center,space-between);
     
     &_logo {
+        position:relative;
+        height:4.6rem;
+        min-height:29px;
+
         svg {
             @include svg($light);
-            width:19rem;
-            min-width:110px;
+            @include position(absolute,1,0,auto,auto,0);
+            width:auto;
+            height:100%;
+            opacity:0;
+            transform: translateX(100%);
 
             &:hover {
                 opacity:.6;
+            }
+
+            &+svg {
+                height:4.6rem;
+                min-height:29px;
+                opacity:1;
+                transform: none;
             }
         }
     }
@@ -146,16 +160,16 @@
 
         &_button {
             @extend .u-burger;
-            margin-left:3rem;
+            margin-left:15px;
 
             svg {
                 @include position(relative,2);
                 @include svg($dark);
-                @include icon(22px);
+                @include icon(18px);
                 @include transi();
 
                 @media (min-width:$screen-lg) {
-                    @include icon(30px);
+                    @include icon(22px);
                 }
             }
 
@@ -184,6 +198,22 @@
 
             @media (min-width:$screen-lg) {
                 padding:30px;
+            }
+        }
+    }
+
+    // *** Stick effects
+
+    &.sticky {
+        .c-nav_logo {
+            svg {
+                opacity:1;
+                transform:none;
+
+                &+svg {
+                    opacity:0;
+                    transform: translateX(-25%);
+                }
             }
         }
     }

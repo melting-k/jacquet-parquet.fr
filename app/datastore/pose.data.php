@@ -270,7 +270,40 @@ return (object) [
                 'title'     => "Des parquets certifiés responsables",
                 'text'      => "Notre sélection est rigoureuse : nous vous proposons des parquets répondant aux normes et labels les plus exigeants, gage de qualité et de respect de l’environnement : ",
                 'icon'      => $icons->logo_round,
-                'logos'     => 'img/aside/certifications'
+                'logos'     => (object) [
+                    (object) [
+                        'image'   => (object) [
+                            'url'   => "img/aside/certifications/pefc.jpg",
+                            'alt'   => "Logo PEFC"
+                        ],
+                        'text'  => "<strong>PEFC</strong><br>
+                                    Garantit que le bois provient de forêts gérées durablement, dans le respect des écosystèmes forestiers"
+                    ],
+                    (object) [
+                        'image'   => (object) [
+                            'url'   => "img/aside/certifications/norme-francaise-environnement.jpg",
+                            'alt'   => "Logo Norme Française Environnement"
+                        ],
+                        'text'  => "<strong>NF</strong><br>
+                                    Certifie la qualité, la performance et la sécurité des parquets selon des critères rigoureux"
+                    ],
+                    (object) [
+                        'image'   => (object) [
+                            'url'   => "img/aside/certifications/parquets-de-france.jpg",
+                            'alt'   => "Logo Parquets de France"
+                        ],
+                        'text'  => "<strong>Parquets de France</strong><br>
+                                    Label des fabricants français engagés dans une démarche de qualité et d'authenticité"
+                    ],
+                    (object) [
+                        'image'   => (object) [
+                            'url'   => "img/aside/certifications/entreprise-du-patrimoine-vivant.jpg",
+                            'alt'   => "Logo Entreprise du patrimoine vivant"
+                        ],
+                        'text'  => "<strong>EPV</strong><br>
+                                    Distingue les entreprises françaises aux savoir-faire artisanaux et industriels d’excellence"
+                    ]
+                ]
             ],
         ]
     ],

@@ -619,11 +619,13 @@ function smoothscroll() {
 function menu() {
 
     const navigation = document.querySelector('[data-role=nav]'),
+          navbar = navigation.closest('.c-nav'),
           contact = document.querySelector('[data-role=contact]'),
           nav_button = document.querySelector('[data-action=open_nav]'),
           contact_button = document.querySelectorAll('[data-action=open_contact]');
 
     nav_button.addEventListener('click',handleMenuClick);
+
     for(const button of contact_button) {
         button.addEventListener('click',handleContactClick);
     }
@@ -634,14 +636,16 @@ function menu() {
     }
 
     function handleContactClick(event) {
-        event.target.closest('[data-action=open_contact]').classList.toggle('active');
         contact.classList.toggle('active');
+        for(const button of contact_button) {
+            button.classList.toggle('active');
+        }
     }
 
     let scrollTop = document.documentElement.scrollTop;
 
     if(scrollTop > 50) {
-        navigation.classList.add('sticky');
+        navbar.classList.add('sticky');
     }
 
     document.addEventListener('click', function(event) {
@@ -655,7 +659,9 @@ function menu() {
             && !event.target.closest('[data-action=open_contact]') 
             && contact.classList.contains('active')) {
             contact.classList.remove('active');
-            contact_button.classList.remove('active');
+            for(const button of contact_button) {
+                button.classList.remove('active');
+            }
         }
     });
 
@@ -663,9 +669,9 @@ function menu() {
         let scrollTopNew = document.documentElement.scrollTop;
 
         if(scrollTopNew > 50) {
-            navigation.classList.add('sticky');
+            navbar.classList.add('sticky');
         } else {
-            navigation.classList.remove('sticky');
+            navbar.classList.remove('sticky');
         }
         
         scrollTop = scrollTopNew;
@@ -692,7 +698,8 @@ function setup_carousel(carousel) {
     
     const carousel_tracks = carousel.querySelectorAll('[js-carousel_track]'),
           carousel_prev = carousel.querySelector('[js-carousel_prev]'),
-          carousel_next = carousel.querySelector('[js-carousel_next]');
+          carousel_next = carousel.querySelector('[js-carousel_next]'),
+          carousel_dots = carousel.querySelectorAll('[js-carousel_dot]');
     let responsive_array = [
             {
                 breakpoint : 300,
@@ -776,6 +783,18 @@ function setup_carousel(carousel) {
         
         update_carousel();
     });
+
+    // Dots
+
+    if(carousel_dots.length) {
+        carousel_dots.forEach((button,index) => {
+            button.addEventListener('click', () => {
+                current_index = index;
+                
+                update_carousel();
+            });
+        });
+    }
     
     
     // Touch events (mobile)
@@ -966,8 +985,6 @@ function switch_content_callback(entries,observer) {
     for (const entry of entries)
     {
         const parent = entry.target.parent;
-        
-            console.log(entry);
         if(entry.isIntersecting)
         {
             const index = entry.target.index;
@@ -994,6 +1011,88 @@ function switch_content_callback(entries,observer) {
     }
 }
 
+///////////////////////////////////////////////////////
+/* Toggle items */
+///////////////////////////////////////////////////////
+
+function toggle_content() {
+    
+    const toggles = document.querySelectorAll('[js-toggle]');
+
+    toggles.forEach(function(toggle,index)
+    {
+        if(window.matchMedia("(min-width:990px)").matches) {
+            toggle.addEventListener('mouseenter',function() {                    
+                handleToggleClick(index,toggle)
+            });
+
+            toggle.addEventListener('mouseleave',function() {                    
+                handleToggleOut(index,toggle)
+            });
+        }
+        else
+        {
+            toggle.addEventListener('click',function() {                    
+                handleToggleClick(index,toggle)
+            });
+        }
+    });
+
+    document.addEventListener('click', function(event) {                    
+        handleToggleClose(event)
+    });
+}
+
+function handleToggleClick(index,element) {
+    const container = element.closest('[js-toggle-multiple]'),
+          items = document.querySelectorAll('[js-toggle]'),
+          active_item = container.querySelector('[js-toggle].toggled');
+    
+    if(active_item) {
+        active_item.classList.remove('toggled');
+        container.classList.remove('toggled');
+    }
+
+    if(!element.isEqualNode(active_item)) {
+        items[index].classList.add('toggled');
+        container.classList.add('toggled');
+    }
+}
+
+function handleToggleClose(ev) {
+    if(!ev.target.closest('[js-toggle]')) {
+
+        const current_elements = document.querySelectorAll('[js-toggle].toggled');
+
+        if(current_elements) {
+            for(const element of current_elements) 
+            {
+                element.classList.remove('toggled');
+            }
+        }
+
+        const containers = document.querySelectorAll('[js-toggle-multiple].toggled');
+
+        if(containers) {
+            for(const container of containers) 
+            {
+                container.classList.remove('toggled');
+            }
+        }
+    }
+}
+
+function handleToggleOut(index,element) {
+    const container = element.closest('[js-toggle-multiple]'),
+          items = document.querySelectorAll('[js-toggle]'),
+          active_item = container.querySelector('[js-toggle].toggled');
+    
+    if(active_item) {
+        active_item.classList.remove('toggled');
+        container.classList.remove('toggled');
+    }
+}
+
 
 window.addEventListener("load", function() {
     animations();
@@ -1004,6 +1103,7 @@ window.addEventListener("load", function() {
     smoothscroll();
 
     switch_content();
+    toggle_content();
 });
 
 window.addEventListener("resize", function() {

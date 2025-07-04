@@ -121,7 +121,7 @@
                 &_slide {
                     @include flex(flex,center,flex-start,column);
                     gap:30px;
-                    width:calc(100vw - 30px);
+                    width:calc(100vw - 60px);
                     white-space: normal;
                     margin-right: 20px;
                     position:relative;
@@ -186,11 +186,12 @@
                     }
 
                     &_item {
-                        @include icon(16px);
+                        @include icon(18px);
                         border-radius: 50%;
                         border:solid 2px $dark;
                         position:relative;
                         @include transi();
+                        cursor:pointer;
 
                         &.active {
                             background:$dark;
@@ -245,7 +246,7 @@
         .c-aside {
             &_wrapper {
                 grid-column: span 12;
-                margin:0 -15px;
+                margin:0 -30px;
                 padding:120px 30px 30px;
 
                 @media (min-width:$screen-sm) {
@@ -285,12 +286,12 @@
                 @include icon(24rem);
                 @include position(absolute,1,0,0,auto,0);
                 margin:auto;
-                transform: translateY(-50%);
 
                 svg {
                     @include svg($light);
                     width:100%;
                     height:auto;
+                    transform: translateY(-50%);
                 }
 
                 @media (min-width:$screen-sm) {
@@ -298,7 +299,10 @@
                     right:10rem;
                     left:auto;
                     margin:0;
-                    transform: none;
+
+                    svg {
+                        transform: none;
+                    }
                 }
             }
 
@@ -329,7 +333,35 @@
                     width:calc(100vw - 60px);
                     white-space: normal;
                     margin-right: 20px;
-                    position:relative;
+                    border-radius:4px;
+
+                    &_wrapper {
+                        position:relative;
+                        overflow:hidden;
+                        padding-bottom:65%;
+                    }
+
+                    &_front,
+                    &_back {
+                        backface-visibility: hidden;
+                        @include transi(.35s, ease-in-out);
+                        @include position(absolute,1,0,0px,0,0px);
+                        @include flex(flex,center,center);
+
+                        p {
+                            color:$light;
+                            text-align:center;
+
+                            strong {
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+
+                    &_back {
+                        transform: rotateY(180deg);
+                        opacity:0;
+                    }
 
                     img {
                         width:100%;
@@ -343,6 +375,17 @@
 
                     @media (min-width:$screen-sm) {
                         width:calc(25% - 23px);
+                    }
+
+                    &.toggled {
+                        .c-aside_logos_slide_front {
+                            transform: rotateY(180deg);
+                            opacity:0;
+                        }
+                        .c-aside_logos_slide_back {
+                            transform: rotateY(360deg);
+                            opacity:1;
+                        }
                     }
                 }
 

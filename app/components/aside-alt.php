@@ -31,7 +31,7 @@
 <?php
     foreach($page_item->carousel as $slide) {
 ?>
-                                <div class="c-aside_carousel_dots_item" js-carousel_slide></div>
+                                <div class="c-aside_carousel_dots_item" js-carousel_slide js-carousel_dot></div>
 <?php
     }
 ?>                    

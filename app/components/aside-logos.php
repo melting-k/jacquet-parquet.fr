@@ -12,12 +12,20 @@
                     <?=$page_item->text?>
                 </p>
                 <div class="c-aside_logos" js-carousel pose>
-                    <div class="c-aside_logos_slideshow" js-carousel_track>
+                    <div class="c-aside_logos_slideshow" js-carousel_track js-toggle-multiple>
 <?php
-$images = new Gallery($page_item->logos);
-foreach($images->images as $image) {
+foreach($page_item->logos as $logo) {
 ?>
-                        <p class="c-aside_logos_slide" js-carousel_slide data-parallax="fadeIn"><?=$image?></p>
+                        <div class="c-aside_logos_slide" js-carousel_slide js-toggle data-parallax="fadeIn">
+                            <div class="c-aside_logos_slide_wrapper">
+                                <p class="c-aside_logos_slide_front">
+                                    <img src="<?=$logo->image->url?>" alt="<?=$logo->image->alt?>">
+                                </p>
+                                <div class="c-aside_logos_slide_back">
+                                    <p><?=$logo->text?></p>
+                                </div>
+                            </div>
+                        </div>
 <?php
 }
 ?>

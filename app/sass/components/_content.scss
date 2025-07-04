@@ -111,6 +111,10 @@
             svg {
                 @include icon(30px);
             }
+
+            strong {
+                flex:1;
+            }
         }
 
         &_essence {

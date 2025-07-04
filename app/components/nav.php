@@ -1,6 +1,7 @@
 <nav class="c-nav">
     <a href="<?=$NAV->home->url?>" title="<?=$NAV->home->title?>" class="c-nav_logo">
         <?php
+            include 'img/logomark.svg';
             include 'img/logo-baptiste-jacquet.svg';
         ?>
     </a>

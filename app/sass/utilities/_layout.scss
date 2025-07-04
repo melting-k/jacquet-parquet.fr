@@ -4,7 +4,7 @@
 
 .container {
     @include position(relative,5);
-    padding:0 15px;
+    padding:0 30px;
     width:100%;
     
     @media (min-width:$screen-sm) {

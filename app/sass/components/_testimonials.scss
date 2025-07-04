@@ -29,7 +29,7 @@
 
     &_slide {
         @include flex(flex,center,center);
-        width:calc(100vw - 30px);
+        width:calc(100vw - 60px);
         white-space: normal;
         background:$dark;
         margin-right: 20px;
